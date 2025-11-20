@@ -1,0 +1,164 @@
+body {
+    border: 3px dotted black;
+    text-align: center;
+    background-color: white;
+}
+
+section.points {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-self: center;
+}
+section.points button {
+    font-family: 'Times New Roman', Times, serif;
+    max-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+section.points button:hover {
+    background-color: #555;
+}
+section.points.grid1c2r {
+    grid-template-columns: 200px;
+    grid-template-rows: 25px 30px;
+}
+section.points .row1 {
+    border-bottom: 5px solid black;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.maincolor {
+    background-color: #333;
+    color: white;
+}
+.maincolor:hover {
+    background-color: #555;
+}
+.prescolor {
+    background-color: #aaee46;
+    color: black;
+}
+.prescolor:hover {
+    background-color: #ccff79;
+}
+.boostcolor {
+    background-color: #230faa;
+    color: white;
+}
+.boostcolor:hover {
+    background-color: #000088;
+}
+.ascendcolor {
+    position: relative;
+    background-color: red;
+}
+.ascendcolor::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        transparent 60%,
+        rgb(255, 191, 0) 100%
+    );
+    border-radius: inherit;
+}
+
+
+.upgrades {
+    justify-content: center;
+}
+.upgradeheader {
+    font-size: 100%;
+}
+.unbought {
+    max-width: 150px;
+    min-width: 150px;
+    background-color: #999;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 80%;
+}
+.bought {
+    max-width: 150px;
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 80%;
+}
+
+.rebuyable {
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-top: 40px;
+    max-width: 150px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
+
+.milestones {
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    flex-direction: column;
+    align-items: center;
+}
+.milestoneheader {
+    font-size: 100%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.milestonereq {
+    font-size: 75%;
+}
+.unachieved {
+    max-width: 900px;
+    min-width: 900px;
+    background-color: #999;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 120%;
+}
+.achieved {
+    max-width: 900px;
+    min-width: 900px;
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 90%;
+}
+
+.col1 {
+    grid-column: 1;
+}
+.col2 {
+    grid-column: 2;
+}
+.col3 {
+    grid-column: 3;
+}
+.row1 {
+    grid-row: 1;
+}
+.row2 {
+    grid-row: 2;
+}
+.row3 {
+    grid-row: 3;
+}
