@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Resource Clicker</title>
+        <link rel="stylesheet" href="Main.css" />
+        <link rel="stylesheet" href="Highstyle.css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+        <section class="points grid1c2r">
+            <div class="col1 row1">You have <span id="points">0</span> points.</div>
+            <button onclick="GainPoints()" class="col1 row2">Click for <span id="ppc">1</span> points</button>
+        </section>
+
+        <nav class="MainNav">
+            <a onclick="SwitchTabs('MainTab')" id="Main" class="btn maincolor">Main</a>
+            <a onclick="SwitchTabs('PresTab')" id="Prestige" class="btn prescolor hidden">Prestige</a>
+            <a onclick="SwitchTabs('BoostTab')" id="Booster" class="btn boostcolor hidden">Boosters</a>
+            <a onclick="SwitchTabs('AscTab')" id="Ascend" class="btn ascendcolor hiddes">Ascension</a>
+            <a onclick="SwitchTabs('AutoTab')" id="Auto" class="btn maincolor hidden">Automation</a>
+            <a onclick="SwitchTabs('SettingsTab')" class="btn maincolor">Settings</a>
+        </nav>
+
+        <div id="MainTab" class="">
+            <button onclick="BuyUnlocker()" class="unlocker">
+                <h1 class="unlockheader">Unlocker</h1>
+                <div><span id="unlock">Unlock Prestige Points</span></div>
+                <div>Cost: <span id="unlockprice">10</span> points</div>
+                <div>Amount: <span id="unlockeramnt">0</span>/5</div>
+            </button>
+        </div>
+
+        <div id="PresTab" class="hidden">
+            <section class="prestige grid1c2r">
+                <div class="col1 row1">You have <span id="prestigepoints">0</span> Prestige Points</div>
+                <button onclick="GoPrestige()" class="prestigereset">You can gain <span id="prestigegain">0</span> Prestige Points</button>
+            </section>
+
+            <nav id="Powers" class="SubNav hidden">
+                <a onclick="SwitchTabs('MainPresTab')" class="btn prescolor">Main</a>
+                <a onclick="SwitchTabs('PowPresTab')" class="btn prescolor">Prestige Powers</a>
+            </nav>
+
+            <div id="MainPresTab" class="">
+                <section class="upgrades container">
+                    <button onclick="BuyPU1(); BuyPresUpg();" id="PU1" class="unbought box griditem">
+                        <h1 class="upgradeheader">Prestige Upgrade I</h1>
+                        <div>Multiply Points Per Click (PPC) by 2</div>
+                        <div>Cost: 1 Prestige Points</div>
+                    </button>
+                    <button onclick="BuyPU2(); BuyPresUpg();" id="PU2" class="unbought box hidden">
+                        <h1 class="upgradeheader">Prestige Upgrade II</h1>
+                        <div>Multiply PPC by 3</div>
+                        <div>Cost: 5 Prestige Points</div>
+                    </button>
+                    <button onclick="BuyPU3(); BuyPresUpg();" id="PU3" class="unbought box hidden">
+                        <h1 class="upgradeheader">Prestige Upgrade III</h1>
+                        <div>Multiply PPC by 5</div>
+                        <div>Cost: 10 Prestige Points</div>
+                    </button>
+                </section>
+                <section class="upgrades container">
+                    <button onclick="BuyPU4(); BuyPresUpg();" id="PU4" class="unbought box hidden">
+                        <h1 class="upgradeheader">Upgrade IV</h1>
+                        <div>Increase Power I cap by 10, but it scales faster every 10th level</div>
+                        <div>Cost: 1.00e15 Prestige Points</div>
+                    </button>
+                    <button onclick="BuyPU5(); BuyPresUpg();" id="PU5" class="unbought box hidden">
+                        <h1 class="upgradeheader">Upgrade V</h1>
+                        <div>Boost Prestige Points and Prestige Powers by 10</div>
+                        <div>Cost: 1.00e19 Prestige Points</div>
+                    </button>
+                    <button onclick="BuyPU6(); BuyPresUpg();" id="PU6" class="unbought box hidden">
+                        <h1 class="upgradeheader">Upgrade VI</h1>
+                        <div>Prestige Power effect exponent is increased by 0.05</div>
+                        <div>Cost: 2.00e20 Prestige Points</div>
+                    </button>
+                </section>
+            </div>
+
+            <div id="PowPresTab" class="hidden">
+                <section class="powergain">
+                    <div>You have <span id="poweramount">0</span> Prestige Powers</div> 
+                    <div>They boost PPC by <span id="powereffect">1</span></div>
+                    <button onclick="gainPowers()" id="powergain">Click for <span id="powerclick">0</span> Prestige Powers</button>
+                </section>
+
+                <section class="rebuyables">
+                    <button onclick="BuyB1()" class="rebuyable">
+                        <h1 class="upgradeheader">Power I</h1>
+                        <div>Multiply points by <span id="powB1base">2</span> per level.</div>
+                        <div>Cost: <span id="powB1cost">100</span> Prestige Powers</div>
+                        <div>Currently: <span id="powB1effect">1</span>x</div>
+                        <div><span id="powB1amount">0</span>/<span id="powB1max">10</span></div>
+                    </button>
+                    <button onclick="BuyB2()" class="rebuyable">
+                        <h1 class="upgradeheader">Power II</h1>
+                        <div>Multiply prestige points by <span id="powB2base">2</span> per level.</div>
+                        <div>Cost: <span id="powB2cost">500</span> Prestige Powers</div>
+                        <div>Currently: <span id="powB2effect">1</span>x</div>
+                        <div><span id="powB2amount">0</span>/<span id="powB2max">10</span></div>
+                    </button>
+                    <button onclick="BuyB3()" class="rebuyable">
+                        <h1 class="upgradeheader">Power III</h1>
+                        <div>Multiply prestige powers by <span id="powB3base">2</span> per level.</div>
+                        <div>Cost: <span id="powB3cost">1000</span> Prestige Powers</div>
+                        <div>Currently: <span id="powB3effect">1</span>x</div>
+                        <div><span id="powB3amount">0</span>/<span id="powB3max">10</span></div>
+                    </button>
+                </section>
+            </div>
+        </div>
+
+        <div id="BoostTab" class="hidden">
+            <section class="booster grid1c3r">
+                <div class="col1 row1">You have <span id="boosters">0</span> Boosters</div>
+                <div>They boost points by <span id="boostereff">1</span>x</div>
+                <button onclick="GoBooster()" class="boosterreset">You can reset for 1 Booster at <span id="boosterreq">1.00e9</span> points</button>
+            </section>
+
+            <nav id="BstrUpg" class="SubNav hidden">
+                <a onclick="SwitchTabs('MainBoostTab')" class="btn boostcolor">Milestones</a>
+                <a onclick="SwitchTabs('UpgBoostTab')" class="btn boostcolor">Upgrades</a>
+            </nav>
+
+            <div id="MainBoostTab" class="">
+                <section class="milestones">
+                    <div id="bm1" class="unachieved">
+                        <h1 class="milestoneheader">Booster I</h1>
+                        <h2 class="milestonereq">1 Booster</h2>
+                        <div>Welcome to Boosters! To help you, the first Power buyable base is increased by 1.</div>
+                    </div>
+                    <div id="bm2" class="hidden unachieved">
+                        <h1 class="milestoneheader">Booster II</h1>
+                        <h2 class="milestonereq">2 Boosters</h2>
+                        <div>Gain 20 times the points but only at 2 boosters</div>
+                    </div>
+                    <div id="bm3" class="unachieved hidden">
+                        <h1 class="milestoneheader">Booster III</h1>
+                        <h2 class="milestonereq">3 Boosters</h2>
+                        <div>Unlock some booster upgrades.</div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="UpgBoostTab" class="hidden">
+                <section class="upgrades container">
+                    <button onclick="BuyBU1()" id="BU1" class="unbought box">
+                        <h1 class="upgradeheader">Booster Upgrade I</h1>
+                        <div>Boost PPC by 2 for every bought Booster Upgrade.</div>
+                        <div>Currently: <span id="BU1effect">1x</span></div>
+                        <div>Cost: <span class="boostercost">3 Boosters</span></div>
+                    </button>
+                    <button onclick="BuyBU2()" id="BU2" class="unbought box">
+                        <h1 class="upgradeheader">Booster Upgrade II</h1>
+                        <div>Boost Prestige Points by 2 for every bought Booster Upgrade</div>
+                        <div>Currently: <span id="BU2effect">1x</span></div>
+                        <div>Cost: <span class="boostercost">3 Boosters</span></div>
+                    </button>
+                    <button onclick="BuyBU3()" id="BU3" class="unbought box">
+                        <h1 class="upgradeheader">Booster Upgrade III</h1>
+                        <div>Boost Prestige Powers by 2 for every Booster Upgrade.</div>
+                        <div>Currently: <span id="BU3effect">1x</span></div>
+                        <div>Cost: <span class="boostercost">3 Boosters</span></div>
+                    </button>
+                </section>
+            </div>
+        </div>
+
+        <div id="AscTab" class="hidden">
+            <div>You have <span id="AscPoints">0</span> Ascension Points</div>
+            <button onclick="GoAscension()" class="Ascensionreset">You can reset for <span id="AscReward">0</span> Ascension Points</button>
+
+            <nav class="SubNav">
+                <a onclick="SwitchTabs('AscRankTab')" class="btn ascendcolor">Ascension Ranks</a>
+                <a onclick="SwitchTabs('AscRankRewardTab')" class="btn ascendcolor">Rank Rewards</a>
+                <a onclick="SwitchTabs('AscUpgTab')" id="AscUpg" class="btn ascendcolor hidden">Ascension Upgrades</a>
+                <a onclick="SwitchTabs('AscBuyableTab')" id="AscBuyables" class="btn ascendcolor hidden">Ascension Buyables</a>
+            </nav>
+
+            <div id="AscRankTab" class="">
+                <div onclick="UpgradeRank()" class="AscRank">
+                    <div class="rankheader">Rank <span id="rankamount">0</span></div>
+                    <div>Reset Ascension Points, but rank up for boosts</div>
+                    <div>Next: <span id="RankReward">-</span></div>
+                    <div>Requires: <span id="RankRequirement">1</span> Ascension Points</div>
+                </div>
+            </div>
+
+            <div id="AscRankRewardTab" class="hidden">
+                <div id="RR1" class="hidden AscRankRewardBox">Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2</div>
+                <div id="RR2" class="hidden AscRankRewardBox">Keep 1 of each automation on ascension</div>
+                <div id="RR3" class="hidden AscRankRewardBox">Unlock more Prestige upgrades and keep QOL I on Ascend</div>
+                <div id="RR4" class="hidden AscRankRewardBox">Boost Ascension points based on Ranks and unlock some Ascension upgrades. Currently: <span id="rank4reward">1x</span></div>
+            </div>
+
+            <div id="AscUpgTab" class="hidden">
+                <section class="upgrades container">
+                    <div id="AscU1" class="unbought box">
+                        <div class="upgradeheader">Ascension I</div>
+                        <div>Unlock the first Ascension buyable</div>
+                        <div>Cost: 100 Ascension Points</div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="AscBuyableTab" class="hidden">
+            </div>
+        </div>
+
+        <div id="AutoTab" class="hidden">
+            <section class="Autopoints">
+                <div>You have <span id="AutoAmount">0</span> Automation points.</div>
+                <button onclick="GainAuto()" class="autogain">You can gain <span id="AutoGain">0</span> Automation points.</button>
+            </section>
+
+            <nav class="SubNav">
+                <a onclick="SwitchTabs('MainAutoTab')" class="btn maincolor">Automation</a>
+                <a onclick="SwitchTabs('QOLAutoTab')" class="btn maincolor">QOL</a>
+            </nav>
+            <div id="MainAutoTab" class="">
+                <section class="Automations">
+                    <div id="pointsauto" class="Automation">
+                        <div>Points Automation</div>
+                        <button onclick="BuyPointAuto()">Upgrade for <span id="pointsautocost">10</span> Automation Points</button>
+                        <div>You are currently getting <span id="pointsautoeffect">0</span> clicks per second</div>
+                    </div>
+                    <div id="presauto" class="Automation hidden">
+                        <div>Prestige Automation</div>
+                        <button onclick="BuyPresAuto()">Upgrade for <span id="presautocost">1000</span> Automation Points</button>
+                        <div>You are currently gaining Prestige Points as if you were doing <span id="presautoeffect">0</span> resets a second</div>
+                    </div>
+                    <div id="powauto" class="Automation hidden">
+                        <div>Power Automation</div>
+                        <button onclick="BuyPowAuto()">Upgrade for <span id="powautocost">1.00e6</span> Automation Points</button>
+                        <div>Currently clicking Power <span id="powautoeffect">0</span> times a second</div>
+                    </div>
+                    <div id="autoauto" class="Automation hidden">
+                        <div>Automation^2</div>
+                        <button onclick="BuyAutoAuto()">Upgrade for <span id="autoautocost">1.00e10</span> Automation Points</button>
+                        <div>Currently clicking Automation <span id="autoautoeffect">0</span> times a second</div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="QOLAutoTab" class="hidden">
+                <section class="upgrades container">
+                    <div onclick="BuyQOLU1()" id="QOLU1" class="unbought box">
+                        <div class="upgradeheader">QOL I</div>
+                        <div>Keep the first three prestige upgrades</div>
+                        <div>Cost: 100000 Automation Points</div>
+                    </div>
+                    <div onclick="BuyQOLU2()" id="QOLU2" class="unbought box hidden">
+                        <div class="upgradeheader">QOL II</div>
+                        <div>Automate power buyables</div>
+                        <div>Cost: 1.00e7 Automation Points</div>
+                    </div>
+                    <div onclick="BuyQOLU3()" id="QOLU3" class="unbought box hidden">
+                        <div class="upgradeheader">QOL III</div>
+                        <div>Power buyables don't reduce power</div>
+                        <div>Costs: 1.00e10 Automation Points</div>
+                    </div>
+                    <div onclick="BuyQOLU4()" id="QOLU4" class="unbought box hidden">
+                        <div class="upgradeheader">QOL IV</div>
+                        <div>Booster reset resets nothing</div>
+                        <div>Costs: 1.00e15 Automation Points</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="SettingsTab" class="hidden">
+            <section class="settings">
+                <button onclick="HardReset()" class="btn resetcolor">Hard Reset</button>
+                <button onclick="DevReset()" class="btn maincolor">Dev Reset</button>
+            </section>
+        </div>
+        <script src="GameVars.js"></script>
+        <script src="GameParse.js"></script>
+        <script src="HardReset.js"></script>
+        <script src="DevReset.js"></script>
+        <script src="GeneralFunctions.js"></script>
+        <script src="AutomatedResources.js"></script>
+        <script src="TabLogic.js"></script>
+        <script src="UpgradeLogic.js"></script>
+        <script src="Main.js"></script>
+        <script src="SetInterval.js"></script>
+    </body>
+</html>
