@@ -78,5 +78,4 @@ setInterval (function(){
     document.getElementById("RankReward").textContent = game.RankEffect[game.RankLevel]
     document.getElementById("RankRequirement").textContent = formatNumber(game.RankRequirement[game.RankLevel])
     document.getElementById("rank4reward").textContent = formatNumber(game.rank4reward)
-    // rankamount, RankReward, RankRequirement
 }, 50)

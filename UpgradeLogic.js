@@ -109,7 +109,7 @@ function BuyAscU1(){
 // Ascension Buyables
 
 function BuyAscB1(){
-
+    
 }
 // QOL Upgrades
 
