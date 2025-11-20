@@ -5,6 +5,7 @@ setInterval (function(){
     CheckBoosters();
     CheckMilestones();
     checkBstrUpgs();
+    checkAscUpgs();
     CheckQOLUpgs();
     UpdateAutoVisibility();
     updateRankRewards();
@@ -27,7 +28,7 @@ setInterval (function(){
     game.AscB1[2] = Math.log10(game.AscAmount + 1) + 1
     game.AscB1[3] = game.AscB1[2] ** game.AscB1[1]
     game.AscB1[4] = 5 ** (game.AscB1[1] ** 2)
-    
+
     // Update Text Content
 
     document.getElementById("points").textContent = formatNumber(game.points);
@@ -82,5 +83,5 @@ setInterval (function(){
     document.getElementById("rank4reward").textContent = formatNumber(game.rank4reward)
     document.getElementById("Asc1base").textContent = game.AscB1[2]
     document.getElementById("Asc1effect").textContent = game.AscB1[3]
-    document.getElementById("Asc1cost").textContent = game.Asc[4]
+    document.getElementById("Asc1cost").textContent = game.AscB1[4]
 }, 50)

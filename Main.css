@@ -147,6 +147,23 @@ nav {
     red;
     position: relative;
 }
+#AscBuyableTab .rebuyable{
+    background: radial-gradient(
+        circle,
+        transparent 60%,
+        rgb(255, 191, 0) 100%
+    ), 
+    red;
+    cursor: pointer;
+}
+#AscBuyableTab .rebuyable:hover{
+    background: radial-gradient(
+        circle,
+        transparent 60%,
+        rgb(255, 191, 100) 100%
+    ), 
+    #F44;
+}
 
 /* Automation Tab Items */
 #AutoTab .autogain {
