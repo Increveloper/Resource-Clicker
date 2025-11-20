@@ -80,5 +80,5 @@ game = {
     rank4exp: 1,
     AscU1: false,
     ascupgamnt: 0,
-    AscB1: [0, 1, 1] // [amount, effect base, cost]
+    AscB1: [0, 1, 1, 1] // [amount, effect base, effect, cost]
 };

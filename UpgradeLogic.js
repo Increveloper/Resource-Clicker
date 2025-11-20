@@ -109,7 +109,10 @@ function BuyAscU1(){
 // Ascension Buyables
 
 function BuyAscB1(){
-    
+    if(game.AscAmount >= game.AscB1[4]){
+        game.AscAmount -= game.AscB1[4]
+        game.AscB1[1] += 1
+    }
 }
 // QOL Upgrades
 

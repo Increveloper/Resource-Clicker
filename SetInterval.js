@@ -25,9 +25,11 @@ setInterval (function(){
     game.autoeff = [game.PointAuto ** 2, game.Presauto, game.Powauto ** 2, game.Autoauto ** 3];
     game.rank4reward = game.RankLevel ** game.rank4exp
     game.AscB1[2] = Math.log10(game.AscAmount + 1) + 1
-    game.AscB1[3] = 5 ** (game.AscB1[1] ** 2)
-
+    game.AscB1[3] = game.AscB1[2] ** game.AscB1[1]
+    game.AscB1[4] = 5 ** (game.AscB1[1] ** 2)
+    
     // Update Text Content
+
     document.getElementById("points").textContent = formatNumber(game.points);
     document.getElementById("ppc").textContent = formatNumber(game.ppc);
     document.getElementById("unlock").textContent = game.unlocks[game.unlockAmount];
@@ -78,4 +80,7 @@ setInterval (function(){
     document.getElementById("RankReward").textContent = game.RankEffect[game.RankLevel]
     document.getElementById("RankRequirement").textContent = formatNumber(game.RankRequirement[game.RankLevel])
     document.getElementById("rank4reward").textContent = formatNumber(game.rank4reward)
+    document.getElementById("Asc1base").textContent = game.AscB1[2]
+    document.getElementById("Asc1effect").textContent = game.AscB1[3]
+    document.getElementById("Asc1cost").textContent = game.Asc[4]
 }, 50)

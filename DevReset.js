@@ -42,7 +42,7 @@ function DevReset(){
         powB1effect: 1,
         powB2effect: 1,
         powB3effect: 1,
-        boosters: 4,
+        boosters: 5,
         boosterrequirement: 10 ** 9,
         boostereffect: 1,
         boosterreq: [1, 10**300],
@@ -53,7 +53,7 @@ function DevReset(){
         bstrupgamnt: 1,
         boostupgcost: [3, 4, 5],
         BU1: true,
-        BU2: false,
+        BU2: true,
         BU3: true,
         BU1effect: 4,
         BU2effect: 4,
@@ -73,17 +73,18 @@ function DevReset(){
         AscGain: 0,
         RankRequirement: [1, 2, 10, 100, 10 ** 300],
         RankEffect: ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each automation on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-"],
-        RankLevel: 3,
+        RankLevel: 4,
         ifAscend: false,
         rank4reward: 1,
         rank4exp: 1,
         ascupgamnt: 0,
-        AscB1: [0, 1, 1]
+        AscB1: [0, 1, 1, 1]
     };
     game.powerEffect = 1 + game.powerAmount ** 0.5;
     game.boostereffect = 2 ** game.boosters;
     game.boosterrequirement = (10 ** 9) * (10 ** (game.boosters ** 2))
     game.AscGain = game.boostereffect / game.boosters ** 2
+    game.rank4reward = game.RankLevel
     calculatePPC();
     calculatePP();
     calculatePPow();
