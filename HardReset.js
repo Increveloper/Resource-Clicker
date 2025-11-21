@@ -2,8 +2,8 @@ function HardReset(){
     game = {
         points: 0,
         ppc: 1,
-        unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Finish the game"],
-        unlockCost: [10, 1000, 10 ** 9, 10 ** 13, 10 ** 18, 10 ** 300],
+        unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Finish the game"],
+        unlockCost: [10, 1000, 10 ** 9, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 300],
         unlockAmount: 0,
         prestigeGain: 0,
         prestigeAmount: 0,
@@ -78,7 +78,7 @@ function HardReset(){
         rank4reward: 1,
         rank4exp: 1,
         ascupgamnt: 0,
-        AscB1: [0, 1, 1]
+        AscB1: [0, 1, 1],
     };
     updateTabs();
 };

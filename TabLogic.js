@@ -47,6 +47,12 @@ function updateTabs(){
     else{
         document.getElementById("AscBuyables").classList.add("hidden")
     }
+    if(game.unlockAmount >= 5 && game.AscU1){
+        document.getElementById("AllocationPoints").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("AllocationPoints").classList.add("hidden")
+    }
 };
 
 function SwitchTabs(tab){
@@ -85,18 +91,20 @@ function SwitchTabs(tab){
             document.getElementById("UpgBoostTab").classList.remove("hidden")
         }
     }
-    else if(tab === "AscTab" || tab === "AscRankTab" || tab === "AscRankRewardTab" || tab === "AscUpgTab" || tab === "AscBuyableTab"){
+    else if(tab === "AscTab" || tab === "AscRankTab" || tab === "AscRankRewardTab" || tab === "AscUpgTab" || tab === "AscBuyableTab" || tab === "AllocationTab"){
         document.getElementById("AscTab").classList.remove("hidden")
         document.getElementById("AscRankTab").classList.remove("hidden")
         document.getElementById("AscRankRewardTab").classList.add("hidden")
         document.getElementById("AscUpgTab").classList.add("hidden")
         document.getElementById("AscBuyableTab").classList.add("hidden")
+        document.getElementById("AllocationTab").classList.add("hidden")
         if(tab === "AscRankTab"){
             document.getElementById("AscTab").classList.remove("hidden")
             document.getElementById("AscRankTab").classList.remove("hidden")
             document.getElementById("AscRankRewardTab").classList.add("hidden")
             document.getElementById("AscUpgTab").classList.add("hidden")
             document.getElementById("AscBuyableTab").classList.add("hidden")
+            document.getElementById("AllocationTab").classList.add("hidden")
         }
         else if(tab === "AscRankRewardTab"){
             document.getElementById("AscTab").classList.remove("hidden")
@@ -104,6 +112,7 @@ function SwitchTabs(tab){
             document.getElementById("AscRankRewardTab").classList.remove("hidden")
             document.getElementById("AscUpgTab").classList.add("hidden")
             document.getElementById("AscBuyableTab").classList.add("hidden")
+            document.getElementById("AllocationTab").classList.add("hidden")
         }
         else if(tab === "AscUpgTab"){
             document.getElementById("AscTab").classList.remove("hidden")
@@ -111,6 +120,7 @@ function SwitchTabs(tab){
             document.getElementById("AscRankRewardTab").classList.add("hidden")
             document.getElementById("AscUpgTab").classList.remove("hidden")
             document.getElementById("AscBuyableTab").classList.add("hidden")
+            document.getElementById("AllocationTab").classList.add("hidden")
         }
         else if(tab === "AscBuyableTab"){
             document.getElementById("AscTab").classList.remove("hidden")
@@ -118,6 +128,15 @@ function SwitchTabs(tab){
             document.getElementById("AscRankRewardTab").classList.add("hidden")
             document.getElementById("AscUpgTab").classList.add("hidden")
             document.getElementById("AscBuyableTab").classList.remove("hidden")
+            document.getElementById("AllocationTab").classList.add("hidden")
+        }
+        else if(tab === "AllocationTab"){
+            document.getElementById("AscTab").classList.remove("hidden")
+            document.getElementById("AscRankTab").classList.add("hidden")
+            document.getElementById("AscRankRewardTab").classList.add("hidden")
+            document.getElementById("AscUpgTab").classList.add("hidden")
+            document.getElementById("AscBuyableTab").classList.add("hidden")
+            document.getElementById("AllocationTab").classList.remove("hidden")
         }
     }
     else if(tab === "AutoTab" || tab === "MainAutoTab" || tab === "QOLAutoTab"){

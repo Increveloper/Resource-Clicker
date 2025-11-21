@@ -171,13 +171,14 @@
 
         <div id="AscTab" class="hidden">
             <div>You have <span id="AscPoints">0</span> Ascension Points</div>
-            <button onclick="GoAscension()" class="Ascensionreset">You can reset for <span id="AscReward">0</span> Ascension Points</button>
+            <button onclick="GoAscension(); GoAscension();" class="Ascensionreset">You can reset for <span id="AscReward">0</span> Ascension Points</button>
 
             <nav class="SubNav">
                 <a onclick="SwitchTabs('AscRankTab')" class="btn ascendcolor">Ascension Ranks</a>
                 <a onclick="SwitchTabs('AscRankRewardTab')" class="btn ascendcolor">Rank Rewards</a>
                 <a onclick="SwitchTabs('AscUpgTab')" id="AscUpg" class="btn ascendcolor hidden">Ascension Upgrades</a>
                 <a onclick="SwitchTabs('AscBuyableTab')" id="AscBuyables" class="btn ascendcolor hidden">Ascension Buyables</a>
+                <a onclick="SwitchTabs('AllocationTab')" id="AllocationPoints" class="btn ascendcolor hidden">Allocation Points</a>
             </nav>
 
             <div id="AscRankTab" class="">
@@ -206,9 +207,9 @@
                 </section>
             </div>
 
-            <div onclick="BuyAscB1()" id="AscBuyableTab" class="hidden">
+            <div id="AscBuyableTab" class="hidden">
                 <section class="rebuyables">
-                    <div class="rebuyable">
+                    <div onclick="BuyAscB1()" class="rebuyable">
                         <div class="upgradeheader">Ascension Rebuyable I</div>
                         <div>Boost points by <span id="Asc1base">1x</span></div>
                         <div>Currently: <span id="Asc1effect">1x</span></div>
@@ -216,6 +217,8 @@
                     </div>
                 </section>
             </div>
+
+            <div id="AllocationTab" class="hidden"></div>
         </div>
 
         <div id="AutoTab" class="hidden">

@@ -147,6 +147,14 @@ nav {
     red;
     position: relative;
 }
+#AscUpgTab {
+    display: flex;
+    justify-content: center;
+}
+#AscBuyableTab {
+    display: flex;
+    justify-content: center;
+}
 #AscBuyableTab .rebuyable{
     background: radial-gradient(
         circle,
