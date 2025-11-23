@@ -84,6 +84,9 @@ if(savedGame) {
     game.AscU1 = parsed.AscU1 ?? game.AscU1;
     game.ascupgamnt = parsed.ascupgamnt ?? game.ascupgamnt;
     game.AscB1 = parsed.AscB1 ?? game.AscB1;
+    game.APamount = parsed.APamount ?? game.APamount;
+    game.APbuyables = parsed.APbuyables ?? game.APbuyables;
+    game.APU = parsed.APU ?? game.APU;
 };
 
 setInterval(function(){

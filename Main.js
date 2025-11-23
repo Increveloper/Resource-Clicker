@@ -132,8 +132,10 @@ function ResetAscension(){
         if(game.RankLevel < 3){
             game.QOLU[1] = false
         }
-        game.QOLU[2] = false
-        game.QOLU[3] = false
+        if(game.RankLevel < 5){
+            game.QOLU[2] = false
+            game.QOLU[3] = false
+        }
         game.QOLU[4] = false
     
         game.AscAmount += game.AscGain
@@ -197,6 +199,10 @@ function updateRankRewards(){
     else{
         document.getElementById("RR4").classList.add("hidden")
     }
+}
+function RespecAllocations(){
+    game.APU = [[false, false, false], [false, false, false], [false, false, false]]
+    game.APamount[1] = game.APamount[0]
 }
 
 // Automation Tab Items

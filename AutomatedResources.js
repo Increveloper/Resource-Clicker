@@ -7,26 +7,26 @@ function runautomation(){
         game.powerAmount += game.powerGain * game.autoeff[2] / 20
         game.AutoAmount += game.AutoGain * game.autoeff[3] / 20
     }
-    if(game.QOLU[1]){
+    if(game.QOLU[0]){
         game.PU1 = true
         game.PU2 = true
         game.PU3 = true
     }
-    if(game.QOLU[2]){
+    if(game.QOLU[1]){
         if (game.powerAmount >= game.powB1cost && game.powB1 < game.powB1max) {
-            if(!game.QOLU[3]){
+            if(!game.QOLU[2]){
                 game.powerAmount -= game.powB1cost;
             }
             game.powB1 += 1;
         }
         if (game.powerAmount >= game.powB2cost && game.powB2 < game.powB2max) {
-            if(!game.QOLU[3]){
+            if(!game.QOLU[2]){
                 game.powerAmount -= game.powB2cost;
             }
             game.powB2 += 1;
         }
         if (game.powerAmount >= game.powB3cost && game.powB3 < game.powB3max) {
-            if(!game.QOLU[3]){
+            if(!game.QOLU[2]){
                 game.powerAmount -= game.powB3cost;
             }
             game.powB3 += 1;

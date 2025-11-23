@@ -74,11 +74,15 @@ function DevReset(){
         RankRequirement: [1, 2, 10, 100, 10 ** 300],
         RankEffect: ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each automation on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-"],
         RankLevel: 4,
-        ifAscend: false,
+        ifAscend: true,
         rank4reward: 1,
         rank4exp: 1,
-        ascupgamnt: 0,
-        AscB1: [0, 1, 1, 1]
+        AscU1: true,
+        ascupgamnt: 1,
+        AscB1: [2, 1, 1, 1],
+        APbuyables: [[0, 10 ** 28], [0, 10 ** 23], [0, 10 ** 20], [0, 100]],
+        APamount: [0, 0],
+        APU: [[false, false, false], [false, false, false], [false, false, false]],
     };
     game.powerEffect = 1 + game.powerAmount ** 0.5;
     game.boostereffect = 2 ** game.boosters;

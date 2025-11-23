@@ -109,9 +109,91 @@ function BuyAscU1(){
 // Ascension Buyables
 
 function BuyAscB1(){
-    if(game.AscAmount >= game.AscB1[4]){
-        game.AscAmount -= game.AscB1[4]
-        game.AscB1[1] += 1
+    if(game.AscAmount >= game.AscB1[3]){
+        game.AscAmount -= game.AscB1[3]
+        game.AscB1[0] += 1
+    }
+}
+
+// Allocation points upgrades
+
+function BuyPointAllocation(){
+    if(game.points >= game.APbuyables[0][1]){
+        game.APbuyables[0][0] += 1
+        game.APbuyables[0][1] *= 100
+    }
+}
+function BuyPrestigeAllocation(){
+    if(game.prestigeAmount >= game.APbuyables[1][1]){
+        game.APbuyables[1][0] += 1
+        game.APbuyables[1][1] *= 100
+    }
+}
+function BuyPowerAllocation(){
+    if(game.powerAmount >= game.APbuyables[2][1]){
+        game.APbuyables[2][0] += 1
+        game.APbuyables[2][1] *= 100
+    }
+}
+function BuyAscensionAllocation(){
+    if(game.AscAmount >= game.APbuyables[3][1]){
+        game.APbuyables[3][0] += 1
+        game.APbuyables[3][1] *= 2
+    }
+}
+
+function BuyAPU11(){
+    if(game.APamount[1] >= 1){
+        game.APamount[1] -= 1
+        game.APU[0][0] = true
+    }
+}
+function BuyAPU12(){
+    if(game.APamount[1] >= 1){
+        game.APamount[1] -= 1
+        game.APU[0][1] = true
+    }
+}
+function BuyAPU13(){
+    if(game.APamount[1] >= 2){
+        game.APamount[1] -= 2
+        game.APU[0][2] = true
+    }
+}
+function BuyAPU21(){
+    if(game.APamount[1] >= 1){
+        game.APamount[1] -= 1
+        game.APU[1][0] = true
+    }
+}
+function BuyAPU22(){
+    if(game.APamount[1] >= 2){
+        game.APamount[1] -= 2
+        game.APU[1][1] = true
+    }
+}
+function BuyAPU23(){
+    if(game.APamount[1] >= 5){
+        game.APamount[1] -= 5
+        game.APU[1][2] = true
+    }
+}
+function BuyAPU31(){
+    if(game.APamount[1] >= 2){
+        game.APamount[1] -= 2
+        game.APU[2][0] = true
+    }
+}
+function BuyAPU32(){
+    if(game.APamount[1] >= 5){
+        game.APamount[1] -= 5
+        game.APU[2][1] = true
+    }
+}
+function BuyAPU33(){
+    if(game.APamount[1] >= 14){
+        game.APamount[1] -= 14
+        game.APU[2][2] = true
     }
 }
 // QOL Upgrades
@@ -240,6 +322,112 @@ function checkAscUpgs(){
     else{
         document.getElementById("AscU1").classList.remove("bought")
         document.getElementById("AscU1").classList.add("unbought")
+    }
+}
+function checkAPU(){
+    if(game.APU[0][0]){
+        document.getElementById("APU11").classList.remove("unbought")
+        document.getElementById("APU11").classList.add("bought")
+        document.getElementById("APU12").classList.remove("hidden")
+        document.getElementById("APU21").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU11").classList.remove("bought")
+        document.getElementById("APU11").classList.add("unbought")
+        document.getElementById("APU12").classList.add("hidden")
+        document.getElementById("APU21").classList.add("hidden")
+    }
+    if(game.APU[0][1]){
+        document.getElementById("APU12").classList.remove("unbought")
+        document.getElementById("APU12").classList.add("bought")
+        document.getElementById("APU13").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU12").classList.remove("bought")
+        document.getElementById("APU12").classList.add("unbought")
+        document.getElementById("APU13").classList.add("hidden")
+    }
+    if(game.APU[0][2]){
+        document.getElementById("APU13").classList.remove("unbought")
+        document.getElementById("APU13").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU13").classList.remove("bought")
+        document.getElementById("APU13").classList.add("unbought")
+    }
+    if(game.APU[1][0]){
+        document.getElementById("APU21").classList.remove("unbought")
+        document.getElementById("APU21").classList.add("bought")
+        document.getElementById("APU31").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU21").classList.remove("bought")
+        document.getElementById("APU21").classList.add("unbought")
+        document.getElementById("APU31").classList.add("hidden")
+    }
+    if(game.APU[1][1]){
+        document.getElementById("APU22").classList.remove("unbought")
+        document.getElementById("APU22").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU22").classList.remove("bought")
+        document.getElementById("APU22").classList.add("unbought")
+    }
+    if(game.APU[1][2]){
+        document.getElementById("APU23").classList.remove("unbought")
+        document.getElementById("APU23").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU23").classList.remove("bought")
+        document.getElementById("APU23").classList.add("unbought")
+    }
+    if(game.APU[2][0]){
+        document.getElementById("APU31").classList.remove("unbought")
+        document.getElementById("APU31").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU31").classList.remove("bought")
+        document.getElementById("APU31").classList.add("unbought")
+    }
+    if(game.APU[2][1]){
+        document.getElementById("APU32").classList.remove("unbought")
+        document.getElementById("APU32").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU32").classList.remove("bought")
+        document.getElementById("APU32").classList.add("unbought")
+    }
+    if(game.APU[2][2]){
+        document.getElementById("APU33").classList.remove("unbought")
+        document.getElementById("APU33").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU33").classList.remove("bought")
+        document.getElementById("APU33").classList.add("unbought")
+    }
+    if(game.APU[0][1] && game.APU[1][0]){
+        document.getElementById("APU22").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU22").classList.add("hidden")
+    }
+    if(game.APU[0][2] && game.APU[1][1]){
+        document.getElementById("APU23").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU23").classList.add("hidden")
+    }
+    if(game.APU[1][1] && game.APU[2][0]){
+        document.getElementById("APU32").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU32").classList.add("hidden")
+    }
+    if(game.APU[1][2] && game.APU[2][1]){
+        document.getElementById("APU33").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU33").classList.add("hidden")
     }
 }
 function CheckQOLUpgs(){

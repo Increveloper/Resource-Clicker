@@ -77,8 +77,11 @@ function HardReset(){
         ifAscend: false,
         rank4reward: 1,
         rank4exp: 1,
+        AscU1: false,
         ascupgamnt: 0,
-        AscB1: [0, 1, 1],
+        AscB1: [0, 1, 1, 1],
+        APamount: [0, 0],
+        APU: [[false, false, false], [false, false, false], [false, false, false]],
     };
     updateTabs();
 };

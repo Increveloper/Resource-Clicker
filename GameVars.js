@@ -80,5 +80,9 @@ game = {
     rank4exp: 1,
     AscU1: false,
     ascupgamnt: 0,
-    AscB1: [0, 1, 1, 1] // [amount, effect base, effect, cost]
+    AscB1: [0, 1, 1, 1], // [amount, effect base, effect, cost]
+    APamount: [0, 0], //[total, current]
+    APbuyables: [[0, 10 ** 28], [0, 10 ** 23], [0, 10 ** 20], [0, 100]], //[Point, Prestige, Powers, Ascension], [[amount, cost]]
+    APU: [[false, false, false], [false, false, false], [false, false, false]], //[[APU11, APU12, APU13], [APU21, APU22, APU23], [APU31, APU32, APU33]]
 };
+// REMEMBER: LIST ITEM 1 IS REFERRED TO AS [0]!!!!!

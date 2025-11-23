@@ -172,6 +172,10 @@ nav {
     ), 
     #F44;
 }
+#AllocationTab {
+    display: flex;
+    justify-content: center;
+}
 
 /* Automation Tab Items */
 #AutoTab .autogain {

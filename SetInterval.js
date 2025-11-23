@@ -6,6 +6,7 @@ setInterval (function(){
     CheckMilestones();
     checkBstrUpgs();
     checkAscUpgs();
+    checkAPU();
     CheckQOLUpgs();
     UpdateAutoVisibility();
     updateRankRewards();
@@ -28,6 +29,7 @@ setInterval (function(){
     game.AscB1[2] = Math.log10(game.AscAmount + 1) + 1
     game.AscB1[3] = game.AscB1[2] ** game.AscB1[1]
     game.AscB1[4] = 5 ** (game.AscB1[1] ** 2)
+    game.APamount[0] = game.APbuyables[0][0] + game.APbuyables[1][0] + game.APbuyables[2][0] + game.APbuyables[3][0]
 
     // Update Text Content
 
@@ -84,4 +86,10 @@ setInterval (function(){
     document.getElementById("Asc1base").textContent = game.AscB1[2]
     document.getElementById("Asc1effect").textContent = game.AscB1[3]
     document.getElementById("Asc1cost").textContent = game.AscB1[4]
+    document.getElementById("TotalAllocationPoints").textContent = game.APamount[0]
+    document.getElementById("UnspentAllocationPoints").textContent = game.APamount[1]
+    document.getElementById("PointAllocationCost").textContent = game.APbuyables[0][1]
+    document.getElementById("PrestigeAllocationCost").textContent = game.APbuyables[1][1]
+    document.getElementById("PowerAllocationCost").textContent = game.APbuyables[2][1]
+    document.getElementById("AscensionAllocationCost").textContent = game.APbuyable[3][1]
 }, 50)

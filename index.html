@@ -28,7 +28,7 @@
                 <h1 class="unlockheader">Unlocker</h1>
                 <div><span id="unlock">Unlock Prestige Points</span></div>
                 <div>Cost: <span id="unlockprice">10</span> points</div>
-                <div>Amount: <span id="unlockeramnt">0</span>/5</div>
+                <div>Amount: <span id="unlockeramnt">0</span>/6</div>
             </button>
         </div>
 
@@ -218,7 +218,85 @@
                 </section>
             </div>
 
-            <div id="AllocationTab" class="hidden"></div>
+            <div id="AllocationTab" class="hidden">
+                <div>You bought <span id="TotalAllocationPoints">0</span> Allocation Points and have <span id="UnspentAllocationPoints">0</span> unspent Allocation Points</div>
+                <div>Also, upon unlocking this tab, you unlocked 2 new rank rewards.</div>
+
+                <section class="rebuyables">
+                    <div onclick="BuyPointAllocation()" class="rebuyable">
+                        <div>Buy 1 Allocation Point with Points</div>
+                        <div>Cost: <span id="PointAllocationCost">1.00e28 Points</span></div>
+                    </div>
+                    <div onclick="BuyPrestigeAllocation()" class="rebuyable">
+                        <div>Buy 1 Allocation Point with Prestige</div>
+                        <div>Cost: <span id="PrestigeAllocationCost">1.00e23</span> Prestige Points</div>
+                    </div>
+                    <div onclick="BuyPowerAllocation()" class="rebuyable">
+                        <div>Buy 1 Allocation Point with Power</div>
+                        <div>Cost: <span id="PowerAllocationCost">1.00e20</span> Prestige Powers</div>
+                    </div>
+                    <div onclick="BuyAscensionAllocation()" class="rebuyable">
+                        <div>Buy 1 Allocation Point with Ascension Points</div>
+                        <div>Cost: <span id="AscensionAllocationCost">100</span> Ascension Points</div>
+                    </div>
+                </section>
+
+                <button onclick="RespecAllocations()">Respec AP</button>
+
+                <section class="upgrades container">
+                    <div onclick="BuyAPU11()" id="APU11" class="unbought box">
+                        <div class="upgradeheader">Allocation 11</div>
+                        <div>Add 1 to the booster base</div>
+                        <div>Cost: 1 AP</div>
+                    </div>
+                    <div onclick="BuyAPU12()" id="APU12" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 12</div>
+                        <div>Boost Points by 10</div>
+                        <div>Cost: 1 AP</div>
+                    </div>
+                    <div onclick="BuyAPU13()" id="APU13" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 13</div>
+                        <div>Boost points by 1.5 per upgrade bought</div>
+                        <div>Cost: 2 AP</div>
+                    </div>
+                </section>
+
+                <section class="upgrades container">
+                    <div onclick="BuyAPU21()" id="APU21" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 21</div>
+                        <div>Increase Power II and Power III's bases by 1</div>
+                        <div>Cost: 1 AP</div>
+                    </div>
+                    <div onclick="BuyAPU22()" id="APU22" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 22</div>
+                        <div>Prestige Points and Power are multiplied by 10</div>
+                        <div>Cost: 2 AP</div>
+                    </div>
+                    <div onclick="BuyAPU23()" id="APU23" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 23</div>
+                        <div>Prestige Points and Power are multiplied by 1.2 for each AP bought</div>
+                        <div>Cost: 5 AP</div>
+                    </div>
+                </section>
+                
+                <section class="upgrades container">
+                    <div onclick="BuyAPU31()" id="APU31" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 31</div>
+                        <div>Rank 4 reward exponent is increased by 1</div>
+                        <div>Cost: 2 AP</div>
+                    </div>
+                    <div onclick="BuyAPU32()" id="APU32" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 32</div>
+                        <div>Boost Ascension Points by 10</div>
+                        <div>Cost: 5 AP</div>
+                    </div>
+                    <div onclick="BuyAPU33()" id="APU33" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 33</div>
+                        <div>Boost Ascension Points by 1.1 per AP bought</div>
+                        <div>Cost: 14 AP</div>
+                    </div>
+                </section>
+            </div>
         </div>
 
         <div id="AutoTab" class="hidden">
