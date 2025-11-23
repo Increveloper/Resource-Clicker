@@ -120,28 +120,28 @@ function BuyAscB1(){
 function BuyPointAllocation(){
     if(game.points >= game.APbuyables[0][1]){
         game.APbuyables[0][0] += 1
-        game.APbuyables[0][1] *= 1000
+        game.APbuyables[0][1] *= 10000
         game.APamount[1] += 1
     }
 }
 function BuyPrestigeAllocation(){
     if(game.prestigeAmount >= game.APbuyables[1][1]){
         game.APbuyables[1][0] += 1
-        game.APbuyables[1][1] *= 500
+        game.APbuyables[1][1] *= 2500
         game.APamount[1] += 1
     }
 }
 function BuyPowerAllocation(){
     if(game.powerAmount >= game.APbuyables[2][1]){
         game.APbuyables[2][0] += 1
-        game.APbuyables[2][1] *= 200
+        game.APbuyables[2][1] *= 500
         game.APamount[1] += 1
     }
 }
 function BuyAscensionAllocation(){
     if(game.AscAmount >= game.APbuyables[3][1]){
         game.APbuyables[3][0] += 1
-        game.APbuyables[3][1] *= 2
+        game.APbuyables[3][1] *= 4
         game.APamount[1] += 1
     }
 }
@@ -205,25 +205,49 @@ function BuyAPU33(){
 function BuyQOLU1(){
     if(game.AutoAmount >= 100000){
         game.AutoAmount -= 100000
-        game.QOLU[1] = true
+        game.QOLU[0] = true
     }
 }
 function BuyQOLU2(){
     if(game.AutoAmount >= 10 ** 7){
         game.AutoAmount -= 10 ** 7
-        game.QOLU[2] = true
+        game.QOLU[1] = true
     }
 }
 function BuyQOLU3(){
     if(game.AutoAmount >= 10 ** 10){
         game.AutoAmount -= 10 ** 10
-        game.QOLU[3] = true
+        game.QOLU[2] = true
     }
 }
 function BuyQOLU4(){
     if(game.AutoAmount >= 10 ** 15){
         game.AutoAmount -= 10 ** 15
+        game.QOLU[3] = true
+    }
+}
+function BuyQOLU5(){
+    if(game.AutoAmount >= 10 ** 20){
+        game.AutoAmount -= 10 ** 20
         game.QOLU[4] = true
+    }
+}
+function BuyQOLU6(){
+    if(game.AutoAmount >= 10 ** 25){
+        game.AutoAmount -= 10 ** 25
+        game.QOLU[5] = true
+    }
+}
+function BuyQOLU7(){
+    if(game.AutoAmount >= 10 ** 35){
+        game.AutoAmount -= 10 ** 35
+        game.QOLU[6] = true
+    }
+}
+function BuyQOLU8(){
+    if(game.AutoAmount >= 10 ** 40){
+        game.AutoAmount -= 10 ** 40
+        game.QOLU[7] = true
     }
 }
 
@@ -435,7 +459,7 @@ function checkAPU(){
     }
 }
 function CheckQOLUpgs(){
-    if(game.QOLU[1]){
+    if(game.QOLU[0]){
         document.getElementById("QOLU1").classList.remove("unbought")
         document.getElementById("QOLU1").classList.add("bought")
         document.getElementById("QOLU2").classList.remove("hidden")
@@ -445,7 +469,7 @@ function CheckQOLUpgs(){
         document.getElementById("QOLU1").classList.remove("bought")
         document.getElementById("QOLU2").classList.add("hidden")
     }
-    if(game.QOLU[2]){
+    if(game.QOLU[1]){
         document.getElementById("QOLU2").classList.remove("unbought")
         document.getElementById("QOLU2").classList.add("bought")
         document.getElementById("QOLU3").classList.remove("hidden")
@@ -455,7 +479,7 @@ function CheckQOLUpgs(){
         document.getElementById("QOLU2").classList.remove("bought")
         document.getElementById("QOLU3").classList.add("hidden")
     }
-    if(game.QOLU[3]){
+    if(game.QOLU[2]){
         document.getElementById("QOLU3").classList.remove("unbought")
         document.getElementById("QOLU3").classList.add("bought")
         document.getElementById("QOLU4").classList.remove("hidden")
@@ -465,12 +489,52 @@ function CheckQOLUpgs(){
         document.getElementById("QOLU3").classList.remove("bought")
         document.getElementById("QOLU4").classList.add("hidden")
     }
-    if(game.QOLU[4]){
+    if(game.QOLU[3]){
         document.getElementById("QOLU4").classList.remove("unbought")
         document.getElementById("QOLU4").classList.add("bought")
+        document.getElementById("QOLU5").classList.remove("hidden")
     }
     else{
         document.getElementById("QOLU4").classList.add("unbought")
         document.getElementById("QOLU4").classList.remove("bought")
+        document.getElementById("QOLU5").classList.add("hidden")
+    }
+    if(game.QOLU[4]){
+        document.getElementById("QOLU5").classList.remove("unbought")
+        document.getElementById("QOLU5").classList.add("bought")
+        document.getElementById("QOLU6").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("QOLU5").classList.add("unbought")
+        document.getElementById("QOLU5").classList.remove("bought")
+        document.getElementById("QOLU6").classList.add("hidden")
+    }
+    if(game.QOLU[5]){
+        document.getElementById("QOLU6").classList.remove("unbought")
+        document.getElementById("QOLU6").classList.add("bought")
+        document.getElementById("QOLU7").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("QOLU6").classList.add("unbought")
+        document.getElementById("QOLU6").classList.remove("bought")
+        document.getElementById("QOLU7").classList.add("hidden")
+    }
+    if(game.QOLU[6]){
+        document.getElementById("QOLU7").classList.remove("unbought")
+        document.getElementById("QOLU7").classList.add("bought")
+        document.getElementById("QOLU8").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("QOLU7").classList.add("unbought")
+        document.getElementById("QOLU7").classList.remove("bought")
+        document.getElementById("QOLU8").classList.add("hidden")
+    }
+    if(game.QOLU[7]){
+        document.getElementById("QOLU8").classList.remove("unbought")
+        document.getElementById("QOLU8").classList.add("bought")
+    }
+    else{
+        document.getElementById("QOLU8").classList.add("unbought")
+        document.getElementById("QOLU8").classList.remove("bought")
     }
 }

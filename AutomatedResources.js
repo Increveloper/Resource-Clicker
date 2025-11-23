@@ -32,11 +32,39 @@ function runautomation(){
             game.powB3 += 1;
         }
     }
-    //if(game.QOLU[3]){
-    //    game.BU1 = true
-    //    game.BU2 = true
-    //    game.BU3 = true
-    //}
+    if(game.QOLU[4]){
+        if(game.points >= game.boosterrequirement){
+            if(!game.QOLU[3]){
+                game.points = 0
+                game.prestigeAmount = 0
+                game.PU1 = false
+                game.PU2 = false
+                game.PU3 = false
+                game.powerAmount = 0
+                game.powB1 = 0
+                game.powB2 = 0
+                game.powB3 = 0
+            }
+            game.boosters += 1
+        }
+        game.powerEffect = 1 + game.powerAmount ** 0.5;
+    }
+    if(game.QOLU[5]){
+        game.BU1 = true
+        game.BU2 = true
+        game.BU3 = true
+    }
+    if(game.QOLU[6]){
+        game.PU4 = true
+        game.PU5 = true
+        game.PU6 = true
+    }
+    if(game.QOLU[7]){
+        game.QOLU[0] = true
+        game.QOLU[1] = true
+        game.QOLU[2] = true
+        game.QOLU[3] = true
+    }
 }
 Automated = setInterval (function(){
     runautomation()

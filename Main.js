@@ -47,7 +47,7 @@ function gainPowers(){
 
 function GoBooster(){
     if(game.points >= game.boosterrequirement){
-        if(!game.QOLU[4]){
+        if(!game.QOLU[3]){
             game.points = 0
             game.prestigeAmount = 0
             game.PU1 = false
@@ -117,26 +117,28 @@ function CheckMilestones(){
 function ResetAscension(){
     //console.log(game.points, "before reset")
     if(game.boosters >= 4){
-        if(game.RankLevel >= 2){
-            game.PointAuto = 1
-            game.Presauto = 1
-            game.Powauto = 1
-            game.Autoauto = 0
-        }
-        else{
-            game.PointAuto = 0
-            game.Presauto = 0
-            game.Powauto = 0
-            game.Autoauto = 0
+        if(!game.QOLU[7]){
+            if(game.RankLevel >= 2){
+                game.PointAuto = 1
+                game.Presauto = 1
+                game.Powauto = 1
+                game.Autoauto = 0
+            }
+            else{
+                game.PointAuto = 0
+                game.Presauto = 0
+                game.Powauto = 0
+                game.Autoauto = 0
+            }
         }
         if(game.RankLevel < 3){
-            game.QOLU[1] = false
+            game.QOLU[0] = false
         }
         if(game.RankLevel < 5){
+            game.QOLU[1] = false
             game.QOLU[2] = false
-            game.QOLU[3] = false
         }
-        game.QOLU[4] = false
+        game.QOLU[3] = false
     
         game.AscAmount += game.AscGain
         game.points = 0

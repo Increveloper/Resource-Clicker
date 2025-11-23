@@ -196,6 +196,12 @@ nav {
     display: flex;
     justify-content: center;
 }
+#AllocationTab .bought{
+    min-width: 150px;
+}
+#AllocationTab .unbought{
+    min-width: 150px;
+}
 #AllocationTab button{
     margin: 30px;
 }

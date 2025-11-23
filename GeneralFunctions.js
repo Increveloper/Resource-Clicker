@@ -41,7 +41,7 @@ function calculatePPC(){
     }
 
     game.ppc *= game.powB1base ** game.powB1
-    game.ppc *= game.AscB1[3]
+    game.ppc *= game.AscB1[2]
     game.ppc *= game.powerEffect
     game.ppc *= game.boostereffect
 }

@@ -26,9 +26,9 @@ setInterval (function(){
     game.autocost = [10 * (1.1 ** (game.PointAuto ** 2)), 1000 * (2 ** game.Presauto), (10 ** 6) * (1.01 ** (game.Powauto ** 3)), (10 ** 10) * (3 ** game.Autoauto)];
     game.autoeff = [game.PointAuto ** 2, game.Presauto, game.Powauto ** 2, game.Autoauto ** 3];
     game.rank4reward = game.RankLevel ** game.rank4exp
-    game.AscB1[2] = Math.log10(game.AscAmount + 1) + 1
-    game.AscB1[3] = game.AscB1[2] ** game.AscB1[1]
-    game.AscB1[4] = 5 ** (game.AscB1[1] ** 2)
+    game.AscB1[1] = Math.log10(game.AscAmount + 1) + 1
+    game.AscB1[2] = game.AscB1[1] ** game.AscB1[0]
+    game.AscB1[3] = 5 ** (game.AscB1[0] ** 2)
     game.APamount[0] = game.APbuyables[0][0] + game.APbuyables[1][0] + game.APbuyables[2][0] + game.APbuyables[3][0]
 
     // Update Text Content

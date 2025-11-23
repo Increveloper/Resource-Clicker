@@ -68,7 +68,7 @@ game = {
     autocost: [10, 1000, 10 ** 6, 10 ** 10],
     autoeff: [0, 0, 0, 0],
     pausedauto: false,
-    QOLU: [false, false, false, false],
+    QOLU: [false, false, false, false, false, false, false, false],
     QOLUBought: 0,
     AscAmount: 0,
     AscGain: 0,
