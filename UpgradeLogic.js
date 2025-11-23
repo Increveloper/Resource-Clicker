@@ -120,21 +120,21 @@ function BuyAscB1(){
 function BuyPointAllocation(){
     if(game.points >= game.APbuyables[0][1]){
         game.APbuyables[0][0] += 1
-        game.APbuyables[0][1] *= 100
+        game.APbuyables[0][1] *= 1000
         game.APamount[1] += 1
     }
 }
 function BuyPrestigeAllocation(){
     if(game.prestigeAmount >= game.APbuyables[1][1]){
         game.APbuyables[1][0] += 1
-        game.APbuyables[1][1] *= 100
+        game.APbuyables[1][1] *= 500
         game.APamount[1] += 1
     }
 }
 function BuyPowerAllocation(){
     if(game.powerAmount >= game.APbuyables[2][1]){
         game.APbuyables[2][0] += 1
-        game.APbuyables[2][1] *= 100
+        game.APbuyables[2][1] *= 200
         game.APamount[1] += 1
     }
 }
