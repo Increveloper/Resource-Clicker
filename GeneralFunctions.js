@@ -232,7 +232,7 @@ function calculateRankRewards(){
 function RankUpdates(){
     if(game.unlockAmount >= 5 && game.AscU1){
         game.RankRequirement = [1, 2, 10, 100, 200, 500, 10 ** 300]
-        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank, boost points, prestige, powers by 100, 10 and 5 respectively", "-"]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "-"]
     }
     else{
         game.RankRequirement = [1, 2, 10, 100, 10 ** 300]
