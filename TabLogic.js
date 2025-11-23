@@ -54,10 +54,10 @@ function updateTabs(){
         document.getElementById("AllocationPoints").classList.add("hidden")
     }
     if(game.unlockAmount >= 6){
-        document.getElementById("Void").classList.add("hidden")
+        document.getElementById("Void").classList.remove("hidden")
     }
     else{
-        document.getElementById("Void").classList.remove("hidden")
+        document.getElementById("Void").classList.add("hidden")
     }
 };
 
