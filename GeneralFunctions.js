@@ -261,6 +261,6 @@ setInterval(function(){
     calculateAsc();
     calculateRankRewards();
     RankUpdates();
-    calculateAP();
+    calculateAPtotal();
     game.boostereffect = game.boosterbase ** game.boosters;
 },50);
