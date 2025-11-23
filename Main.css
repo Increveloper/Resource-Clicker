@@ -172,7 +172,27 @@ nav {
     ), 
     #F44;
 }
-#AllocationTab {
+#AllocationTab .rebuyables{
+    display: flex;
+    justify-content: center;
+}
+#AllocationTab .rebuyable{
+    background: radial-gradient(
+        circle,
+        transparent 60%,
+        rgb(255, 191, 0) 100%
+    ), 
+    red;
+}
+#AllocationTab .rebuyable:hover{
+    background: radial-gradient(
+        circle,
+        transparent 60%,
+        rgb(255, 191, 100) 100%
+    ), 
+    #F44;
+}
+#AllocationTab .upgrades{
     display: flex;
     justify-content: center;
 }

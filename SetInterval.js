@@ -88,8 +88,8 @@ setInterval (function(){
     document.getElementById("Asc1cost").textContent = game.AscB1[4]
     document.getElementById("TotalAllocationPoints").textContent = game.APamount[0]
     document.getElementById("UnspentAllocationPoints").textContent = game.APamount[1]
-    document.getElementById("PointAllocationCost").textContent = game.APbuyables[0][1]
-    document.getElementById("PrestigeAllocationCost").textContent = game.APbuyables[1][1]
-    document.getElementById("PowerAllocationCost").textContent = game.APbuyables[2][1]
-    document.getElementById("AscensionAllocationCost").textContent = game.APbuyable[3][1]
+    document.getElementById("PointAllocationCost").textContent = formatNumber(game.APbuyables[0][1])
+    document.getElementById("PrestigeAllocationCost").textContent = formatNumber(game.APbuyables[1][1])
+    document.getElementById("PowerAllocationCost").textContent = formatNumber(game.APbuyables[2][1])
+    document.getElementById("AscensionAllocationCost").textContent = formatNumber(game.APbuyables[3][1])
 }, 50)
