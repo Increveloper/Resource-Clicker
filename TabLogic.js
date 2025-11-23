@@ -60,6 +60,7 @@ function SwitchTabs(tab){
     document.getElementById("PresTab").classList.add("hidden")
     document.getElementById("BoostTab").classList.add("hidden")
     document.getElementById("AscTab").classList.add("hidden")
+    document.getElementById("VoidTab").classList.add("hidden")
     document.getElementById("AutoTab").classList.add("hidden")
     document.getElementById("SettingsTab").classList.add("hidden")
     if(tab === "PresTab" || tab === "MainPresTab" || tab === "PowPresTab"){

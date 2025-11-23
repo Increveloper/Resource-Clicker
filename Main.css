@@ -206,6 +206,12 @@ nav {
     margin: 30px;
 }
 
+/* The Void Items */
+.voidcolor{
+    background: #550055;
+    box-shadow: 0 0 5px 5px #110055;
+}
+
 /* Automation Tab Items */
 #AutoTab .autogain {
     background-color: #333;

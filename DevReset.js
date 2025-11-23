@@ -2,9 +2,9 @@ function DevReset(){
     game = {
         points: 0,
         ppc: 1,
-        unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Finish the game"],
-        unlockCost: [10, 1000, 10 ** 9, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 300],
-        unlockAmount: 5,
+        unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Finish the game"],
+        unlockCost: [10, 1000, 10 ** 9, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 47, 10 ** 300],
+        unlockAmount: 6,
         prestigeGain: 0,
         prestigeAmount: 10 ** 10,
         upgamnt: 3,
@@ -80,9 +80,9 @@ function DevReset(){
         AscU1: true,
         ascupgamnt: 1,
         AscB1: [2, 1, 1, 1],
-        APbuyables: [[0, 10 ** 28], [0, 10 ** 23], [0, 10 ** 20], [0, 100]],
-        APamount: [0, 0],
-        APU: [[false, false, false], [false, false, false], [false, false, false]],
+        APbuyables: [[4, 10 ** 44], [3, 1.56 * 10 ** 33], [3, 1.25 * 10 ** 28], [6, 409600]],
+        APamount: [20, 1],
+        APU: [[true, true, true], [true, true, true], [true, true, false]],
     };
     game.powerEffect = 1 + game.powerAmount ** 0.5;
     game.boostereffect = 2 ** game.boosters;
