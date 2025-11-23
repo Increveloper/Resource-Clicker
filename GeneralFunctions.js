@@ -239,6 +239,15 @@ function RankUpdates(){
         game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-"]
     }
 }
+function calculateAPtotal(){
+    game.APamount[0] = game.APbuyables[0][0] + game.APbuyables[1][0] + game.APbuyables[2][0] + game.APbuyables[3][0]
+    if(game.RankLevel >= 5){
+        game.APamount[0] += game.RankLevel - 4
+    }
+    if(game.RankLevel >= 6){
+        game.APamount[0] += game.RankLevel - 4
+    }
+}
 setInterval(function(){
     calculatePPC();
     calculatePP();
@@ -252,5 +261,6 @@ setInterval(function(){
     calculateAsc();
     calculateRankRewards();
     RankUpdates();
+    calculateAP();
     game.boostereffect = game.boosterbase ** game.boosters;
 },50);

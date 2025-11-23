@@ -29,7 +29,6 @@ setInterval (function(){
     game.AscB1[1] = Math.log10(game.AscAmount + 1) + 1
     game.AscB1[2] = game.AscB1[1] ** game.AscB1[0]
     game.AscB1[3] = 5 ** (game.AscB1[0] ** 2)
-    game.APamount[0] = game.APbuyables[0][0] + game.APbuyables[1][0] + game.APbuyables[2][0] + game.APbuyables[3][0]
 
     // Update Text Content
 
