@@ -64,7 +64,7 @@ function calculatePP(){
         game.prestigeGain *= 10
     }
     if(game.APU[1][2]){
-        game.prestigeGain *= 1.2 ** APamount[1]
+        game.prestigeGain *= 1.2 ** game.APamount[0]
     }
     game.prestigeGain *= game.powB2base ** game.powB2
 }
@@ -87,7 +87,7 @@ function calculatePPow(){
         game.powerGain *= 10
     }
     if(game.APU[1][2]){
-        game.powerGain *= 1.2 ** APamount[1]
+        game.powerGain *= 1.2 ** game.APamount[0]
     }
     game.powerGain *= game.powB3base ** game.powB3
 }
@@ -226,6 +226,8 @@ function calculateRankRewards(){
     if(game.APU[2][0]){
         game.rank4exp += 1
     }
+
+    game.rank4reward = game.RankLevel ** game.rank4exp
 }
 function RankUpdates(){
     if(game.unlockAmount >= 5 && game.AscU1){
@@ -244,6 +246,7 @@ setInterval(function(){
     calculatePPowEffExp();
     calculatePBBASE();
     calculatePB1MAX();
+    calculateBoosterBase();
     calculateupgs();
     calculateMiles();
     calculateAsc();
