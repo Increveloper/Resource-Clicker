@@ -83,9 +83,9 @@ setInterval (function(){
     document.getElementById("RankReward").textContent = game.RankEffect[game.RankLevel]
     document.getElementById("RankRequirement").textContent = formatNumber(game.RankRequirement[game.RankLevel])
     document.getElementById("rank4reward").textContent = formatNumber(game.rank4reward)
-    document.getElementById("Asc1base").textContent = game.AscB1[2]
-    document.getElementById("Asc1effect").textContent = game.AscB1[3]
-    document.getElementById("Asc1cost").textContent = game.AscB1[4]
+    document.getElementById("Asc1base").textContent = game.AscB1[1]
+    document.getElementById("Asc1effect").textContent = game.AscB1[2]
+    document.getElementById("Asc1cost").textContent = game.AscB1[3]
     document.getElementById("TotalAllocationPoints").textContent = game.APamount[0]
     document.getElementById("UnspentAllocationPoints").textContent = game.APamount[1]
     document.getElementById("PointAllocationCost").textContent = formatNumber(game.APbuyables[0][1])
