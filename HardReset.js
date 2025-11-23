@@ -71,7 +71,7 @@ function HardReset(){
         QOLUBought: 0,
         AscAmount: 0,
         AscGain: 0,
-        RankRequirement: [1, 2, 10, 100, 10 ** 300],
+        RankRequirement: [1, 2, 5, 25, 10 ** 300],
         RankEffect: ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each automation on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-"],
         RankLevel: 0,
         ifAscend: false,
