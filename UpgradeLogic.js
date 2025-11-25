@@ -200,6 +200,27 @@ function BuyAPU33(){
         game.APU[2][2] = true
     }
 }
+
+// Void Buyables
+
+function BuyVB1(){
+    if(game.VoidPower >= game.VoidBuyables[0][1]){
+        game.VoidPower -= game.VoidBuyables[0][1]
+        game.VoidBuyables[0][0] += 1
+    }
+}
+function BuyVB2(){
+    if(game.VoidPower >= game.VoidBuyables[1][1]){
+        game.VoidPower -= game.VoidBuyables[1][1]
+        game.VoidBuyables[1][0] += 1
+    }
+}
+function BuyVB3(){
+    if(game.VoidPower >= game.VoidBuyables[2][1][game.VoidBuyables[2][0]]){
+        game.VoidPower -= game.VoidBuyables[2][1][game.VoidBuyables[2][0]]
+        game.VoidBuyables[2][0] += 1
+    }
+}
 // QOL Upgrades
 
 function BuyQOLU1(){

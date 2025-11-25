@@ -211,6 +211,25 @@ nav {
     background: #550055;
     box-shadow: 0 0 5px 5px #110055;
 }
+#VoidTab .entervoid{
+    background: #550055;
+    box-shadow: 0 0 5px 15px #110055, 0 0 5px 25px #330055;
+
+}
+#VoidTab .entervoid:hover{
+    background: #660066;
+    box-shadow: 0 0 5px 15px #330055, 0 0 5px 25px #441144;
+}
+#MainVoidTab button{
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 5px;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
 
 /* Automation Tab Items */
 #AutoTab .autogain {

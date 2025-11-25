@@ -302,7 +302,49 @@
             </div>
         </div>
 
-        <div id="VoidTab"></div>
+        <div id="VoidTab">
+            <button onclick="ToggleVoid()" class="EnterVoid"><span id="VoidToggle">Enter</span> The Void</button>
+            <div id="VoidEnergy">If you exit now, you can gain <span id="VoidEnergyGain">0</span> Void Energy</div>
+            <div>If you enter the void, your points will be fourth rooted and divided by 1000, but you will gain Void Energy based on your highest points in The Void</div>
+
+            <nav class="hidden">
+                <a onclick="SwitchTabs('MainVoidTab')">Void Powers</a>
+            </nav>
+
+            <div id="MainVoidTab">
+                <div>You have <span id="VoidEnergyAmount">0</span> Void Energy, which boosts points by <span id="VEeff1">1</span> after all exponents and produces <span id="VEeff2">0</span> Void Power each click.</div>
+                <div>You have <span id="VoidPowersAmount">0</span> Void Powers, which boost various things.</div>
+
+                <button onclick="GainVoidPower()" class="voidcolor">Click to gain Void Power</button>
+
+
+                <div class="rebuyables">
+                    <div onclick="BuyVB1()" class="rebuyable">
+                        <div class="upgradeheader">Energy multiplier</div>
+                        <div>Boost Void Energy by 2</div>
+                        <div>Costs: <span id="energymult">10</span> Void Power</div>
+                    </div>
+                    <div onclick="BuyVB2()" class="rebuyable">
+                        <div class="upgradeheader">Power multiplier</div>
+                        <div>Boost Void Power by 2</div>
+                        <div>Costs: <span id="powermult">100</span> Void Power</div>
+                    </div>
+                    <div onclick="BuyVB3()" class="rebuyable">
+                        <div class="upgradeheader">Rank extension</div>
+                        <div>Unlock 1 extra Ascension rank reward</div>
+                        <div>Costs: <span id="rankincrease">1000</span> Void Power</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>Also, your Void Power boosts the following:</div>
+                    <div>Points by <span id="VoidReward1">1</span>x</div>
+                    <div>Prestige Points by <span id="VoidReward2">1</span>x</div>
+                    <div>Prestige Power by <span id="VoidReward3">1</span>x</div>
+                    <div>Ascension Points by <span id="VoidReward4">1</span>x</div>
+                </div>
+            </div>
+        </div>
 
         <div id="AutoTab" class="hidden">
             <section class="Autopoints">

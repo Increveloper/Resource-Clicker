@@ -146,6 +146,15 @@ function SwitchTabs(tab){
             document.getElementById("AllocationTab").classList.remove("hidden")
         }
     }
+    else if(tab === "VoidTab" || tab === "MainVoidTab"){
+        document.getElementById("VoidTab").classList.remove("hidden")
+        document.getElementById("MainVoidTab").classList.remove("hidden")
+
+        if(tab === "MainVoidTab"){
+            document.getElementById("VoidTab").classList.remove("hidden")
+            document.getElementById("MainVoidTab").classList.remove("hidden")
+        }
+    }
     else if(tab === "AutoTab" || tab === "MainAutoTab" || tab === "QOLAutoTab"){
         document.getElementById("AutoTab").classList.remove("hidden")
         document.getElementById("MainAutoTab").classList.remove("hidden")

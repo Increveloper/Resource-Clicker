@@ -44,6 +44,11 @@ function calculatePPC(){
     game.ppc *= game.AscB1[2]
     game.ppc *= game.powerEffect
     game.ppc *= game.boostereffect
+
+    if(game.InVoid){
+        game.ppc **= 0.25
+        game.ppc /= 1000
+    }
 }
 function calculatePP(){
     game.prestigeGain = Math.floor((game.points / 10) ** 0.5)
@@ -239,7 +244,7 @@ function RankUpdates(){
         game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-"]
     }
 }
-function calculateAPtotal(){
+function calculateAP(){
     game.APamount[0] = game.APbuyables[0][0] + game.APbuyables[1][0] + game.APbuyables[2][0] + game.APbuyables[3][0]
     if(game.RankLevel >= 5){
         game.APamount[0] += game.RankLevel - 4
@@ -247,6 +252,44 @@ function calculateAPtotal(){
     if(game.RankLevel >= 6){
         game.APamount[0] += game.RankLevel - 4
     }
+    game.APamount[1] = game.APamount[0]
+    if(game.APU[0][0]){
+        game.APamount[1] -= 1
+    }
+    if(game.APU[0][1]){
+        game.APamount[1] -= 1
+    }
+    if(game.APU[0][2]){
+        game.APamount[1] -= 2
+    }
+    if(game.APU[1][0]){
+        game.APamount[1] -= 1
+    }
+    if(game.APU[1][1]){
+        game.APamount[1] -= 2
+    }
+    if(game.APU[1][2]){
+        game.APamount[1] -= 5
+    }
+    if(game.APU[2][0]){
+        game.APamount[1] -= 2
+    }
+    if(game.APU[2][1]){
+        game.APamount[1] -= 5
+    }
+    if(game.APU[2][2]){
+        game.APamount[1] -= 14
+    }
+}
+function calculateVoidEnergy(){
+    game.VoidEnergy[0] = game.points ** 0.5
+
+    game.VoidEnergy[0] *= 2 ** game.VoidBuyables[0][0]
+}
+function calculateVoidPower(){
+    game.VoidEnergy[3] = game.VoidEnergy[1] ** 2
+
+    game.VoidEnergy[3] *= 2 ** game.VoidBuyables[1][0]
 }
 setInterval(function(){
     calculatePPC();
@@ -261,6 +304,10 @@ setInterval(function(){
     calculateAsc();
     calculateRankRewards();
     RankUpdates();
-    calculateAPtotal();
+    calculateAP();
+    if(game.InVoid){
+        calculateVoidEnergy();
+        calculateVoidPower();
+    }
     game.boostereffect = game.boosterbase ** game.boosters;
 },50);

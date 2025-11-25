@@ -1,0 +1,1 @@
+- Update DevReset.js and HardReset.js after finishing

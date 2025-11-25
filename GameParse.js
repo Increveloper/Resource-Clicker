@@ -87,6 +87,12 @@ if(savedGame) {
     game.APamount = parsed.APamount ?? game.APamount;
     game.APbuyables = parsed.APbuyables ?? game.APbuyables;
     game.APU = parsed.APU ?? game.APU;
+    game.InVoid = parsed.InVoid ?? game.InVoid;
+    game.BestPoints = parsed.BestPoints ?? game.BestPoints;
+    game.VoidEnergy = parsed.VoidEnergy ?? game.VoidEnergy;
+    game.VoidPower = parsed.VoidPower ?? game.VoidPower;
+    game.VoidBuyables = parsed.VoidBuyables ?? game.VoidBuyables;
+    game.VoidEffect = parsed.VoidEffect ?? game.VoidEffect;
 };
 
 setInterval(function(){

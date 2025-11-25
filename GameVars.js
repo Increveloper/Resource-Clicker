@@ -84,5 +84,12 @@ game = {
     APamount: [0, 0], //[total, current]
     APbuyables: [[0, 10 ** 28], [0, 10 ** 23], [0, 10 ** 20], [0, 100]], //[Point, Prestige, Powers, Ascension], [[amount, cost]]
     APU: [[false, false, false], [false, false, false], [false, false, false]], //[[APU11, APU12, APU13], [APU21, APU22, APU23], [APU31, APU32, APU33]]
+    InVoid: false,
+    BestPoints: 0,
+    VoidEnergy: [0, 0, 1, 0], // [Pending, current, effect 1, effect 2]
+    VoidPower: 0,
+    VoidBuyables: [[0, 10], [0, 100], [0, [1000, 100000, 10 ** 300]]], // [B1, B2, B3] [[amount, cost]] [[[cost 1, cost 2]]]
+    VB3cost: [1000, 100000, 10 ** 300],
+    VoidEffect: [1, 1, 1, 1] //Effects 1, Effect 2, Effect 3, Effect 4
 };
 // REMEMBER: LIST ITEM 1 IS REFERRED TO AS [0]!!!!!

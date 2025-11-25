@@ -91,8 +91,6 @@ function CheckMilestones(){
 
 // Ascension Tab Items
 
-
-
 function UpgradeRank(){
     if(game.AscAmount >= game.RankRequirement[game.RankLevel]){
         game.AscAmount = 0
@@ -140,6 +138,21 @@ function updateRankRewards(){
 function RespecAllocations(){
     game.APU = [[false, false, false], [false, false, false], [false, false, false]]
     game.APamount[1] = game.APamount[0]
+}
+
+// The Void Items
+
+function ToggleVoid(){
+    if(game.InVoid){
+        game.VoidEnergy[1] += game.VoidEnergy[0]
+        if(game.points >= game.BestPoints){
+            game.BestPoints = game.points
+        }
+    }
+    game.InVoid = !game.InVoid
+}
+function GainVoidPower(){
+    game.VoidPower += game.VoidEnergy[3]
 }
 
 // Automation Tab Items

@@ -29,6 +29,18 @@ setInterval (function(){
     game.AscB1[1] = Math.log10(game.AscAmount + 1) + 1
     game.AscB1[2] = game.AscB1[1] ** game.AscB1[0]
     game.AscB1[3] = 5 ** (game.AscB1[0] ** 2)
+    if(game.InVoid){
+        game.VoidEnergy[0] = game.points ** 0.2
+    }
+    game.VoidEnergy[2] = game.VoidEnergy[1]
+    game.VoidEnergy[3] = game.VoidEnergy[1] ** 2
+    game.VoidPower += game.VoidEnergy[3] / 20
+    game.VoidBuyables[0][1] = 10 ** (1 + game.VoidBuyables[0][0])
+    game.VoidBuyables[1][1] = 100 ** (1 + 0.75 * game.VoidBuyables[1][0])
+    game.VoidEffect[0] = 1 + game.VoidPower ** 0.2
+    game.VoidEffect[1] = 1 + game.VoidPower ** 0.4
+    game.VoidEffect[2] = 1 + game.VoidPower ** 0.2
+    game.VoidEffect[3] = 1 + Math.log(game.VoidBuyables + 1)
 
     // Update Text Content
 
@@ -82,13 +94,33 @@ setInterval (function(){
     document.getElementById("RankReward").textContent = game.RankEffect[game.RankLevel]
     document.getElementById("RankRequirement").textContent = formatNumber(game.RankRequirement[game.RankLevel])
     document.getElementById("rank4reward").textContent = formatNumber(game.rank4reward)
-    document.getElementById("Asc1base").textContent = game.AscB1[1]
-    document.getElementById("Asc1effect").textContent = game.AscB1[2]
-    document.getElementById("Asc1cost").textContent = game.AscB1[3]
+    document.getElementById("Asc1base").textContent = game.AscB1[1].toFixed(2)
+    document.getElementById("Asc1effect").textContent = game.AscB1[2].toFixed(2)
+    document.getElementById("Asc1cost").textContent = formatNumber(game.AscB1[3])
     document.getElementById("TotalAllocationPoints").textContent = game.APamount[0]
     document.getElementById("UnspentAllocationPoints").textContent = game.APamount[1]
     document.getElementById("PointAllocationCost").textContent = formatNumber(game.APbuyables[0][1])
     document.getElementById("PrestigeAllocationCost").textContent = formatNumber(game.APbuyables[1][1])
     document.getElementById("PowerAllocationCost").textContent = formatNumber(game.APbuyables[2][1])
     document.getElementById("AscensionAllocationCost").textContent = formatNumber(game.APbuyables[3][1])
+    if(!game.InVoid){
+        document.getElementById("VoidToggle").textContent = "Enter"
+        document.getElementById("VoidEnergy").classList.add("hidden")
+    }
+    else if(game.InVoid){
+        document.getElementById("VoidToggle").textContent = "Exit"
+        document.getElementById("VoidEnergy").classList.remove("hidden")
+        document.getElementById("VoidEnergyGain").textContent = game.VoidEnergy[0]
+    }
+    document.getElementById("VoidEnergyAmount").textContent = game.VoidEnergy[1]
+    document.getElementById("VEeff1").textContent = game.VoidEnergy[2]
+    document.getElementById("VEeff2").textContent = game.VoidEnergy[3]
+    document.getElementById("VoidPowersAmount").textContent = game.VoidPower
+    document.getElementById("energymult").textContent = game.VoidBuyables[0][1]
+    document.getElementById("powermult").textContent = game.VoidBuyables[1][1]
+    document.getElementById("rankincrease").textContent = game.VoidBuyables[2][1][game.VoidBuyables[2][0]]
+    document.getElementById("VoidReward1").textContent = game.VoidEffect[0]
+    document.getElementById("VoidReward2").textContent = game.VoidEffect[1]
+    document.getElementById("VoidReward3").textContent = game.VoidEffect[2]
+    document.getElementById("VoidReward4").textContent = game.VoidEffect[3]
 }, 50)
