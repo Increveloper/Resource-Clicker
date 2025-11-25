@@ -32,7 +32,7 @@ setInterval (function(){
     if(game.InVoid){
         game.VoidEnergy[0] = game.points ** 0.2
     }
-    game.VoidEnergy[2] = game.VoidEnergy[1]
+    game.VoidEnergy[2] = game.VoidEnergy[1] + 1
     game.VoidEnergy[3] = game.VoidEnergy[1] ** 2
     game.VoidPower += game.VoidEnergy[3] / 20
     game.VoidBuyables[0][1] = 10 ** (1 + game.VoidBuyables[0][0])
@@ -40,7 +40,7 @@ setInterval (function(){
     game.VoidEffect[0] = 1 + game.VoidPower ** 0.2
     game.VoidEffect[1] = 1 + game.VoidPower ** 0.4
     game.VoidEffect[2] = 1 + game.VoidPower ** 0.2
-    game.VoidEffect[3] = 1 + Math.log(game.VoidBuyables + 1)
+    game.VoidEffect[3] = 1 + Math.log(game.VoidPower + 1)
 
     // Update Text Content
 

@@ -211,16 +211,18 @@ nav {
     background: #550055;
     box-shadow: 0 0 5px 5px #110055;
 }
-#VoidTab .entervoid{
+#VoidTab .EnterVoid{
+    margin-top: 15px;
+    margin-bottom: 15px;
     background: #550055;
-    box-shadow: 0 0 5px 15px #110055, 0 0 5px 25px #330055;
+    box-shadow: 0 0 10px 2px #110055, 0 0 10px 5px #330055;
 
 }
-#VoidTab .entervoid:hover{
+#VoidTab .EnterVoid:hover{
     background: #660066;
-    box-shadow: 0 0 5px 15px #330055, 0 0 5px 25px #441144;
+    box-shadow: 0 0 10px 3px #330055, 0 0 10px 6px #441144;
 }
-#MainVoidTab button{
+#VoidTab button{
     padding: 10px 20px;
     display: inline-block;
     margin-top: 5px;
@@ -229,6 +231,19 @@ nav {
     text-align: center;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
+}
+#VoidTab .rebuyables{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+#VoidTab .rebuyable{
+    background-color: #550055;
+    box-shadow: 0 0 10px 2px #110055, 0 0 10px 5px #330055;
+}
+#VoidTab .rebuyable:hover{
+    background: #660066;
+    box-shadow: 0 0 10px 3px #330055, 0 0 10px 6px #441144;
 }
 
 /* Automation Tab Items */
