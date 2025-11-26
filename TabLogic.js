@@ -47,13 +47,13 @@ function updateTabs(){
     else{
         document.getElementById("AscBuyables").classList.add("hidden")
     }
-    if(game.unlockAmount >= 5 && game.AscU1){
+    if(game.unlockAmount >= 6 && game.AscU1){
         document.getElementById("AllocationPoints").classList.remove("hidden")
     }
     else{
         document.getElementById("AllocationPoints").classList.add("hidden")
     }
-    if(game.unlockAmount >= 6){
+    if(game.unlockAmount >= 7){
         document.getElementById("Void").classList.remove("hidden")
     }
     else{
