@@ -82,6 +82,8 @@ if(savedGame) {
     game.rank4reward = parsed.rank4reward ?? game.rank4reward;
     game.rank4exp = parsed.rank4exp ?? game.rank4exp;
     game.AscU1 = parsed.AscU1 ?? game.AscU1;
+    game.AscU2 = parsed.AscU2 ?? game.AscU2;
+    game.AscU3 = parsed.AscU3 ?? game.AscU3;
     game.ascupgamnt = parsed.ascupgamnt ?? game.ascupgamnt;
     game.AscB1 = parsed.AscB1 ?? game.AscB1;
     game.APamount = parsed.APamount ?? game.APamount;

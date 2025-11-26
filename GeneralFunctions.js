@@ -33,6 +33,9 @@ function calculatePPC(){
     if(game.RankLevel >= 6){
         game.ppc *= 100
     }
+    if(game.AscU2 && game.InVoid){
+        game.ppc *= 10 ** 5
+    }
     if(game.APU[0][1]){
         game.ppc *= 10
     }
@@ -44,10 +47,21 @@ function calculatePPC(){
     game.ppc *= game.AscB1[2]
     game.ppc *= game.powerEffect
     game.ppc *= game.boostereffect
+    game.ppc *= game.VoidEffect[0]
 
     if(game.InVoid){
         game.ppc **= 0.25
-        game.ppc /= 1000
+        game.ppc /= 100000
+    }
+
+    game.ppc *= game.VoidEnergy[2]
+    if(game.RankLevel >= 8){
+        if(game.InVoid){
+            game.ppc *= 1.1 ** game.APamount[0]
+        }
+        else{
+            game.ppc *= 1.5 ** game.APamount[0]
+        }
     }
 }
 function calculatePP(){
@@ -72,6 +86,7 @@ function calculatePP(){
         game.prestigeGain *= 1.2 ** game.APamount[0]
     }
     game.prestigeGain *= game.powB2base ** game.powB2
+    game.prestigeGain *= game.VoidEffect[1]
 }
 function calculatePPow(){
     game.powerGain = Math.floor(game.prestigeAmount ** 0.5)
@@ -95,6 +110,7 @@ function calculatePPow(){
         game.powerGain *= 1.2 ** game.APamount[0]
     }
     game.powerGain *= game.powB3base ** game.powB3
+    game.powerGain *= game.VoidEffect[2]
 }
 function calculatePBBASE(){
     game.powB1base = 2
@@ -224,6 +240,8 @@ function calculateAsc(){
     if(game.APU[2][2]){
         game.AscGain *= 1.1 ** game.APamount[0]
     }
+
+    game.AscGain *= game.VoidEffect[3]
 }
 function calculateRankRewards(){
     game.rank4exp = 1
@@ -231,11 +249,24 @@ function calculateRankRewards(){
     if(game.APU[2][0]){
         game.rank4exp += 1
     }
+    if(game.RankLevel >= 8){
+        game.rank4exp += 1
+    }
 
-    game.rank4reward = game.RankLevel ** game.rank4exp
+    game.rank4reward = game.RankLevel
+
+    game.rank4reward **= game.rank4exp
 }
 function RankUpdates(){
-    if(game.unlockAmount >= 5 && game.AscU1){
+    if(game.VoidBuyables[2][0] >= 2){
+        game.RankRequirement = [1, 2, 10, 100, 200, 500, 10 ** 6, 10 ** 7, 10 ** 300]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "-"]
+    }
+    if(game.VoidBuyables[2][0] >= 1){
+        game.RankRequirement = [1, 2, 10, 100, 200, 500, 10 ** 6, 10 ** 300]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "-"]
+    }
+    else if(game.unlockAmount >= 5 && game.AscU1){
         game.RankRequirement = [1, 2, 10, 100, 200, 500, 10 ** 300]
         game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "-"]
     }
@@ -282,7 +313,11 @@ function calculateAP(){
     }
 }
 function calculateVoidEnergy(){
-    game.VoidEnergy[0] = game.points ** 0.5
+    game.VoidEnergy[0] = game.points ** 0.2
+
+    if(game.AscU2){
+        game.VoidEnergy[0] *= 100
+    }
 
     game.VoidEnergy[0] *= 2 ** game.VoidBuyables[0][0]
 }
@@ -290,6 +325,17 @@ function calculateVoidPower(){
     game.VoidEnergy[3] = game.VoidEnergy[1] ** 2
 
     game.VoidEnergy[3] *= 2 ** game.VoidBuyables[1][0]
+}
+function calculateVoidEffects(){
+    game.VoidEffect[0] = 1 + game.VoidPower ** 0.2
+    game.VoidEffect[1] = 1 + game.VoidPower ** 0.4
+    game.VoidEffect[2] = 1 + game.VoidPower ** 0.2
+    game.VoidEffect[3] = 1 + Math.log(game.VoidPower + 1)
+
+    if(game.AscU3){
+        game.VoidEffect[3] **= 2
+        game.VoidEffect /= 4
+    }
 }
 setInterval(function(){
     calculatePPC();
@@ -307,7 +353,7 @@ setInterval(function(){
     calculateAP();
     if(game.InVoid){
         calculateVoidEnergy();
-        calculateVoidPower();
     }
+    calculateVoidPower();
     game.boostereffect = game.boosterbase ** game.boosters;
 },50);

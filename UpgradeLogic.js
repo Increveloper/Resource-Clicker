@@ -106,6 +106,19 @@ function BuyAscU1(){
     }
 }
 
+function BuyAscU2(){
+    if(game.AscAmount >= 10 ** 7 && !game.AscU2){
+        game.AscU2 = true
+        game.AscAmount -= 10 ** 7
+    }
+}
+function BuyAscU3(){
+    if(game.AscAmount >= 10 ** 8 && !game.AscU3){
+        game.AscAmount -= 10 ** 8
+        game.AscU3 = true
+    }
+}
+
 // Ascension Buyables
 
 function BuyAscB1(){
@@ -371,6 +384,22 @@ function checkAscUpgs(){
     else{
         document.getElementById("AscU1").classList.remove("bought")
         document.getElementById("AscU1").classList.add("unbought")
+    }
+    if(game.RankLevel >= 7){
+        document.getElementById("AscU2").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("AscU2").classList.add("hidden")
+    }
+    if(game.AscU2){
+        document.getElementById("AscU2").classList.remove("unbought")
+        document.getElementById("AscU2").classList.add("bought")
+        document.getElementById("AscU3").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("AscU2").classList.remove("bought")
+        document.getElementById("AscU2").classList.add("unbought")
+        document.getElementById("AscU3").classList.add("hidden")
     }
 }
 function checkAPU(){

@@ -29,18 +29,9 @@ setInterval (function(){
     game.AscB1[1] = Math.log10(game.AscAmount + 1) + 1
     game.AscB1[2] = game.AscB1[1] ** game.AscB1[0]
     game.AscB1[3] = 5 ** (game.AscB1[0] ** 2)
-    if(game.InVoid){
-        game.VoidEnergy[0] = game.points ** 0.2
-    }
     game.VoidEnergy[2] = game.VoidEnergy[1] + 1
-    game.VoidEnergy[3] = game.VoidEnergy[1] ** 2
-    game.VoidPower += game.VoidEnergy[3] / 20
     game.VoidBuyables[0][1] = 10 ** (1 + game.VoidBuyables[0][0])
     game.VoidBuyables[1][1] = 100 ** (1 + 0.75 * game.VoidBuyables[1][0])
-    game.VoidEffect[0] = 1 + game.VoidPower ** 0.2
-    game.VoidEffect[1] = 1 + game.VoidPower ** 0.4
-    game.VoidEffect[2] = 1 + game.VoidPower ** 0.2
-    game.VoidEffect[3] = 1 + Math.log(game.VoidPower + 1)
 
     // Update Text Content
 
@@ -110,17 +101,17 @@ setInterval (function(){
     else if(game.InVoid){
         document.getElementById("VoidToggle").textContent = "Exit"
         document.getElementById("VoidEnergy").classList.remove("hidden")
-        document.getElementById("VoidEnergyGain").textContent = game.VoidEnergy[0]
+        document.getElementById("VoidEnergyGain").textContent = formatNumber(game.VoidEnergy[0])
     }
-    document.getElementById("VoidEnergyAmount").textContent = game.VoidEnergy[1]
-    document.getElementById("VEeff1").textContent = game.VoidEnergy[2]
-    document.getElementById("VEeff2").textContent = game.VoidEnergy[3]
-    document.getElementById("VoidPowersAmount").textContent = game.VoidPower
-    document.getElementById("energymult").textContent = game.VoidBuyables[0][1]
-    document.getElementById("powermult").textContent = game.VoidBuyables[1][1]
-    document.getElementById("rankincrease").textContent = game.VoidBuyables[2][1][game.VoidBuyables[2][0]]
-    document.getElementById("VoidReward1").textContent = game.VoidEffect[0]
-    document.getElementById("VoidReward2").textContent = game.VoidEffect[1]
-    document.getElementById("VoidReward3").textContent = game.VoidEffect[2]
-    document.getElementById("VoidReward4").textContent = game.VoidEffect[3]
+    document.getElementById("VoidEnergyAmount").textContent = formatNumber(game.VoidEnergy[1])
+    document.getElementById("VEeff1").textContent = formatNumber(game.VoidEnergy[2])
+    document.getElementById("VEeff2").textContent = formatNumber(game.VoidEnergy[3])
+    document.getElementById("VoidPowersAmount").textContent = formatNumber(game.VoidPower)
+    document.getElementById("energymult").textContent = formatNumber(game.VoidBuyables[0][1])
+    document.getElementById("powermult").textContent = formatNumber(game.VoidBuyables[1][1])
+    document.getElementById("rankincrease").textContent = formatNumber(game.VoidBuyables[2][1][game.VoidBuyables[2][0]])
+    document.getElementById("VoidReward1").textContent = formatNumber(game.VoidEffect[0])
+    document.getElementById("VoidReward2").textContent = formatNumber(game.VoidEffect[1])
+    document.getElementById("VoidReward3").textContent = formatNumber(game.VoidEffect[2])
+    document.getElementById("VoidReward4").textContent = formatNumber(game.VoidEffect[3])
 }, 50)

@@ -64,17 +64,17 @@
                 </section>
                 <section class="upgrades container">
                     <button onclick="BuyPU4(); BuyPresUpg();" id="PU4" class="unbought box hidden">
-                        <h1 class="upgradeheader">Upgrade IV</h1>
+                        <h1 class="upgradeheader">Prestige Upgrade IV</h1>
                         <div>Increase Power I cap by 10, but it scales faster every 10th level</div>
                         <div>Cost: 1.00e15 Prestige Points</div>
                     </button>
                     <button onclick="BuyPU5(); BuyPresUpg();" id="PU5" class="unbought box hidden">
-                        <h1 class="upgradeheader">Upgrade V</h1>
+                        <h1 class="upgradeheader">Prestige Upgrade V</h1>
                         <div>Boost Prestige Points and Prestige Powers by 10</div>
                         <div>Cost: 1.00e19 Prestige Points</div>
                     </button>
                     <button onclick="BuyPU6(); BuyPresUpg();" id="PU6" class="unbought box hidden">
-                        <h1 class="upgradeheader">Upgrade VI</h1>
+                        <h1 class="upgradeheader">Prestige Upgrade VI</h1>
                         <div>Prestige Power effect exponent is increased by 0.05</div>
                         <div>Cost: 2.00e20 Prestige Points</div>
                     </button>
@@ -201,11 +201,21 @@
             </div>
 
             <div id="AscUpgTab" class="hidden">
-                <section onclick="BuyAscU1()" class="upgrades container">
-                    <div id="AscU1" class="unbought box">
+                <section class="upgrades container">
+                    <div onclick="BuyAscU1()" id="AscU1" class="unbought box">
                         <div class="upgradeheader">Ascension I</div>
                         <div>Unlock the first Ascension buyable</div>
                         <div>Cost: 100 Ascension Points</div>
+                    </div>
+                    <div onclick="BuyAscU2()" id="AscU2" class="unbought box hidden">
+                        <div class="upgradeheader">Ascension II</div>
+                        <div>Boost Void Energy by 100 and gain 100000x base points but only when in The Void</div>
+                        <div>Cost: 1.00e7 Ascension Points</div>
+                    </div>
+                    <div onclick="BuyAscU3()" id="AscU3" class="unbought box hidden">
+                        <div class="upgradeheader">Ascension III</div>
+                        <div>Void Power effect 4 gets squared but divided by 4</div>
+                        <div>Cost: 1.00e8 Ascension Points</div>
                     </div>
                 </section>
             </div>
@@ -305,7 +315,7 @@
         <div id="VoidTab" class="hidden">
             <button onclick="ToggleVoid()" class="EnterVoid"><span id="VoidToggle">Enter</span> The Void</button>
             <div id="VoidEnergy">If you exit now, you can gain <span id="VoidEnergyGain">0</span> Void Energy</div>
-            <div>If you enter the void, your points will be fourth rooted and divided by 1000, but you will gain Void Energy based on your highest points in The Void</div>
+            <div>If you enter the void, your points will be fourth rooted and divided by 100000, but you will gain Void Energy based on your current points in The Void</div>
 
             <nav class="hidden">
                 <a onclick="SwitchTabs('MainVoidTab')">Void Powers</a>

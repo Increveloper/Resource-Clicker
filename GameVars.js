@@ -2,7 +2,7 @@ game = {
     points: 0,
     ppc: 1,
     unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Finish the game"],
-    unlockCost: [10, 1000, 10 ** 9, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 300],
+    unlockCost: [10, 1000, 10 ** 8, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 300],
     unlockAmount: 0,
     prestigeGain: 0,
     prestigeAmount: 0,
@@ -79,6 +79,8 @@ game = {
     rank4reward: 1,
     rank4exp: 1,
     AscU1: false,
+    AscU2: false,
+    AscU3: false,
     ascupgamnt: 0,
     AscB1: [0, 1, 1, 1], // [amount, effect base, effect, cost]
     APamount: [0, 0], //[total, current]

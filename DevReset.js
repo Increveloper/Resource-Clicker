@@ -3,7 +3,7 @@ function DevReset(){
         points: 0,
         ppc: 1,
         unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Finish the game"],
-        unlockCost: [10, 1000, 10 ** 9, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 300],
+        unlockCost: [10, 1000, 10 ** 8, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 300],
         unlockAmount: 6,
         prestigeGain: 0,
         prestigeAmount: 10 ** 10,

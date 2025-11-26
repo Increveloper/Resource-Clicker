@@ -45,7 +45,7 @@ function CheckBoosters(){
         game.boosterrequirement = 10 ** 308
     }
     else{
-        game.boosterrequirement = (10 ** 9) * (10 ** (game.boosters ** 2))
+        game.boosterrequirement = (10 ** 8) * (10 ** (game.boosters ** 2))
     }
     if(game.boosters >= 1){
         game.BM1 = true
@@ -150,6 +150,7 @@ function ToggleVoid(){
         }
     }
     game.InVoid = !game.InVoid
+    game.points = 0
 }
 function GainVoidPower(){
     game.VoidPower += game.VoidEnergy[3]
