@@ -78,10 +78,19 @@ function HardReset(){
         rank4reward: 1,
         rank4exp: 1,
         AscU1: false,
+        AscU2: false,
+        AscU3: false,
         ascupgamnt: 0,
         AscB1: [0, 1, 1, 1],
         APamount: [0, 0],
         APU: [[false, false, false], [false, false, false], [false, false, false]],
+        InVoid: false,
+        BestPoints: 0,
+        VoidEnergy: [0, 0, 1, 0],
+        VoidPower: 0,
+        VoidBuyables: [[0, 10], [0, 100], [0, [1000, 100000, 10 ** 300]]],
+        VB3cost: [1000, 100000, 10 ** 300],
+        VoidEffect: [1, 1, 1, 1]
     };
     updateTabs();
 };

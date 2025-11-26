@@ -78,11 +78,20 @@ function DevReset(){
         rank4reward: 1,
         rank4exp: 1,
         AscU1: true,
+        AscU2: false,
+        AscU3: false,
         ascupgamnt: 1,
         AscB1: [2, 1, 1, 1],
         APbuyables: [[4, 10 ** 44], [3, 1.56 * 10 ** 33], [3, 1.25 * 10 ** 28], [6, 409600]],
         APamount: [20, 1],
         APU: [[true, true, true], [true, true, true], [true, true, false]],
+        InVoid: false,
+        BestPoints: 0,
+        VoidEnergy: [0, 0, 1, 0],
+        VoidPower: 0,
+        VoidBuyables: [[0, 10], [0, 100], [0, [1000, 100000, 10 ** 300]]],
+        VB3cost: [1000, 100000, 10 ** 300],
+        VoidEffect: [1, 1, 1, 1]
     };
     game.powerEffect = 1 + game.powerAmount ** 0.5;
     game.boostereffect = 2 ** game.boosters;
