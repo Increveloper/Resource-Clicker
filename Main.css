@@ -133,11 +133,13 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 #AscRankRewardTab .AscRankRewardBox {
     max-width: 150px;
     max-height: 100px;
     min-height: 100px;
+    min-width: 100px;
     border: 3px solid black;
     background: radial-gradient(
         circle,
@@ -146,10 +148,6 @@ nav {
     ), 
     red;
     position: relative;
-}
-#AscUpgTab {
-    display: flex;
-    justify-content: center;
 }
 #AscUpgTab .upgrades{
     display: flex;

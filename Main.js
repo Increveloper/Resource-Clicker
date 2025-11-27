@@ -134,6 +134,18 @@ function updateRankRewards(){
     else{
         document.getElementById("RR6").classList.add("hidden")
     }
+    if(game.RankLevel >= 7){
+        document.getElementById("RR7").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("RR7").classList.add("hidden")
+    }
+    if(game.RankLevel >= 8){
+        document.getElementById("RR8").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("RR8").classList.add("hidden")
+    }
 }
 function RespecAllocations(){
     game.APU = [[false, false, false], [false, false, false], [false, false, false]]
