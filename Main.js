@@ -148,6 +148,16 @@ function ToggleVoid(){
         if(game.points >= game.BestPoints){
             game.BestPoints = game.points
         }
+        game.PointAuto = 20
+        game.Presauto = 20
+        game.Powauto = 20
+        game.Autoauto = 20
+    }
+    else{
+        game.PointAuto = 0
+        game.Presauto = 0
+        game.Powauto = 0
+        game.Autoauto = 0
     }
     game.InVoid = !game.InVoid
     game.points = 0
