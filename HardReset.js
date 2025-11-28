@@ -60,6 +60,7 @@ function HardReset(){
         BU3effect: 1,
         AutoAmount: 0,
         AutoGain: 0,
+        PauseAuto: 0,
         PointAuto: 0,
         Presauto: 0,
         Powauto: 0,
