@@ -155,6 +155,7 @@ function RespecAllocations(){
 // The Void Items
 
 function ToggleVoid(){
+    game.PauseAuto = 0
     if(game.InVoid){
         game.VoidEnergy[1] += game.VoidEnergy[0]
         if(game.points >= game.BestPoints){
@@ -173,6 +174,7 @@ function ToggleVoid(){
     }
     game.InVoid = !game.InVoid
     game.points = 0
+    game.PauseAuto = 0
 }
 function GainVoidPower(){
     game.VoidPower += game.VoidEnergy[3]

@@ -68,9 +68,11 @@ function ResetAscension(){
     //console.log(game.points, "after reset")
 };
 function GoAscension(){
+    game.PauseAuto = 0
     clearInterval(Automated)
     ResetAscension()
     Automated = setInterval (function(){
         runautomation()
     }, 50)
+    game.PauseAuto = 0
 };
