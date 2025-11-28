@@ -322,7 +322,7 @@ function calculateVoidEnergy(){
     game.VoidEnergy[0] *= 2 ** game.VoidBuyables[0][0]
 }
 function calculateVoidPower(){
-    game.VoidEnergy[3] = game.VoidEnergy[1] ** 2
+    game.VoidEnergy[3] = game.VoidEnergy[1] ** 0.8
 
     game.VoidEnergy[3] *= 2 ** game.VoidBuyables[1][0]
 }

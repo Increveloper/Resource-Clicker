@@ -1,6 +1,6 @@
 function runautomation(){
     //console.log("Triggered automation!", game.PointAuto, game.points)
-    if(game.PauseAuto >= 2){
+    if(game.PauseAuto >= 1){
         // fixes reset bugs
         game.points += game.ppc * game.autoeff[0] / 20
         game.prestigeAmount += game.prestigeGain * game.autoeff[1] / 20
