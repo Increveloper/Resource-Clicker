@@ -315,8 +315,7 @@
         </div>
 
         <div id="VoidTab" class="hidden">
-            <!--Having multiple function calls fixes an issue with point amount not properly resetting. I haven't found a better fix for it.-->
-            <button onclick="ToggleVoid(); ToggleVoid(); ToggleVoid();" class="EnterVoid"><span id="VoidToggle">Enter</span> The Void</button>
+            <button onclick="ToggleVoid()" class="EnterVoid"><span id="VoidToggle">Enter</span> The Void</button>
             <div id="VoidEnergy">If you exit now, you can gain <span id="VoidEnergyGain">0</span> Void Energy</div>
             <div>If you enter the void, your points will be fourth rooted and divided by 100000, but you will gain Void Energy based on your current points in The Void</div>
 

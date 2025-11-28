@@ -64,6 +64,7 @@ if(savedGame) {
     game.BU3effect = parsed.BU3effect ?? game.BU3effect;
     game.AutoAmount = parsed.AutoAmount ?? game.AutoAmount;
     game.AutoGain = parsed.AutoGain ?? game.AutoGain;
+    game.PauseAuto = parsed.PauseAuto ?? game.PauseAuto;
     game.PointAuto = parsed.PointAuto ?? game.PointAuto;
     game.Presauto = parsed.Presauto ?? game.Presauto;
     game.Powauto = parsed.Powauto ?? game.Powauto;
