@@ -107,14 +107,14 @@ function BuyAscU1(){
 }
 
 function BuyAscU2(){
-    if(game.AscAmount >= 10 ** 7 && !game.AscU2){
+    if(game.AscAmount >= 10 ** 8 && !game.AscU2){
         game.AscU2 = true
-        game.AscAmount -= 10 ** 7
+        game.AscAmount -= 10 ** 8
     }
 }
 function BuyAscU3(){
-    if(game.AscAmount >= 10 ** 8 && !game.AscU3){
-        game.AscAmount -= 10 ** 8
+    if(game.AscAmount >= 10 ** 10 && !game.AscU3){
+        game.AscAmount -= 10 ** 10
         game.AscU3 = true
     }
 }
@@ -400,6 +400,14 @@ function checkAscUpgs(){
         document.getElementById("AscU2").classList.remove("bought")
         document.getElementById("AscU2").classList.add("unbought")
         document.getElementById("AscU3").classList.add("hidden")
+    }
+    if(game.AscU3){
+        document.getElementById("AscU3").classList.remove("unbought")
+        document.getElementById("AscU3").classList.add("bought")
+    }
+    else{
+        document.getElementById("AscU3").classList.remove("bought")
+        document.getElementById("AscU3").classList.add("unbought")
     }
 }
 function checkAPU(){

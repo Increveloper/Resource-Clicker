@@ -259,7 +259,7 @@ function calculateRankRewards(){
 }
 function RankUpdates(){
     if(game.VoidBuyables[2][0] >= 2){
-        game.RankRequirement = [1, 2, 10, 100, 200, 500, 10 ** 6, 10 ** 7, 10 ** 300]
+        game.RankRequirement = [1, 2, 10, 100, 200, 500, 10 ** 6, 10 ** 8, 10 ** 300]
         game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "-"]
     }
     else if(game.VoidBuyables[2][0] >= 1){
