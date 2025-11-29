@@ -64,7 +64,7 @@ function calculatePPC(){
         }
     }
 
-    if(game.points >= game.PointSoftcapStart){
+    if(game.ppc >= game.PointSoftcapStart){
         game.ppc /= game.PointSoftcapStart
         game.ppc **= 0.4
         game.ppc *= game.PointSoftcapStart
