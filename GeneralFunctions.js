@@ -63,6 +63,12 @@ function calculatePPC(){
             game.ppc *= 1.5 ** game.APamount[0]
         }
     }
+
+    if(game.points >= game.PointSoftcapStart){
+        game.ppc /= game.PointSoftcapStart
+        game.ppc **= 0.4
+        game.ppc *= game.PointSoftcapStart
+    }
 }
 function calculatePP(){
     game.prestigeGain = Math.floor((game.points / 10) ** 0.5)
@@ -320,6 +326,12 @@ function calculateVoidEnergy(){
     }
 
     game.VoidEnergy[0] *= 2 ** game.VoidBuyables[0][0]
+
+    if(game.VoidEnergy[0] >= 10 ** 6){
+        game.VoidEnergy[0] /= 10 ** 6
+        game.VoidEnergy[0] **= 0.7
+        game.VoidEnergy[0] *= 10 ** 6
+    }
 }
 function calculateVoidPower(){
     game.VoidEnergy[3] = game.VoidEnergy[1] ** 0.8

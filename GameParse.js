@@ -4,6 +4,7 @@ if(savedGame) {
 
     game.points = parsed.points ?? game.points;
     game.ppc = parsed.ppc ?? game.ppc;
+    game.PointSoftcapStart = parsed.PointSoftcapStart ?? game.PointSoftcapStart;
     game.unlockAmount = parsed.unlockAmount ?? game.unlockAmount;
     game.unlockcost = parsed.unlockcost ?? game.unlockcost;
     game.unlocks = parsed.unlocks ?? game.unlocks;

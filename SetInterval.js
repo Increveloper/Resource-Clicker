@@ -97,11 +97,18 @@ setInterval (function(){
     if(!game.InVoid){
         document.getElementById("VoidToggle").textContent = "Enter"
         document.getElementById("VoidEnergy").classList.add("hidden")
+        document.getElementById("VES1").classList.add("hidden")
     }
     else if(game.InVoid){
         document.getElementById("VoidToggle").textContent = "Exit"
         document.getElementById("VoidEnergy").classList.remove("hidden")
         document.getElementById("VoidEnergyGain").textContent = formatNumber(game.VoidEnergy[0])
+        if(game.VoidEnergy >= 0.7){
+            document.getElementById("VES1").classList.remove("hidden")
+        }
+        else{
+            document.getElementById("VES1").classList.add("hidden")
+        }
     }
     document.getElementById("VoidEnergyAmount").textContent = formatNumber(game.VoidEnergy[1])
     document.getElementById("VEeff1").textContent = formatNumber(game.VoidEnergy[2])
