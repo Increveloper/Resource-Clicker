@@ -152,7 +152,6 @@ nav {
 #AscUpgTab .upgrades{
     display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 #AscBuyableTab {
     display: flex;
