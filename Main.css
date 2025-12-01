@@ -2,12 +2,16 @@
 
 nav {
     justify-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
 }
 
 
 #MainTab button.unlocker {
     border: 3px solid black;
-    border-radius: 10px;
     margin-top: 40px;
     color: #fff;
     background-color: #555;
@@ -107,10 +111,10 @@ nav {
 }
 
 #AscTab .AscRank {
-    min-width: 250px;
-    min-height: 250px;
-    max-width: 250px;
-    max-height: 250px;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
     border: 5px solid black;
     border-radius: 30px;
     background: radial-gradient(
@@ -211,13 +215,15 @@ nav {
 /* The Void Items */
 .voidcolor{
     background: #550055;
-    box-shadow: 0 0 5px 5px #110055;
+    box-shadow: 0 0 5px 5px #110055 !important;
+    color: white;
 }
 #VoidTab .EnterVoid{
     margin-top: 15px;
     margin-bottom: 15px;
     background: #550055;
     box-shadow: 0 0 10px 2px #110055, 0 0 10px 5px #330055;
+    color: white;
 
 }
 #VoidTab .EnterVoid:hover{
@@ -242,6 +248,7 @@ nav {
 #VoidTab .rebuyable{
     background-color: #550055;
     box-shadow: 0 0 10px 2px #110055, 0 0 10px 5px #330055;
+    color: white;
 }
 #VoidTab .rebuyable:hover{
     background: #660066;
@@ -271,6 +278,12 @@ nav {
     border: 2px solid black;
     background-color: #333;
     color: white;
+    min-height: 100px;
+}
+#MainAutoTab .Automation button {
+    background-color: #444;
+    color: white;
+    border-color: #555
 }
 
 /* QOL Tab Items */

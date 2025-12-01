@@ -1,9 +1,14 @@
+html {
+    min-height: 100vh;
+}
 body {
-    border: 3px dotted black;
     text-align: center;
-    background-color: white;
 }
 
+nav {
+    margin: 5px;
+}
+    
 section.points {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     justify-self: center;
@@ -14,10 +19,13 @@ section.points button {
     margin-top: 5px;
     margin-bottom: 5px;
     border: 2px solid black;
-    border-radius: 3px;
     background-color: #333;
     color: #fff;
     cursor: pointer;
+    box-shadow: 2px 2px 8px 1px black;
+    min-height: 30px;
+    min-width: 200px;
+    border-radius: 5px;
 }
 section.points button:hover {
     background-color: #555;
@@ -38,9 +46,12 @@ section.points .row1 {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 6px;
     text-align: center;
     cursor: pointer;
+    box-shadow: 2px 2px 5px black;
+}
+.btn:hover {
+    text-decoration: underline;
 }
 
 .maincolor {
@@ -83,6 +94,7 @@ section.points .row1 {
 
 
 .upgrades {
+    display: flex;
     justify-content: center;
 }
 .upgradeheader {
@@ -95,29 +107,32 @@ section.points .row1 {
     border: 2px solid black;
     border-radius: 6px;
     font-size: 80%;
-    cursor: pointer;
+    max-height: 200px;
 }
 .bought {
     max-width: 150px;
     background-color: green;
     border: 2px solid black;
     border-radius: 6px;
-    font-size: 80%;
+    font-size: 70%;
+    max-width: 150px;
+    min-width: 150px;
+    max-height: 200px;
 }
 
 .rebuyable {
     border: 3px solid black;
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 20px !important;
     max-width: 150px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
+    
 }
 
 .milestones {
     display: flex;
     justify-content: center;
-    border: 2px solid black;
     flex-direction: column;
     align-items: center;
 }
@@ -126,19 +141,19 @@ section.points .row1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .milestonereq {
-    font-size: 75%;
+    font-size: 90%;
 }
 .unachieved {
-    max-width: 900px;
-    min-width: 900px;
+    max-width: 100vh;
+    min-width: 500px;
     background-color: #999;
     border: 2px solid black;
     border-radius: 6px;
     font-size: 120%;
 }
 .achieved {
-    max-width: 900px;
-    min-width: 900px;
+    max-width: 100vh;
+    min-width: 500px;
     background-color: green;
     border: 2px solid black;
     border-radius: 6px;

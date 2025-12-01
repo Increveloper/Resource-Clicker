@@ -103,7 +103,7 @@ setInterval (function(){
         document.getElementById("VoidToggle").textContent = "Exit"
         document.getElementById("VoidEnergy").classList.remove("hidden")
         document.getElementById("VoidEnergyGain").textContent = formatNumber(game.VoidEnergy[0])
-        if(game.VoidEnergy >= 0.7){
+        if(game.VoidEnergy[0] >= 10 ** 6){
             document.getElementById("VES1").classList.remove("hidden")
         }
         else{
