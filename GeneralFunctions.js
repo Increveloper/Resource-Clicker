@@ -9,6 +9,56 @@ function formatNumber(num) {
     return `${cleanMantissa}e${exponent}`;
     // Done by ChatGPT
 }
+function UpdateUnlockDisplay(){
+    if(game.unlockAmount >= 1){
+        document.getElementById("unlock1").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock1").classList.add("hidden")
+    }
+    if(game.unlockAmount >= 2){
+        document.getElementById("unlock2").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock2").classList.add("hidden")
+    }
+    if(game.unlockAmount >= 3){
+        document.getElementById("unlock3").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock3").classList.add("hidden")
+    }
+    if(game.unlockAmount >= 4){
+        document.getElementById("unlock4").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock4").classList.add("hidden")
+    }
+    if(game.unlockAmount >= 5){
+        document.getElementById("unlock5").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock5").classList.add("hidden")
+    }
+    if(game.unlockAmount >= 6){
+        document.getElementById("unlock6").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock6").classList.add("hidden")
+    }
+    if(game.unlockAmount >= 7){
+        document.getElementById("unlock7").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock7").classList.add("hidden")
+    }
+    if(game.unlockAmount >= 8){
+        document.getElementById("unlock8").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("unlock8").classList.add("hidden")
+    }
+}
 function calculatePPC(){
     game.ppc = 1
 

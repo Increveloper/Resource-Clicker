@@ -31,6 +31,19 @@
                 <div>Cost: <span id="unlockprice">10</span> points</div>
                 <div>Amount: <span id="unlockeramnt">0</span>/7</div>
             </button>
+
+            <div>Some content has extra requirements before unlocking. After buying a new unlocker level, they appear below.</div>
+            <div>
+                <div id="unlock1" class="hidden">Prestige Points: Unlocked at Unlocker level 1. Appears as a separate tab in the main navigation.</div>
+                <div id="unlock2" class="hidden">Prestige Powers: Unlocked at Unlocker level 2 and Prestige III bought. Appears as a separate tab in Prestige.</div>
+                <div id="unlock3" class="hidden">Boosters: Unlocked at Unlocker level 3. Appears as a separate tab in the main navigation.</div>
+                <div id="unlock4" class="hidden">Automation: Unlocked at Unlocker level 4. Appears as a separate tab in the main navigation.</div>
+                <div id="unlock5" class="hidden">Ascension: Unlocked at Unlocker level 5 and 4 boosters. Appears as a separate tab in the main navigation.</div>
+                <div id="unlock6" class="hidden">Allocation Points: Unlocked at Unlocker level 6. Appears as a separate tab in Ascension.</div>
+                <div id="unlock7" class="hidden">The Void: Unlocked at Unlocker level 7. Appears as a separate tab in the main Navigation</div>
+                <div id="unlock8" class="hidden">Void Boosters: Not yet implemented.</div>
+
+            </div>
         </div>
 
         <div id="PresTab" class="hidden">
@@ -173,6 +186,7 @@
         <div id="AscTab" class="hidden">
             <div>You have <span id="AscPoints">0</span> Ascension Points</div>
             <button onclick="GoAscension(); GoAscension();" class="Ascensionreset">You can reset for <span id="AscReward">0</span> Ascension Points</button>
+            <div>Note: You can only reset after reaching 4 boosters</div>
 
             <nav class="SubNav">
                 <a onclick="SwitchTabs('AscRankTab')" class="btn ascendcolor">Ascension Ranks</a>
@@ -318,7 +332,7 @@
             <button onclick="ToggleVoid()" class="EnterVoid"><span id="VoidToggle">Enter</span> The Void</button>
             <div id="VoidEnergy">If you exit now, you can gain <span id="VoidEnergyGain">0</span> Void Energy</div>
             <div id="VES1">Past 1.00e6 pending Void Energy, it is rised to the power of 0.7!</div>
-            <div>If you enter the void, your points will be fourth rooted and divided by 100000, but you will gain Void Energy based on your current points in The Void</div>
+            <div>If you enter the void, automation will be disabled and your points will be fourth rooted and divided by 100000, but you will gain Void Energy based on your current points in The Void</div>
 
             <nav class="hidden">
                 <a onclick="SwitchTabs('MainVoidTab')">Void Powers</a>
@@ -447,6 +461,8 @@
                 <button onclick="HardReset()" class="btn resetcolor">Hard Reset</button>
                 <button onclick="DevReset()" class="btn maincolor">Dev Reset</button>
             </section>
+
+            <div>Be aware that Dev Reset is only meant for the dev to test for bugs on the latest content.</div>
 
             <section style="margin-top: 10px;">
                 This game was made by Increveloper. This is my first time using JS instead of Python, so don't expect much of this game.
