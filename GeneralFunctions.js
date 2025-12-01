@@ -396,7 +396,7 @@ function calculateVoidEffects(){
 
     if(game.AscU3){
         game.VoidEffect[3] **= 2
-        game.VoidEffect /= 4
+        game.VoidEffect[3] /= 4
     }
 }
 setInterval(function(){
