@@ -400,6 +400,7 @@ function calculateVoidEffects(){
     }
 }
 setInterval(function(){
+    UpdateUnlockDisplay();
     calculatePPC();
     calculatePP();
     calculatePPow();

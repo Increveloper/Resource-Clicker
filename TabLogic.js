@@ -59,6 +59,12 @@ function updateTabs(){
     else{
         document.getElementById("Void").classList.add("hidden")
     }
+    if(game.unlockAmount >= 8){
+        document.getElementById("VBoosters").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("VBoosters").classList.add("hidden")
+    }
 };
 
 function SwitchTabs(tab){
@@ -146,13 +152,21 @@ function SwitchTabs(tab){
             document.getElementById("AllocationTab").classList.remove("hidden")
         }
     }
-    else if(tab === "VoidTab" || tab === "MainVoidTab"){
+    else if(tab === "VoidTab" || tab === "MainVoidTab" || tab === "VoidBoosterTab"){
         document.getElementById("VoidTab").classList.remove("hidden")
         document.getElementById("MainVoidTab").classList.remove("hidden")
+        document.getElementById("VoidBoosterTab").classList.add("hidden")
 
         if(tab === "MainVoidTab"){
             document.getElementById("VoidTab").classList.remove("hidden")
             document.getElementById("MainVoidTab").classList.remove("hidden")
+            document.getElementById("VoidBoosterTab").classList.add("hidden")
+        }
+
+        if(tab === "VoidBoosterTab"){
+            document.getElementById("VoidTab").classList.remove("hidden")
+            document.getElementById("MainVoidTab").classList.add("hidden")
+            document.getElementById("VoidBoosterTab").classList.remove("hidden")
         }
     }
     else if(tab === "AutoTab" || tab === "MainAutoTab" || tab === "QOLAutoTab"){
