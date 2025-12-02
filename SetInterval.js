@@ -137,7 +137,7 @@ setInterval (function(){
     document.getElementById("VoidReward3").textContent = formatNumber(game.VoidEffect[2])
     document.getElementById("VoidReward4").textContent = formatNumber(game.VoidEffect[3])
     document.getElementById("VBamount").textContent = game.VoidBoosters
-    document.getElementById("VBrequrement").textContent = formatNumber(game.VoidBoosterReq)
+    document.getElementById("VBrequirement").textContent = formatNumber(game.VoidBoosterReq)
     document.getElementById("MaxVBActivation").textContent = game.MaxVBAmount
     document.getElementById("VB1E1").textContent = formatNumber(game.VoidBooster1[0])
     document.getElementById("VB1E2").textContent = formatNumber(game.VoidBooster1[1])
