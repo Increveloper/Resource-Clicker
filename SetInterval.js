@@ -36,7 +36,7 @@ setInterval (function(){
     game.VoidBooster1[0] = 10 ** game.VoidBoosters
     game.VoidBooster1[1] = 5 ** game.VoidBoosters
     game.VoidBooster1[2] = 2 ** game.VoidBoosters
-    game.VoidBooster1[3] = 10 * Math.floor(Math.log2(VoidBoosters + 1) / 2 + 0.5)
+    game.VoidBooster1[3] = 10 * Math.floor(Math.log2(game.VoidBoosters + 1) / 2 + 0.5)
     game.VoidBooster2[0] = 1.3 ** game.VoidBoosters
     game.VoidBooster2[1] = Math.floor(Math.log2(VoidBoosters + 1) / 1.5)
     game.VoidBooster2[2] = Math.floor(logbase(VoidBoosters + 2, 3) ** 1.4)
