@@ -92,7 +92,16 @@ function DevReset(){
         VoidPower: 10 ** 6,
         VoidBuyables: [[5, 10], [3, 100], [2, [1000, 100000, 10 ** 300]]],
         VB3cost: [1000, 100000, 10 ** 300],
-        VoidEffect: [1, 1, 1, 1]
+        VoidEffect: [1, 1, 1, 1],
+        VoidBoosters: 0,
+        VoidBoosterReq: 100000,
+        ActiveVBAmount: 0,
+        MaxVBAmount: 1,
+        ActiveEffect: [false, false, false],
+        VoidBooster1: [1, 1, 1, 0],
+        VoidBooster2: [1, 0, 0, 0],
+        VoidBooster3: [1, 1, 0, 1],
+        VB3req: [1, 3, 1000],
     };
     game.powerEffect = 1 + game.powerAmount ** 0.5;
     game.boostereffect = 2 ** game.boosters;

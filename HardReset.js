@@ -92,7 +92,16 @@ function HardReset(){
         VoidPower: 0,
         VoidBuyables: [[0, 10], [0, 100], [0, [1000, 100000, 10 ** 300]]],
         VB3cost: [1000, 100000, 10 ** 300],
-        VoidEffect: [1, 1, 1, 1]
+        VoidEffect: [1, 1, 1, 1],
+        VoidBoosters: 0,
+        VoidBoosterReq: 100000,
+        ActiveVBAmount: 0,
+        MaxVBAmount: 1,
+        ActiveEffect: [false, false, false],
+        VoidBooster1: [1, 1, 1, 0],
+        VoidBooster2: [1, 0, 0, 0],
+        VoidBooster3: [1, 1, 0, 1],
+        VB3req: [1, 3, 1000],
     };
     updateTabs();
 };
