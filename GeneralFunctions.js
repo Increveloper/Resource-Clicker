@@ -9,6 +9,9 @@ function formatNumber(num) {
     return `${cleanMantissa}e${exponent}`;
     // Done by ChatGPT
 }
+function logbase(value, base){
+    return Math.log(value) / Math.log(base)
+}
 function UpdateUnlockDisplay(){
     if(game.unlockAmount >= 1){
         document.getElementById("unlock1").classList.remove("hidden")
@@ -397,6 +400,19 @@ function calculateVoidEffects(){
     if(game.AscU3){
         game.VoidEffect[3] **= 2
         game.VoidEffect[3] /= 4
+    }
+}
+function calculateactivevoidboosters(){
+    game.ActiveVBAmount = 0
+
+    if(game.ActiveEffect[0]){
+        game.ActiveVBAmount += 1
+    }
+    if(game.ActiveEffect[1]){
+        game.ActiveVBAmount += 1
+    }
+    if(game.ActiveEffect[2]){
+        game.ActiveVBAmount += 1
     }
 }
 setInterval(function(){

@@ -22,6 +22,7 @@ function GoBooster(){
 function ResetAscension(){
     //console.log(game.points, "before reset")
     if(game.boosters >= 4){
+        game.PauseAuto = 0
         if(!game.QOLU[7]){
             if(game.RankLevel >= 2){
                 game.PointAuto = 1
@@ -63,16 +64,11 @@ function ResetAscension(){
         game.BU2 = false
         game.BU3 = false
         game.AutoAmount = 0
+        game.PauseAuto = 0
     }
     game.ifAscend = true
     //console.log(game.points, "after reset")
 };
 function GoAscension(){
-    game.PauseAuto = 0
-    clearInterval(Automated)
     ResetAscension()
-    Automated = setInterval (function(){
-        runautomation()
-    }, 50)
-    game.PauseAuto = 0
 };

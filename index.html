@@ -11,7 +11,7 @@
     <body>
         <section class="points grid1c2r">
             <div class="col1 row1">You have <span id="points">0</span> points.</div>
-            <button onclick="GainPoints()" class="col1 row2">Click for <span id="ppc">1</span> points</button>
+            <button onclick="GainPoints()" class="col1 row2" tabindex="-1">Click for <span id="ppc">1</span> points</button>
         </section>
 
         <nav class="MainNav">
@@ -98,7 +98,8 @@
                 <section class="powergain">
                     <div>You have <span id="poweramount">0</span> Prestige Powers</div> 
                     <div>They boost PPC by <span id="powereffect">1</span></div>
-                    <button onclick="gainPowers()" id="powergain">Click for <span id="powerclick">0</span> Prestige Powers</button>
+                    <button onclick="gainPowers()" id="powergain" tabindex="-1">Click for <span id="powerclick">0</span> Prestige Powers</button>
+                    <div>You gain Powers based on Prestige Points</div>
                 </section>
 
                 <section class="rebuyables">
@@ -186,7 +187,7 @@
         <div id="AscTab" class="hidden">
             <div>You have <span id="AscPoints">0</span> Ascension Points</div>
             <button onclick="GoAscension(); GoAscension();" class="Ascensionreset">You can reset for <span id="AscReward">0</span> Ascension Points</button>
-            <div>Note: You can only reset after reaching 4 boosters</div>
+            <div>Note: You can only reset after reaching 4 boosters, and gain is based on Booster effect</div>
 
             <nav class="SubNav">
                 <a onclick="SwitchTabs('AscRankTab')" class="btn ascendcolor">Ascension Ranks</a>
@@ -343,7 +344,7 @@
                 <div>You have <span id="VoidEnergyAmount">0</span> Void Energy, which boosts points by <span id="VEeff1">1</span> after all exponents and produces <span id="VEeff2">0</span> Void Power each click.</div>
                 <div>You have <span id="VoidPowersAmount">0</span> Void Powers, which boost various things.</div>
 
-                <button onclick="GainVoidPower()" class="voidcolor">Click to gain Void Power</button>
+                <button onclick="GainVoidPower()" class="voidcolor" tabindex="-1">Click to gain Void Power</button>
 
 
                 <div class="rebuyables">
@@ -361,6 +362,7 @@
                         <div class="upgradeheader">Rank extension</div>
                         <div>Unlock 1 extra Ascension rank reward</div>
                         <div>Costs: <span id="rankincrease">1000</span> Void Power</div>
+                        <div><span id="VB3level">0</span>/<span id="VB3max">2</span></div>
                     </div>
                 </div>
 
@@ -374,7 +376,31 @@
             </div>
 
             <div id="VoidBoosterTab">
-                WIP (Current endgame)
+                <div>You currently have <span id="VBamount">0</span> Void Boosters.</div>
+                <div>You will gain your next Void Booster at <span id="VBrequirement">100000</span> best points in The Void.</div>
+
+                <button onclick="deactivateVB()">Deactivate all Void Boosters</button>
+
+                <div>You can activate a maximum of <span id="MaxVBActivations">1</span> Void Boosters</div>
+                <div id="VBbox">
+                    <div id="VoidBooster1" class="inactiveVB">
+                        <div>Pre-Ascension Booster</div>
+                        <button onclick="activateVB('VoidBooster1', 0)">Activate this Void Booster</button>
+                        <div>When active, it boosts points by <span id="VB1E1">1</span>x, Prestige Points by <span id="VB1E2">1</span>x, Prestige Powers by <span id="VB1E3">1</span>x and increase Power I-III caps by <span id="VB1E4">0</span></div>
+                    </div>
+
+                    <div id="VoidBooster2" class="inactiveVB">
+                        <div>Ascension Booster</div>
+                        <button onclick="activateVB('VoidBooster2', 1)">Activate this Void Booster</button>
+                        <div>When active, it boosts Ascension Points by <span id="VB2E1">1</span>x, add <span id="VB2E2">0</span> to Rank Reward 4 exponent, add <span id="VB2E3">0</span> extra Ascension Rebuyable I levels and give <span id="VB2E4">0</span> extra AP</div>
+                    </div>
+
+                    <div id="VoidBooster3" class="inactiveVB">
+                        <div>Post-Ascension Booster</div>
+                        <button onclick="activateVB('VoidBooster3', 2)">Activate this Void Booster</button>
+                        <div>When active, it boosts Void Energy by <span id="VB3E1">1</span>x, Void Power by <span id="VB3E2">1</span>x, increase Rank Extension cap by <span id="VB3E3">0</span> and boost Void Rewards by <span id="VB3E4">1</span>x</div>
+                    </div>
+                </div>
             </div>
         </div>
 

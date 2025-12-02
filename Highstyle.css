@@ -91,6 +91,22 @@ section.points .row1 {
     );
     border-radius: inherit;
 }
+.ascendcolor:hover {
+    position: relative;
+    background-color: #ff5500;
+}
+.ascendcolor:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        transparent 60%,
+        rgb(255, 191, 100) 100%
+    );
+    border-radius: inherit;
+}
 
 
 .upgrades {

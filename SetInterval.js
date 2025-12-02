@@ -32,6 +32,21 @@ setInterval (function(){
     game.VoidEnergy[2] = game.VoidEnergy[1] + 1
     game.VoidBuyables[0][1] = 10 ** (1 + game.VoidBuyables[0][0])
     game.VoidBuyables[1][1] = 100 ** (1 + 0.75 * game.VoidBuyables[1][0])
+    game.VoidBoosterReq = 10 ** (5 * game.VoidBoosters)
+    game.VoidBooster1[0] = 10 ** game.VoidBoosters
+    game.VoidBooster1[1] = 5 ** game.VoidBoosters
+    game.VoidBooster1[2] = 2 ** game.VoidBoosters
+    game.VoidBooster1[3] = 10 * Math.floor(Math.log2(VoidBoosters + 1) / 2 + 0.5)
+    game.VoidBooster2[0] = 1.3 ** game.VoidBoosters
+    game.VoidBooster2[1] = Math.floor(Math.log2(VoidBoosters + 1) / 1.5)
+    game.VoidBooster2[2] = Math.floor(logbase(VoidBoosters + 2, 3) ** 1.4)
+    game.VoidBooster2[3] = Math.floor(Math.log2(VoidBoosters + 1) ** 2 / (1 + Math.log(VoidBoosters + 1)))
+    game.VoidBooster3[0] = 1.2 ** game.VoidBoosters
+    game.VoidBooster3[1] = 1.1 ** game.VoidBoosters
+    if(game.VoidBoosters > VB3req[game.VoidBooster3[2]]){
+        game.VoidBooster3 += 1
+    }
+    game.VoidBooster3[3] = game.VoidBoosters
 
     // Update Text Content
 
@@ -121,4 +136,19 @@ setInterval (function(){
     document.getElementById("VoidReward2").textContent = formatNumber(game.VoidEffect[1])
     document.getElementById("VoidReward3").textContent = formatNumber(game.VoidEffect[2])
     document.getElementById("VoidReward4").textContent = formatNumber(game.VoidEffect[3])
+    document.getElementById("VBamount").textContent = game.VoidBoosters
+    document.getElementById("VBrequrement").textContent = formatNumber(game.VoidBoosterReq)
+    document.getElementById("MaxVBActivation").textContent = game.MaxVBAmount
+    document.getElementById("VB1E1").textContent = formatNumber(game.VoidBooster1[0])
+    document.getElementById("VB1E2").textContent = formatNumber(game.VoidBooster1[1])
+    document.getElementById("VB1E3").textContent = formatNumber(game.VoidBooster1[2])
+    document.getElementById("VB1E4").textContent = formatNumber(game.VoidBooster1[3])
+    document.getElementById("VB2E1").textContent = formatNumber(game.VoidBooster2[0])
+    document.getElementById("VB2E2").textContent = formatNumber(game.VoidBooster2[1])
+    document.getElementById("VB2E3").textContent = formatNumber(game.VoidBooster2[2])
+    document.getElementById("VB2E4").textContent = formatNumber(game.VoidBooster2[3])
+    document.getElementById("VB3E1").textContent = formatNumber(game.VoidBooster3[0])
+    document.getElementById("VB3E2").textContent = formatNumber(game.VoidBooster3[1])
+    document.getElementById("VB3E3").textContent = formatNumber(game.VoidBooster3[2])
+    document.getElementById("VB3E4").textContent = formatNumber(game.VoidBooster3[3])
 }, 50)

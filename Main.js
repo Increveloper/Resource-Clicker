@@ -169,6 +169,24 @@ function ToggleVoid(){
 function GainVoidPower(){
     game.VoidPower += game.VoidEnergy[3]
 }
+function deactivateVB(){
+    document.getElementById("VoidBooster1").classList.remove("activeVB")
+    document.getElementById("VoidBooster1").classList.add("inactiveVB")
+    game.ActiveEffect[0] = false
+    document.getElementById("VoidBooster2").classList.remove("activeVB")
+    document.getElementById("VoidBooster2").classList.add("inactiveVB")
+    game.ActiveEffect[1] = false
+    document.getElementById("VoidBooster3").classList.remove("activeVB")
+    document.getElementById("VoidBooster3").classList.add("inactiveVB")
+    game.ActiveEffect[2] = false
+}
+function activateVB(id, num){
+    if(game.ActiveVBAmount < MaxVBAmount){
+        document.getElementById(id).classList.remove("inactiveVB")
+        document.getElementById(id).classList.add("activeVB")
+        game.ActiveEffect[num] = true
+    }
+}
 
 // Automation Tab Items
 
