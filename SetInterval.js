@@ -43,7 +43,7 @@ setInterval (function(){
     game.VoidBooster2[3] = Math.floor(Math.log2(game.VoidBoosters + 1) ** 2 / (1 + Math.log(game.VoidBoosters + 1)))
     game.VoidBooster3[0] = 1.2 ** game.VoidBoosters
     game.VoidBooster3[1] = 1.1 ** game.VoidBoosters
-    if(game.VoidBoosters > VB3req[game.VoidBooster3[2]]){
+    if(game.VoidBoosters > game.VB3req[game.VoidBooster3[2]]){
         game.VoidBooster3 += 1
     }
     game.VoidBooster3[3] = game.VoidBoosters
