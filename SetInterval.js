@@ -38,9 +38,9 @@ setInterval (function(){
     game.VoidBooster1[2] = 2 ** game.VoidBoosters
     game.VoidBooster1[3] = 10 * Math.floor(Math.log2(game.VoidBoosters + 1) / 2 + 0.5)
     game.VoidBooster2[0] = 1.3 ** game.VoidBoosters
-    game.VoidBooster2[1] = Math.floor(Math.log2(VoidBoosters + 1) / 1.5)
-    game.VoidBooster2[2] = Math.floor(logbase(VoidBoosters + 2, 3) ** 1.4)
-    game.VoidBooster2[3] = Math.floor(Math.log2(VoidBoosters + 1) ** 2 / (1 + Math.log(VoidBoosters + 1)))
+    game.VoidBooster2[1] = Math.floor(Math.log2(game.VoidBoosters + 1) / 1.5)
+    game.VoidBooster2[2] = Math.floor(logbase(game.VoidBoosters + 2, 3) ** 1.4)
+    game.VoidBooster2[3] = Math.floor(Math.log2(game.VoidBoosters + 1) ** 2 / (1 + Math.log(VoidBoosters + 1)))
     game.VoidBooster3[0] = 1.2 ** game.VoidBoosters
     game.VoidBooster3[1] = 1.1 ** game.VoidBoosters
     if(game.VoidBoosters > VB3req[game.VoidBooster3[2]]){
