@@ -3,7 +3,7 @@ function HardReset(){
         points: 0,
         ppc: 1,
         PointSoftcapStart: 10**50,
-        unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Unlock Void Boosters","Finish the game"],
+        unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Unlock Void Boosters", "Finish the game"],
         unlockCost: [10, 1000, 10 ** 8, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 60, 10 ** 300],
         unlockAmount: 0,
         prestigeGain: 0,
