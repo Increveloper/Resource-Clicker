@@ -27,7 +27,7 @@ setInterval (function(){
     game.autoeff = [game.PointAuto ** 2, game.Presauto, game.Powauto ** 2, game.Autoauto ** 3];
     game.rank4reward = game.RankLevel ** game.rank4exp
     game.AscB1[1] = Math.log10(game.AscAmount + 1) + 1
-    if(ActiveEffect[1]){
+    if(game.ActiveEffect[1]){
         game.AscB1[2] = game.AscB1[1] ** (game.AscB1[0] + game.VoidBooster2[2])
     }
     else{

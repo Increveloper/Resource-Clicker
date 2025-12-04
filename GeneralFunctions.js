@@ -475,7 +475,7 @@ setInterval(function(){
     calculatePPow();
     calculatePPowEffExp();
     calculatePBBASE();
-    calculatePB1MAX();
+    calculatePBMAX();
     calculateBoosterBase();
     calculateupgs();
     calculateMiles();
