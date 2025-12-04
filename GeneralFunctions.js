@@ -435,5 +435,6 @@ setInterval(function(){
     }
     calculateVoidPower();
     calculateVoidEffects();
+    calculateactivevoidboosters();
     game.boostereffect = game.boosterbase ** game.boosters;
 },50);
