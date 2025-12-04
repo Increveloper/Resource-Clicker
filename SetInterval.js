@@ -39,7 +39,7 @@ setInterval (function(){
     game.VoidBuyables[0][1] = 10 ** (1 + game.VoidBuyables[0][0])
     game.VoidBuyables[1][1] = 100 ** (1 + 0.75 * game.VoidBuyables[1][0])
     game.VoidBoosterReq = 10 ** (5 * game.VoidBoosters)
-    if(game.BestPoints >= game.VoidBoosters){
+    if(game.BestPoints >= game.VoidBoosterReq){
         game.VoidBoosters += 1
     }
     game.VoidBooster1[0] = 10 ** game.VoidBoosters
@@ -156,7 +156,6 @@ setInterval (function(){
     document.getElementById("VB2E2").textContent = formatNumber(game.VoidBooster2[1])
     document.getElementById("VB2E3").textContent = formatNumber(game.VoidBooster2[2])
     document.getElementById("VB2E4").textContent = formatNumber(game.VoidBooster2[3])
-    console.log(game.VoidBooster3[0])
     document.getElementById("VB3E1").textContent = formatNumberEdit(game.VoidBooster3[0])
     document.getElementById("VB3E2").textContent = formatNumber(game.VoidBooster3[1])
     document.getElementById("VB3E3").textContent = formatNumber(game.VoidBooster3[2])
