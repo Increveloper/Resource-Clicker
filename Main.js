@@ -188,7 +188,7 @@ function activateVB(id, num){
     }
 }
 function CheckActiveVB(){
-    if(game.ActiveVBAmount === MaxVBAmount){
+    if(game.ActiveVBAmount === game.MaxVBAmount){
         document.getElementById("VBButton1").textContent = "Max Void Boosters active!"
         document.getElementById("VBButton2").textContent = "Max Void Boosters active!"
         document.getElementById("VBButton3").textContent = "Max Void Boosters active!"
