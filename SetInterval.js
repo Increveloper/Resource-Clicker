@@ -53,9 +53,10 @@ setInterval (function(){
     game.VoidBooster3[0] = 1.2 ** game.VoidBoosters
     game.VoidBooster3[1] = 1.1 ** game.VoidBoosters
     if(game.VoidBoosters > game.VB3req[game.VoidBooster3[2]]){
-        game.VoidBooster3 += 1
+        game.VoidBooster3[2] += 1
     }
     game.VoidBooster3[3] = game.VoidBoosters
+    console.log(game.VoidBooster3[0], game.VoidBooster3[1], game.VoidBooster3[2], game.VoidBooster3[3])
 
     // Update Text Content
 
