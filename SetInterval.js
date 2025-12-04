@@ -39,6 +39,9 @@ setInterval (function(){
     game.VoidBuyables[0][1] = 10 ** (1 + game.VoidBuyables[0][0])
     game.VoidBuyables[1][1] = 100 ** (1 + 0.75 * game.VoidBuyables[1][0])
     game.VoidBoosterReq = 10 ** (5 * game.VoidBoosters)
+    if(game.BestPoints >= game.VoidBoosters){
+        game.VoidBoosters += 1
+    }
     game.VoidBooster1[0] = 10 ** game.VoidBoosters
     game.VoidBooster1[1] = 5 ** game.VoidBoosters
     game.VoidBooster1[2] = 2 ** game.VoidBoosters
