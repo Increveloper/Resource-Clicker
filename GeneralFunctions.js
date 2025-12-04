@@ -10,7 +10,7 @@ function formatNumber(num) {
     // Done by ChatGPT
 }
 function formatNumberEdit(num) {
-    if (num < 1e6) return num.toFixed(2); // show normal up to 1M
+    if (num < 1e6) return num; // show normal up to 1M
     console.log(num)
 
     const exponent = Math.floor(Math.log10(num));
