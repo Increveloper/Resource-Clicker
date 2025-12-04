@@ -426,16 +426,16 @@ function calculateVoidPower(){
 }
 function calculateRankExtensionCap(){
     if(game.ActiveEffect && game.VoidBooster3[2] >= 3){
-        game.VoidBuyables[3][2] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 15, 10 ** 300]
+        game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 15, 10 ** 300]
     }
     else if(game.ActiveEffect && game.VoidBooster3[2] >= 2){
-        game.VoidBuyables[3][2] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 300]
+        game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 300]
     }
     else if(game.ActiveEffect && game.VoidBooster3[2] >= 1){
-        game.VoidBuyables[3][2] =  [1000, 100000, 10 ** 10, 10 ** 300]
+        game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 300]
     }
     else{
-        game.VoidBuyables[3][2] = [1000, 100000, 10 ** 300]
+        game.VoidBuyables[2][1] = [1000, 100000, 10 ** 300]
     }
 }
 function calculateVoidEffects(){
