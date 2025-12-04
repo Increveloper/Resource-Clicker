@@ -157,7 +157,7 @@ setInterval (function(){
     document.getElementById("VB2E3").textContent = formatNumber(game.VoidBooster2[2])
     document.getElementById("VB2E4").textContent = formatNumber(game.VoidBooster2[3])
     document.getElementById("VB3E1").textContent = formatNumberEdit(game.VoidBooster3[0])
-    document.getElementById("VB3E2").textContent = formatNumber(game.VoidBooster3[1])
-    document.getElementById("VB3E3").textContent = formatNumber(game.VoidBooster3[2])
-    document.getElementById("VB3E4").textContent = formatNumber(game.VoidBooster3[3])
+    document.getElementById("VB3E2").textContent = formatNumberEdit(game.VoidBooster3[1])
+    document.getElementById("VB3E3").textContent = game.VoidBooster3[2]
+    document.getElementById("VB3E4").textContent = formatNumberEdit(game.VoidBooster3[3])
 }, 50)

@@ -11,12 +11,9 @@ function formatNumber(num) {
 }
 function formatNumberEdit(num) {
     if (num < 1e6) return num; // show normal up to 1M
-    console.log(num)
 
     const exponent = Math.floor(Math.log10(num));
-    console.log(num)
     const mantissa = num / Math.pow(10, exponent);
-    console.log(num)
     // remove unnecessary decimals like 1.00 -> 1
     const cleanMantissa = parseFloat(mantissa.toFixed(2)).toString();
 
