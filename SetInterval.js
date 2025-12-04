@@ -10,6 +10,7 @@ setInterval (function(){
     CheckQOLUpgs();
     UpdateAutoVisibility();
     updateRankRewards();
+    CheckActiveVB();
 
     // Calculate necessary variables
     game.powerEffect = 1 + game.powerAmount ** game.powerEffectExp;
