@@ -336,8 +336,8 @@
             <div>If you enter the void, automation will be disabled and your points will be fourth rooted and divided by 100000, but you will gain Void Energy based on your current points in The Void</div>
 
             <nav id="VBoosters" class="hidden">
-                <a onclick="SwitchTabs('MainVoidTab')">Void Powers</a>
-                <a onclick="SwitchTabs('VoidBoosterTab')">Void Boosters</a>
+                <a onclick="SwitchTabs('MainVoidTab')" class="btn voidcolor">Void Powers</a>
+                <a onclick="SwitchTabs('VoidBoosterTab')" class="btn voidcolor">Void Boosters</a>
             </nav>
 
             <div id="MainVoidTab">
@@ -379,7 +379,7 @@
                 <div>You currently have <span id="VBamount">0</span> Void Boosters.</div>
                 <div>You will gain your next Void Booster at <span id="VBrequirement">100000</span> best points in The Void.</div>
 
-                <button onclick="deactivateVB()">Deactivate all Void Boosters</button>
+                <button onclick="deactivateVB()" class="voidcolor">Deactivate all Void Boosters</button>
 
                 <div>You can activate a maximum of <span id="MaxVBActivations">1</span> Void Boosters</div>
                 <div id="VBbox">

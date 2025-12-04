@@ -181,7 +181,7 @@ function deactivateVB(){
     game.ActiveEffect[2] = false
 }
 function activateVB(id, num){
-    if(game.ActiveVBAmount < MaxVBAmount){
+    if(game.ActiveVBAmount < game.MaxVBAmount){
         document.getElementById(id).classList.remove("inactiveVB")
         document.getElementById(id).classList.add("activeVB")
         game.ActiveEffect[num] = true

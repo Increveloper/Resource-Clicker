@@ -258,12 +258,19 @@ nav {
     background: #660066;
     box-shadow: 0 0 10px 3px #330055, 0 0 10px 6px #441144;
 }
+#VBbox {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
 #VoidBoosterTab .inactiveVB{
     background-color: #550055;
     min-height: 200px;
     max-height: 200px;
     min-width: 200px;
     max-width: 200px;
+    border: 5px solid black;
+    color: white;
 }
 #VoidBoosterTab .activeVB{
     background: 
@@ -282,6 +289,8 @@ nav {
     max-height: 200px;
     min-width: 200px;
     max-width: 200px;
+    border: 5px solid black;
+    color: white;
 }
 
 /* Automation Tab Items */
