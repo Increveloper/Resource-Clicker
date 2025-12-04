@@ -335,7 +335,7 @@
             <div id="VES1">Past 1.00e6 pending Void Energy, it is rised to the power of 0.7!</div>
             <div>If you enter the void, automation will be disabled and your points will be fourth rooted and divided by 100000, but you will gain Void Energy based on your current points in The Void</div>
 
-            <nav id="VBoosters" class="hidden">
+            <nav id="VBoosters" class="hidden SubNav">
                 <a onclick="SwitchTabs('MainVoidTab')" class="btn voidcolor">Void Powers</a>
                 <a onclick="SwitchTabs('VoidBoosterTab')" class="btn voidcolor">Void Boosters</a>
             </nav>
@@ -385,19 +385,19 @@
                 <div id="VBbox">
                     <div id="VoidBooster1" class="inactiveVB">
                         <div>Pre-Ascension Booster</div>
-                        <button onclick="activateVB('VoidBooster1', 0)">Activate this Void Booster</button>
+                        <button onclick="activateVB('VoidBooster1', 0)" id="VBButton1">Activate this Void Booster</button>
                         <div>When active, it boosts points by <span id="VB1E1">1</span>x, Prestige Points by <span id="VB1E2">1</span>x, Prestige Powers by <span id="VB1E3">1</span>x and increase Power I-III caps by <span id="VB1E4">0</span></div>
                     </div>
 
                     <div id="VoidBooster2" class="inactiveVB">
                         <div>Ascension Booster</div>
-                        <button onclick="activateVB('VoidBooster2', 1)">Activate this Void Booster</button>
+                        <button onclick="activateVB('VoidBooster2', 1)" id="VBButton2">Activate this Void Booster</button>
                         <div>When active, it boosts Ascension Points by <span id="VB2E1">1</span>x, add <span id="VB2E2">0</span> to Rank Reward 4 exponent, add <span id="VB2E3">0</span> extra Ascension Rebuyable I levels and give <span id="VB2E4">0</span> extra AP</div>
                     </div>
 
                     <div id="VoidBooster3" class="inactiveVB">
                         <div>Post-Ascension Booster</div>
-                        <button onclick="activateVB('VoidBooster3', 2)">Activate this Void Booster</button>
+                        <button onclick="activateVB('VoidBooster3', 2)" id="VBButton3">Activate this Void Booster</button>
                         <div>When active, it boosts Void Energy by <span id="VB3E1">1</span>x, Void Power by <span id="VB3E2">1</span>x, increase Rank Extension cap by <span id="VB3E3">0</span> and boost Void Rewards by <span id="VB3E4">1</span>x</div>
                     </div>
                 </div>

@@ -187,6 +187,23 @@ function activateVB(id, num){
         game.ActiveEffect[num] = true
     }
 }
+function CheckActiveVB(){
+    if(game.ActiveVBAmount === MaxVBAmount){
+        document.getElementById("VBButton1").textContent = "Max Void Boosters active!"
+        document.getElementById("VBButton2").textContent = "Max Void Boosters active!"
+        document.getElementById("VBButton3").textContent = "Max Void Boosters active!"
+    }
+
+    if(game.ActiveEffect[0]){
+        document.getElementById("VBButton1").textContent = "Void Booster activated."
+    }
+    if(game.ActiveEffect[1]){
+        document.getElementById("VBButton2").textContent = "Void Booster activated."
+    }
+    if(game.ActiveEffect[2]){
+        document.getElementById("VBButton3").textContent = "Void Booster activated."
+    }
+}
 
 // Automation Tab Items
 

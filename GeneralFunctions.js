@@ -95,6 +95,9 @@ function calculatePPC(){
     if(game.APU[0][2]){
         game.ppc *= 1.5 ** game.upgamnt
     }
+    if(game.ActiveEffect[0]){
+        game.ppc *= game.VoidBooster1[0]
+    }
 
     game.ppc *= game.powB1base ** game.powB1
     game.ppc *= game.AscB1[2]
@@ -144,6 +147,9 @@ function calculatePP(){
     if(game.APU[1][2]){
         game.prestigeGain *= 1.2 ** game.APamount[0]
     }
+    if(game.ActiveEffect[0]){
+        game.prestigeGain *= game.VoidBooster1[1]
+    }
     game.prestigeGain *= game.powB2base ** game.powB2
     game.prestigeGain *= game.VoidEffect[1]
 }
@@ -168,6 +174,9 @@ function calculatePPow(){
     if(game.APU[1][2]){
         game.powerGain *= 1.2 ** game.APamount[0]
     }
+    if(game.ActiveEffect[0]){
+        game.powerGain *= game.VoidBooster1[2] 
+    }
     game.powerGain *= game.powB3base ** game.powB3
     game.powerGain *= game.VoidEffect[2]
 }
@@ -184,11 +193,18 @@ function calculatePBBASE(){
         game.powB3base += 1
     }
 }
-function calculatePB1MAX(){
+function calculatePBMAX(){
     game.powB1max = 10
+    game.powB2max = 10
+    game.powB3max = 10
 
     if(game.PU4){
         game.powB1max += 10
+    }
+    if(game.ActiveEffect[0]){
+        game.powB1max += game.VoidBooster1[3]
+        game.powB2max += game.VoidBooster1[3]
+        game.powB3max += game.VoidBooster1[3]
     }
 }
 function calculatePPowEffExp(){
@@ -277,6 +293,9 @@ function calculateupgs(){
     }
 }
 function calculateMiles(){
+    game.miles = 0
+    game.bstrmiles = 0
+
     if(game.BM1){
         game.miles += 1
         game.bstrmiles += 1
@@ -284,12 +303,9 @@ function calculateMiles(){
 }
 function calculateAsc(){
     game.AscGain = game.boostereffect / Math.max(1, game.boosters) ** 2
-    //console.log("Base AP gain:", game.AscGain)
     if(game.RankLevel >= 1){
         game.AscGain *= 2
-        //console.log("Applied rank 1 boost!")
     }
-    //console.log("New AP gain:", game.AscGain)
     if(game.RankLevel >= 4){
         game.AscGain *= game.rank4reward
     }
@@ -298,6 +314,9 @@ function calculateAsc(){
     }
     if(game.APU[2][2]){
         game.AscGain *= 1.1 ** game.APamount[0]
+    }
+    if(game.VoidEffect[1]){
+        game.AscGain *= game.VoidBooster2[0]
     }
 
     game.AscGain *= game.VoidEffect[3]
@@ -310,6 +329,9 @@ function calculateRankRewards(){
     }
     if(game.RankLevel >= 8){
         game.rank4exp += 1
+    }
+    if(game.ActiveEffect[1]){
+        game.rank4exp += game.VoidBooster2[1]
     }
 
     game.rank4reward = game.RankLevel
@@ -342,6 +364,10 @@ function calculateAP(){
     if(game.RankLevel >= 6){
         game.APamount[0] += game.RankLevel - 4
     }
+    if(game.ActiveEffect[1]){
+        game.APamount[0] += game.VoidBooster2[3]
+    }
+
     game.APamount[1] = game.APamount[0]
     if(game.APU[0][0]){
         game.APamount[1] -= 1
@@ -377,6 +403,9 @@ function calculateVoidEnergy(){
     if(game.AscU2){
         game.VoidEnergy[0] *= 100
     }
+    if(game.ActiveEffect[2]){
+        game.VoidEnergy[0] *= game.VoidBooster3[0]
+    }
 
     game.VoidEnergy[0] *= 2 ** game.VoidBuyables[0][0]
 
@@ -389,7 +418,25 @@ function calculateVoidEnergy(){
 function calculateVoidPower(){
     game.VoidEnergy[3] = game.VoidEnergy[1] ** 0.8
 
+    if(game.ActiveEffect[2]){
+        game.VoidEnergy[3] *= game.VoidBooster3[1]
+    }
+
     game.VoidEnergy[3] *= 2 ** game.VoidBuyables[1][0]
+}
+function calculateRankExtensionCap(){
+    if(game.ActiveEffect && game.VoidBooster3[2] >= 3){
+        game.VoidBuyables[3][2] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 15, 10 ** 300]
+    }
+    else if(game.ActiveEffect && game.VoidBooster3[2] >= 2){
+        game.VoidBuyables[3][2] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 300]
+    }
+    else if(game.ActiveEffect && game.VoidBooster3[2] >= 1){
+        game.VoidBuyables[3][2] =  [1000, 100000, 10 ** 10, 10 ** 300]
+    }
+    else{
+        game.VoidBuyables[3][2] = [1000, 100000, 10 ** 300]
+    }
 }
 function calculateVoidEffects(){
     game.VoidEffect[0] = 1 + game.VoidPower ** 0.2
@@ -400,6 +447,12 @@ function calculateVoidEffects(){
     if(game.AscU3){
         game.VoidEffect[3] **= 2
         game.VoidEffect[3] /= 4
+    }
+    if(game.ActiveEffect[2]){
+        game.VoidEffect[0] *= game.VoidBooster3[3]
+        game.VoidEffect[1] *= game.VoidBooster3[3]
+        game.VoidEffect[2] *= game.VoidBooster3[3]
+        game.VoidEffect[3] *= game.VoidBooster3[3]
     }
 }
 function calculateactivevoidboosters(){
@@ -434,6 +487,7 @@ setInterval(function(){
         calculateVoidEnergy();
     }
     calculateVoidPower();
+    calculateRankExtensionCap();
     calculateVoidEffects();
     calculateactivevoidboosters();
     game.boostereffect = game.boosterbase ** game.boosters;

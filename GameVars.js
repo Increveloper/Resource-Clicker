@@ -103,6 +103,6 @@ game = {
     VoidBooster1: [1, 1, 1, 0],
     VoidBooster2: [1, 0, 0, 0],
     VoidBooster3: [1, 1, 0, 1],
-    VB3req: [1, 3, 1000],
+    VB3req: [1, 3, 6, 1000],
 };
 // REMEMBER: LIST ITEM 1 IS REFERRED TO AS [0]!!!!!

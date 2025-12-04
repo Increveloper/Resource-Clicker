@@ -27,7 +27,12 @@ setInterval (function(){
     game.autoeff = [game.PointAuto ** 2, game.Presauto, game.Powauto ** 2, game.Autoauto ** 3];
     game.rank4reward = game.RankLevel ** game.rank4exp
     game.AscB1[1] = Math.log10(game.AscAmount + 1) + 1
-    game.AscB1[2] = game.AscB1[1] ** game.AscB1[0]
+    if(ActiveEffect[1]){
+        game.AscB1[2] = game.AscB1[1] ** (game.AscB1[0] + game.VoidBooster2[2])
+    }
+    else{
+        game.AscB1[2] = game.AscB1[1] ** game.AscB1[0]
+    }
     game.AscB1[3] = 5 ** (game.AscB1[0] ** 2)
     game.VoidEnergy[2] = game.VoidEnergy[1] + 1
     game.VoidBuyables[0][1] = 10 ** (1 + game.VoidBuyables[0][0])
@@ -36,7 +41,7 @@ setInterval (function(){
     game.VoidBooster1[0] = 10 ** game.VoidBoosters
     game.VoidBooster1[1] = 5 ** game.VoidBoosters
     game.VoidBooster1[2] = 2 ** game.VoidBoosters
-    game.VoidBooster1[3] = 10 * Math.floor(Math.log2(game.VoidBoosters + 1) / 2 + 0.5)
+    game.VoidBooster1[3] = Math.floor(10 * (Math.log2(game.VoidBoosters + 1) / 2 + 0.5))
     game.VoidBooster2[0] = 1.3 ** game.VoidBoosters
     game.VoidBooster2[1] = Math.floor(Math.log2(game.VoidBoosters + 1) / 1.5)
     game.VoidBooster2[2] = Math.floor(logbase(game.VoidBoosters + 2, 3) ** 1.4)
