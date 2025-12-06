@@ -488,13 +488,13 @@ function calculateVoidPower(){
     game.VoidEnergy[3] *= 2 ** game.VoidBuyables[1][0]
 }
 function calculateRankExtensionCap(){
-    if(game.ActiveEffect && game.VoidBooster3[2] >= 3){
+    if(game.ActiveEffect[1] && game.VoidBooster3[2] >= 3){
         game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 15, 10 ** 300]
     }
-    else if(game.ActiveEffect && game.VoidBooster3[2] >= 2){
+    else if(game.ActiveEffect[1] && game.VoidBooster3[2] >= 2){
         game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 300]
     }
-    else if(game.ActiveEffect && game.VoidBooster3[2] >= 1){
+    else if(game.ActiveEffect[1] && game.VoidBooster3[2] >= 1){
         game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 300]
     }
     else{
