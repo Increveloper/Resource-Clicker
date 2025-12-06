@@ -2,6 +2,7 @@ game = {
     points: 0,
     ppc: 1,
     PointSoftcapStart: 10**50,
+    PointSoftcapEffect: 0.4,
     unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Unlock Void Boosters", "Finish the game"],
     unlockCost: [10, 1000, 10 ** 8, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 60, 10 ** 300],
     unlockAmount: 0,
@@ -73,7 +74,7 @@ game = {
     QOLUBought: 0,
     AscAmount: 0,
     AscGain: 0,
-    RankRequirement: [1, 2, 5, 25, 10 ** 300],
+    RankRequirement: [1, 2, 5, 15, 10 ** 300],
     RankEffect: ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-"],
     RankLevel: 0,
     ifAscend: false,
@@ -85,8 +86,8 @@ game = {
     ascupgamnt: 0,
     AscB1: [0, 1, 1, 1], // [amount, effect base, effect, cost]
     APamount: [0, 0], //[total, current]
-    APbuyables: [[0, 10 ** 28], [0, 10 ** 23], [0, 10 ** 20], [0, 100]], //[Point, Prestige, Powers, Ascension], [[amount, cost]]
-    APU: [[false, false, false], [false, false, false], [false, false, false]], //[[APU11, APU12, APU13], [APU21, APU22, APU23], [APU31, APU32, APU33]]
+    APbuyables: [[0, 10 ** 28], [0, 10 ** 23], [0, 10 ** 20], [0, 100], [0, 10 ** 12]], //[Point, Prestige, Powers, Ascension, Void], [[amount, cost]]
+    APU: [[false, false, false, false], [false, false, false, false], [false, false, false, false], [false, false, false, false]], //[[APU11, APU12, APU13, APU14], [APU21, APU22, APU23, APU24], [APU31, APU32, APU33, APU34], [APU41, APU42, APU43, APU44]]
     InVoid: false,
     BestPoints: 0,
     VoidEnergy: [0, 0, 1, 0], // [Pending, current, effect 1, effect 2]

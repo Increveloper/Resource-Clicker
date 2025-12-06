@@ -12,6 +12,7 @@
         <section class="points grid1c2r">
             <div class="col1 row1">You have <span id="points">0</span> points.</div>
             <button onclick="GainPoints()" class="col1 row2" tabindex="-1">Click for <span id="ppc">1</span> points</button>
+            <div id="PS1">Beyond <span id="PS1start">1.00e50</span> Points, Point gain is raised by ^<span id="PS1effect">0.4</span></div>
         </section>
 
         <nav class="MainNav">
@@ -215,6 +216,9 @@
                 <div id="RR6" class="hidden AscRankRewardBox">Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively</div>
                 <div id="RR7" class="hidden AscRankRewardBox">Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades</div>
                 <div id="RR8" class="hidden AscRankRewardBox">Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1</div>
+                <div id="RR9" class="hidden AscRankRewardBox">Gain 100x more Void Power, unlock a new row and column of AP upgrades</div>
+                <div id="RR10" class="hidden AscRankRewardBox">Gain 100x more points, points softcap exponent is weakened (^0.4 -> ^0.45)</div>
+                <div id="RR11" class="hidden AscRankRewardBox">Allow for 1 more Void Booster selection</div>
             </div>
 
             <div id="AscUpgTab" class="hidden">
@@ -222,7 +226,7 @@
                     <div onclick="BuyAscU1()" id="AscU1" class="unbought box">
                         <div class="upgradeheader">Ascension I</div>
                         <div>Unlock the first Ascension buyable</div>
-                        <div>Cost: 100 Ascension Points</div>
+                        <div>Cost: 50 Ascension Points</div>
                     </div>
                     <div onclick="BuyAscU2()" id="AscU2" class="unbought box hidden">
                         <div class="upgradeheader">Ascension II</div>
@@ -269,6 +273,10 @@
                         <div>Buy 1 Allocation Point with Ascension Points</div>
                         <div>Cost: <span id="AscensionAllocationCost">100</span> Ascension Points</div>
                     </div>
+                    <div onclick="BuyVoidAllocation()" class="rebuyable hidden">
+                        <div>Buy 1 Allocation Point with Void Power</div>
+                        <div>Cost: <span id="VoidAllocationCost">1.00e10</span> Void Power</div>
+                    </div>
                 </section>
 
                 <button onclick="RespecAllocations()">Respec AP</button>
@@ -289,6 +297,11 @@
                         <div>Boost points by 1.5 per upgrade bought</div>
                         <div>Cost: 2 AP</div>
                     </div>
+                    <div onclick="BuyAPU14()" id="APU14" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 14</div>
+                        <div>If the Pre-Ascension booster is active, points are boosted by an extra 1.5 per Void Booster</div>
+                        <div>Cost: 10 AP</div>
+                    </div>
                 </section>
 
                 <section class="upgrades container">
@@ -306,6 +319,11 @@
                         <div class="upgradeheader">Allocation 23</div>
                         <div>Prestige Points and Power are multiplied by 1.2 for each AP bought</div>
                         <div>Cost: 5 AP</div>
+                    </div>
+                    <div onclick="BuyAPU24()" id="APU24" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 24</div>
+                        <div>If the Pre-Ascension Booster is active, boost Prestige and Powers by another 1.5 per Void Booster</div>
+                        <div>Cost: 10 AP</div>
                     </div>
                 </section>
                 
@@ -325,6 +343,34 @@
                         <div>Boost Ascension Points by 1.1 per AP bought</div>
                         <div>Cost: 14 AP</div>
                     </div>
+                    <div onclick="BuyAPU34()" id="APU34" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 34</div>
+                        <div>If the Ascension Booster is active, boost Ascension Points by another 1.5 per Void Booster</div>
+                        <div>Cost: 20 AP</div>
+                    </div>
+                </section>
+
+                <section class="upgrades container">
+                    <div onclick="BuyAPU41()" id="APU41" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 41</div>
+                        <div>Increase the bases of the first two Void buyables by 1</div>
+                        <div>Cost: 10 AP</div>
+                    </div>
+                    <div onclick="BuyAPU42()" id="APU42" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 42</div>
+                        <div>Boost Void Power and Void Energy by 10</div>
+                        <div>Cost: 10 AP</div>
+                    </div>
+                    <div onclick="BuyAPU43()" id="APU43" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 43</div>
+                        <div>Boost Void Power and Void Energy by 1.1 per AP bought</div>
+                        <div>Cost: 20 AP</div>
+                    </div>
+                    <div onclick="BuyAPU44()" id="APU44" class="unbought box hidden">
+                        <div class="upgradeheader">Allocation 44</div>
+                        <div>If the Post-Ascension Booster is active, boost Void Energy and Void Power by another 1.1 per Void Booster</div>
+                        <div>Cost: 30 AP</div>
+                    </div>
                 </section>
             </div>
         </div>
@@ -333,6 +379,7 @@
             <button onclick="ToggleVoid()" class="EnterVoid"><span id="VoidToggle">Enter</span> The Void</button>
             <div id="VoidEnergy">If you exit now, you can gain <span id="VoidEnergyGain">0</span> Void Energy</div>
             <div id="VES1">Past 1.00e6 pending Void Energy, it is rised to the power of 0.7!</div>
+            <div id="VES2">Past 1.00e10 pending Void Energy, it is raised to the power of 0.6!</div>
             <div>If you enter the void, automation will be disabled and your points will be fourth rooted and divided by 100000, but you will gain Void Energy based on your current points in The Void</div>
 
             <nav id="VBoosters" class="hidden SubNav">

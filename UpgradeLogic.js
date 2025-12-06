@@ -100,8 +100,8 @@ function BuyBU3(){
 // Ascension Upgrades
 
 function BuyAscU1(){
-    if(game.AscAmount >= 100 && !game.AscU1){
-        game.AscAmount -= 100
+    if(game.AscAmount >= 50 && !game.AscU1){
+        game.AscAmount -= 50
         game.AscU1 = true
     }
 }
@@ -158,6 +158,13 @@ function BuyAscensionAllocation(){
         game.APamount[1] += 1
     }
 }
+function BuyVoidAllocation(){
+    if(game.VoidPower >= game.APbuyables[4][1]){
+        game.APbuyables[4][0] += 1
+        game.APbuyables[4][1] *= 100
+        game.APamount[1] += 1
+    }
+}
 
 function BuyAPU11(){
     if(game.APamount[1] >= 1){
@@ -175,6 +182,12 @@ function BuyAPU13(){
     if(game.APamount[1] >= 2){
         game.APamount[1] -= 2
         game.APU[0][2] = true
+    }
+}
+function BuyAPU14(){
+    if(game.APamount[1] >= 10){
+        game.APamount[1] -= 10
+        game.APU[0][3] = true
     }
 }
 function BuyAPU21(){
@@ -195,6 +208,12 @@ function BuyAPU23(){
         game.APU[1][2] = true
     }
 }
+function BuyAPU24(){
+    if(game.APamount[1] >= 10){
+        game.APamount[1] -= 10
+        game.APU[1][3] = true
+    }
+}
 function BuyAPU31(){
     if(game.APamount[1] >= 2){
         game.APamount[1] -= 2
@@ -211,6 +230,36 @@ function BuyAPU33(){
     if(game.APamount[1] >= 14){
         game.APamount[1] -= 14
         game.APU[2][2] = true
+    }
+}
+function BuyAPU34(){
+    if(game.APamount[1] >= 20){
+        game.APamount[1] -= 20
+        game.APU[2][3] = true
+    }
+}
+function BuyAPU41(){
+    if(game.APamount[1] >= 10){
+        game.APamount[1] -= 10
+        game.APU[3][0] = true
+    }
+}
+function BuyAPU42(){
+    if(game.APamount[1] >= 10){
+        game.APamount[1] -= 10
+        game.APU[3][1] = true
+    }
+}
+function BuyAPU43(){
+    if(game.APamount[1] >= 20){
+        game.APamount[1] -= 20
+        game.APU[3][2] = true
+    }
+}
+function BuyAPU44(){
+    if(game.APamount[1] >= 40){
+        game.APamount[1] -= 40
+        game.APU[3][3] = true
     }
 }
 

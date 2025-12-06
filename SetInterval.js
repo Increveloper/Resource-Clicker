@@ -122,6 +122,7 @@ setInterval (function(){
         document.getElementById("VoidToggle").textContent = "Enter"
         document.getElementById("VoidEnergy").classList.add("hidden")
         document.getElementById("VES1").classList.add("hidden")
+        document.getElementById("VES2").classList.add("hidden")
     }
     else if(game.InVoid){
         document.getElementById("VoidToggle").textContent = "Exit"
@@ -133,6 +134,12 @@ setInterval (function(){
         else{
             document.getElementById("VES1").classList.add("hidden")
         }
+        if(game.VoidEnergy[0] >= 10 ** 10){
+            document.getElementById("VES2").classList.remove("hidden")
+        }
+        else{
+            document.getElementById("VES2").classList.add("hidden")
+        }
     }
     document.getElementById("VoidEnergyAmount").textContent = formatNumber(game.VoidEnergy[1])
     document.getElementById("VEeff1").textContent = formatNumber(game.VoidEnergy[2])
@@ -141,6 +148,8 @@ setInterval (function(){
     document.getElementById("energymult").textContent = formatNumber(game.VoidBuyables[0][1])
     document.getElementById("powermult").textContent = formatNumber(game.VoidBuyables[1][1])
     document.getElementById("rankincrease").textContent = formatNumber(game.VoidBuyables[2][1][game.VoidBuyables[2][0]])
+    document.getElementById("VB3max").textContent = game.VB3max
+    document.getElementById("VB3level").textContent = game.VoidBuyables[2][0]
     document.getElementById("VoidReward1").textContent = formatNumber(game.VoidEffect[0])
     document.getElementById("VoidReward2").textContent = formatNumber(game.VoidEffect[1])
     document.getElementById("VoidReward3").textContent = formatNumber(game.VoidEffect[2])
