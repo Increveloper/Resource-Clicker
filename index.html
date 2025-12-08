@@ -273,7 +273,7 @@
                         <div>Buy 1 Allocation Point with Ascension Points</div>
                         <div>Cost: <span id="AscensionAllocationCost">100</span> Ascension Points</div>
                     </div>
-                    <div onclick="BuyVoidAllocation()" class="rebuyable hidden">
+                    <div onclick="BuyVoidAllocation()" id="VoidAllocationRebuyable" class="rebuyable hidden">
                         <div>Buy 1 Allocation Point with Void Power</div>
                         <div>Cost: <span id="VoidAllocationCost">1.00e10</span> Void Power</div>
                     </div>
@@ -363,7 +363,7 @@
                     </div>
                     <div onclick="BuyAPU43()" id="APU43" class="unbought box hidden">
                         <div class="upgradeheader">Allocation 43</div>
-                        <div>Boost Void Power and Void Energy by 1.1 per AP bought</div>
+                        <div>Boost Void Power and Void Energy by 1.05 per AP bought</div>
                         <div>Cost: 20 AP</div>
                     </div>
                     <div onclick="BuyAPU44()" id="APU44" class="unbought box hidden">
@@ -397,12 +397,12 @@
                 <div class="rebuyables">
                     <div onclick="BuyVB1()" class="rebuyable">
                         <div class="upgradeheader">Energy multiplier</div>
-                        <div>Boost Void Energy by 2</div>
+                        <div>Boost Void Energy by <span id="VB1base">2</span></div>
                         <div>Costs: <span id="energymult">10</span> Void Power</div>
                     </div>
                     <div onclick="BuyVB2()" class="rebuyable">
                         <div class="upgradeheader">Power multiplier</div>
-                        <div>Boost Void Power by 2</div>
+                        <div>Boost Void Power by <span id="VB2base">2</span></div>
                         <div>Costs: <span id="powermult">100</span> Void Power</div>
                     </div>
                     <div onclick="BuyVB3()" class="rebuyable">

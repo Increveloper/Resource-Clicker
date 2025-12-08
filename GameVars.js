@@ -92,7 +92,7 @@ game = {
     BestPoints: 0,
     VoidEnergy: [0, 0, 1, 0], // [Pending, current, effect 1, effect 2]
     VoidPower: 0,
-    VoidBuyables: [[0, 10], [0, 100], [0, [1000, 100000, 10 ** 300]]], // [B1, B2, B3] [[amount, cost]] [[[cost 1, cost 2]]]
+    VoidBuyables: [[0, 10, 2], [0, 100, 2], [0, [1000, 100000, 10 ** 300]]], // [B1, B2, B3] [[amount, cost, base]] [[[cost 1, cost 2]]]
     VB3cost: [1000, 100000, 10 ** 300],
     VB3max: 2,
     VoidEffect: [1, 1, 1, 1], //Effects 1, Effect 2, Effect 3, Effect 4

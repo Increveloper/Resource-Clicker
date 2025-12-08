@@ -490,6 +490,14 @@ function checkAPU(){
         document.getElementById("APU13").classList.remove("bought")
         document.getElementById("APU13").classList.add("unbought")
     }
+    if(game.APU[0][3]){
+        document.getElementById("APU14").classList.remove("unbought")
+        document.getElementById("APU14").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU14").classList.remove("bought")
+        document.getElementById("APU14").classList.add("unbought")
+    }
     if(game.APU[1][0]){
         document.getElementById("APU21").classList.remove("unbought")
         document.getElementById("APU21").classList.add("bought")
@@ -516,6 +524,14 @@ function checkAPU(){
         document.getElementById("APU23").classList.remove("bought")
         document.getElementById("APU23").classList.add("unbought")
     }
+    if(game.APU[1][3]){
+        document.getElementById("APU24").classList.remove("unbought")
+        document.getElementById("APU24").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU24").classList.remove("bought")
+        document.getElementById("APU24").classList.add("unbought")
+    }
     if(game.APU[2][0]){
         document.getElementById("APU31").classList.remove("unbought")
         document.getElementById("APU31").classList.add("bought")
@@ -539,6 +555,46 @@ function checkAPU(){
     else{
         document.getElementById("APU33").classList.remove("bought")
         document.getElementById("APU33").classList.add("unbought")
+    }
+    if(game.APU[2][3]){
+        document.getElementById("APU34").classList.remove("unbought")
+        document.getElementById("APU34").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU34").classList.remove("bought")
+        document.getElementById("APU34").classList.add("unbought")
+    }
+    if(game.APU[3][0]){
+        document.getElementById("APU41").classList.remove("unbought")
+        document.getElementById("APU41").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU41").classList.remove("bought")
+        document.getElementById("APU41").classList.add("unbought")
+    }
+    if(game.APU[3][1]){
+        document.getElementById("APU42").classList.remove("unbought")
+        document.getElementById("APU42").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU42").classList.remove("bought")
+        document.getElementById("APU42").classList.add("unbought")
+    }
+    if(game.APU[3][2]){
+        document.getElementById("APU43").classList.remove("unbought")
+        document.getElementById("APU43").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU43").classList.remove("bought")
+        document.getElementById("APU43").classList.add("unbought")
+    }
+    if(game.APU[3][3]){
+        document.getElementById("APU44").classList.remove("unbought")
+        document.getElementById("APU44").classList.add("bought")
+    }
+    else{
+        document.getElementById("APU44").classList.remove("bought")
+        document.getElementById("APU44").classList.add("unbought")
     }
     if(game.APU[0][1] && game.APU[1][0]){
         document.getElementById("APU22").classList.remove("hidden")
@@ -595,10 +651,12 @@ function checkAPU(){
         document.getElementById("APU44").classList.add("hidden")
     }
     if(game.RankLevel >= 9){
+        document.getElementById("VoidAllocationRebuyable").classList.remove("hidden")
         document.getElementById("APU14").classList.remove("hidden")
         document.getElementById("APU41").classList.remove("hidden")
     }
     else{
+        document.getElementById("VoidAllocationRebuyable").classList.add("hidden")
         document.getElementById("APU14").classList.add("hidden")
         document.getElementById("APU41").classList.add("hidden")
     }

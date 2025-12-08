@@ -118,6 +118,7 @@ setInterval (function(){
     document.getElementById("PrestigeAllocationCost").textContent = formatNumber(game.APbuyables[1][1])
     document.getElementById("PowerAllocationCost").textContent = formatNumber(game.APbuyables[2][1])
     document.getElementById("AscensionAllocationCost").textContent = formatNumber(game.APbuyables[3][1])
+    document.getElementById("VoidAllocationCost").textContent = formatNumber(game.APbuyables[4][1])
     if(!game.InVoid){
         document.getElementById("VoidToggle").textContent = "Enter"
         document.getElementById("VoidEnergy").classList.add("hidden")
@@ -155,6 +156,8 @@ setInterval (function(){
     document.getElementById("VoidReward3").textContent = formatNumber(game.VoidEffect[2])
     document.getElementById("VoidReward4").textContent = formatNumber(game.VoidEffect[3])
     document.getElementById("VBamount").textContent = game.VoidBoosters
+    document.getElementById("VB1base").textContent = game.VoidBuyables[0][2]
+    document.getElementById("VB2base").textContent = game.VoidBuyables[1][2]
     document.getElementById("VBrequirement").textContent = formatNumber(game.VoidBoosterReq)
     document.getElementById("MaxVBActivations").textContent = game.MaxVBAmount
     document.getElementById("VB1E1").textContent = formatNumber(game.VoidBooster1[0])

@@ -117,6 +117,9 @@ function calculatePPC(){
     if(game.ActiveEffect[0]){
         game.ppc *= game.VoidBooster1[0]
     }
+    if(game.ActiveEffect[0] && game.APU[0][3]){
+        game.ppc *= 1.5 ** game.VoidBoosters
+    }
     if(game.RankLevel >= 10){
         game.ppc *= 100
     }
@@ -172,6 +175,9 @@ function calculatePP(){
     if(game.ActiveEffect[0]){
         game.prestigeGain *= game.VoidBooster1[1]
     }
+    if(game.ActiveEffect[0] && game.APU[1][3]){
+        game.prestigeGain *= 1.5 ** game.VoidBoosters
+    }
     game.prestigeGain *= game.powB2base ** game.powB2
     game.prestigeGain *= game.VoidEffect[1]
 }
@@ -198,6 +204,9 @@ function calculatePPow(){
     }
     if(game.ActiveEffect[0]){
         game.powerGain *= game.VoidBooster1[2] 
+    }
+    if(game.ActiveEffect[0] && game.APU[1][3]){
+        game.powerGain *= 1.5 ** game.VoidBoosters
     }
     game.powerGain *= game.powB3base ** game.powB3
     game.powerGain *= game.VoidEffect[2]
@@ -289,8 +298,8 @@ function calculateupgs(){
         game.upgamnt += 1
         game.ascupgamnt += 1
     }
-    for (let i = 0; i <= 2; i++){
-        for (let j = 0; j <= 2; j++){
+    for (let i = 0; i <= 3; i++){
+        for (let j = 0; j <= 3; j++){
             if(game.APU[i][j]){
                 game.upgamnt += 1
                 game.ascupgamnt += 1
@@ -340,6 +349,9 @@ function calculateAsc(){
     if(game.VoidEffect[1]){
         game.AscGain *= game.VoidBooster2[0]
     }
+    if(game.VoidEffect[1] && game.APU[2][3]){
+        game.AscGain *= 1.5 ** game.VoidBoosters
+    }
 
     game.AscGain *= game.VoidEffect[3]
 }
@@ -367,27 +379,27 @@ function RankUpdates(){
     }
     else if(game.VoidBuyables[2][0] >= 4){
         game.RankRequirement = [1, 2, 5, 15, 200, 500, 10 ** 6, 10 ** 8, 5 * 10 ** 10, 10 ** 13, 10 ** 300]
-        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "Gain 100x more Void Power, unlock a new row and column of AP upgrades", "Gain 100x more points, points softcap exponent is weakened (^0.4 -> ^0.45)", "-"]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "Gain 100x more Void Power, unlock a new row and column of AP upgrades", "Gain 100x more points, points softcap exponent is weakened (^0.4 -> ^0.45)", "-", "-"]
     }
     else if(game.VoidBuyables[2][0] >= 3){
         game.RankRequirement = [1, 2, 5, 15, 200, 500, 10 ** 6, 10 ** 8, 5 * 10 ** 10, 10 ** 300]
-        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "Gain 100x more Void Power, unlock a new row and column of AP upgrades", "-"]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "Gain 100x more Void Power, unlock a new row and column of AP upgrades", "-", "-", "-"]
     }
     else if(game.VoidBuyables[2][0] >= 2){
         game.RankRequirement = [1, 2, 5, 15, 200, 500, 10 ** 6, 10 ** 8, 10 ** 300]
-        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "-"]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "Each AP boosts points by 1.5 (1.1 in The Void) after exponents and increase Rank 4 reward exponent by 1", "-", "-", "-", "-",]
     }
     else if(game.VoidBuyables[2][0] >= 1){
         game.RankRequirement = [1, 2, 5, 15, 200, 500, 10 ** 6, 10 ** 300]
-        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "-"]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "Boost Points by 100 after exponents and unlock 2 more Ascension Upgrades", "-", "-", "-", "-", "-",]
     }
     else if(game.unlockAmount >= 5 && game.AscU1){
         game.RankRequirement = [1, 2, 5, 15, 200, 500, 10 ** 300]
-        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "-"]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "Keep QOL II and QOL III on Ascension, each rank after 4 gives 1 extra AP", "Gain another extra AP per rank after 4, boost points, prestige, powers by 100, 10 and 5 respectively", "-", "-", "-", "-", "-", "-"]
     }
     else{
         game.RankRequirement = [1, 2, 5, 15, 10 ** 300]
-        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-"]
+        game.RankEffect = ["Boost points by 10, Prestige by 5, Power by 3 and Ascension points by 2", "Keep 1 of each of the first three automations on ascension", "Unlock more Prestige upgrades and keep QOL I on Ascend", "Boost Ascension points based on Ranks and unlock some Ascension upgrades", "-", "-", "-", "-", "-", "-", "-", "-"]
     }
 }
 function calculateAP(){
@@ -464,8 +476,17 @@ function calculateVoidEnergy(){
     if(game.RankLevel >= 9){
         game.VoidEnergy[0] *= 100
     }
+    if(game.APU[3][1]){
+        game.VoidEnergy[0] *= 10
+    }
+    if(game.APU[3][2]){
+        game.VoidEnergy[0] *= 1.05 ** APamount[0]
+    }
+    if(game.ActiveEffect[2] && game.APU[3][3]){
+        game.VoidEnergy[0] *= 1.5 ** game.VoidBoosters
+    }
 
-    game.VoidEnergy[0] *= 2 ** game.VoidBuyables[0][0]
+    game.VoidEnergy[0] *= game.VoidBuyables[0][2] ** game.VoidBuyables[0][0]
 
     if(game.VoidEnergy[0] >= 10 ** 6){
         game.VoidEnergy[0] /= 10 ** 6
@@ -477,6 +498,7 @@ function calculateVoidEnergy(){
         game.VoidEnergy[0] **= 0.6
         game.VoidEnergy[0] *= 10 ** 10
     }
+
 }
 function calculateVoidPower(){
     game.VoidEnergy[3] = game.VoidEnergy[1] ** 0.8
@@ -487,21 +509,39 @@ function calculateVoidPower(){
     if(game.RankLevel >= 9){
         game.VoidEnergy[3] *= 100
     }
+    if(game.APU[3][1]){
+        game.VoidEnergy[3] *= 10
+    }
+    if(game.APU[3][2]){
+        game.VoidEnergy[3] *= 1.1 ** APamount[0]
+    }
+    if(game.ActiveEffect[2] && game.APU[3][3]){
+        game.VoidEnergy[3] *= 1.5 ** game.VoidBoosters
+    }
 
-    game.VoidEnergy[3] *= 2 ** game.VoidBuyables[1][0]
+    game.VoidEnergy[3] *= game.VoidBuyables[1][2] ** game.VoidBuyables[1][0]
+}
+function calculateVBBases(){
+    game.VoidBuyables[0][2] = 2
+    game.VoidBuyables[1][2] = 2
+
+    if(game.APU[3][0]){
+        game.VoidBuyables[0][2] += 1
+        game.VoidBuyables[1][2] += 1
+    }
 }
 function calculateRankExtensionCap(){
     if(game.ActiveEffect[2] && game.VoidBooster3[2] >= 3){
         game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 15, 10 ** 300]
     }
     else if(game.ActiveEffect[2] && game.VoidBooster3[2] >= 2){
-        game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 300]
+        game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 12, 10 ** 300, 10 ** 300]
     }
     else if(game.ActiveEffect[2] && game.VoidBooster3[2] >= 1){
-        game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 300]
+        game.VoidBuyables[2][1] =  [1000, 100000, 10 ** 10, 10 ** 300, 10 ** 300, 10 ** 300]
     }
     else{
-        game.VoidBuyables[2][1] = [1000, 100000, 10 ** 300]
+        game.VoidBuyables[2][1] = [1000, 100000, 10 ** 300, 10 ** 300, 10 ** 300, 10 ** 300]
     }
 }
 function calculateVoidEffects(){
@@ -568,6 +608,7 @@ setInterval(function(){
         calculateVoidEnergy();
     }
     calculateVoidPower();
+    calculateVBBases();
     calculateRankExtensionCap();
     calculateVoidEffects();
     calculateactivevoidboosters();
