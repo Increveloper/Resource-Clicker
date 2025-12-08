@@ -61,6 +61,12 @@ setInterval (function(){
 
     document.getElementById("points").textContent = formatNumber(game.points);
     document.getElementById("ppc").textContent = formatNumber(game.ppc);
+    if(game.points >= game.PointSoftcapStart){
+        document.getElementById("PS1").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("PS1").classList.add("hidden")
+    }
     document.getElementById("unlock").textContent = game.unlocks[game.unlockAmount];
     document.getElementById("unlockprice").textContent = formatNumber(game.unlockCost[game.unlockAmount]);
     document.getElementById("unlockeramnt").textContent = game.unlockAmount;
