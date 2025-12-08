@@ -564,6 +564,44 @@ function checkAPU(){
     else{
         document.getElementById("APU33").classList.add("hidden")
     }
+    if(game.APU[0][3] && game.APU[1][2]){
+        document.getElementById("APU24").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU24").classList.add("hidden")
+    }
+    if(game.APU[1][3] && game.APU[2][2]){
+        document.getElementById("APU34").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU34").classList.add("hidden")
+    }
+    if(game.APU[2][1] && game.APU[3][0]){
+        document.getElementById("APU42").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU42").classList.add("hidden")
+    }
+    if(game.APU[2][2] && game.APU[3][1]){
+        document.getElementById("APU43").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU43").classList.add("hidden")
+    }
+    if(game.APU[2][3] && game.APU[3][2]){
+        document.getElementById("APU44").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU44").classList.add("hidden")
+    }
+    if(game.RankLevel >= 9){
+        document.getElementById("APU14").classList.remove("hidden")
+        document.getElementById("APU41").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("APU14").classList.add("hidden")
+        document.getElementById("APU41").classList.add("hidden")
+    }
 }
 function CheckQOLUpgs(){
     if(game.QOLU[0]){

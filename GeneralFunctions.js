@@ -484,6 +484,9 @@ function calculateVoidPower(){
     if(game.ActiveEffect[2]){
         game.VoidEnergy[3] *= game.VoidBooster3[1]
     }
+    if(game.RankLevel >= 9){
+        game.VoidEnergy[3] *= 100
+    }
 
     game.VoidEnergy[3] *= 2 ** game.VoidBuyables[1][0]
 }
