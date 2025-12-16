@@ -73,6 +73,7 @@ function SwitchTabs(tab){
     document.getElementById("BoostTab").classList.add("hidden")
     document.getElementById("AscTab").classList.add("hidden")
     document.getElementById("VoidTab").classList.add("hidden")
+    document.getElementById("BeaconTab").classList.add("hidden")
     document.getElementById("AutoTab").classList.add("hidden")
     document.getElementById("SettingsTab").classList.add("hidden")
     if(tab === "PresTab" || tab === "MainPresTab" || tab === "PowPresTab"){
@@ -167,6 +168,30 @@ function SwitchTabs(tab){
             document.getElementById("VoidTab").classList.remove("hidden")
             document.getElementById("MainVoidTab").classList.add("hidden")
             document.getElementById("VoidBoosterTab").classList.remove("hidden")
+        }
+    }
+    else if(tab === "BeaconTab" || tab === "MainBeaconTab" || tab === "WavelengthsBeaconTab" || tab === "LumensBeaconTab"){
+        document.getElementById("BeaconTab").classList.remove("hidden")
+        document.getElementById("MainBeaconTab").classList.remove("hidden")
+        document.getElementById("WavelengthsBeaconTab").classList.add("hidden")
+        document.getElementById("LumensBeaconTab").classList.add("hidden")
+        if(tab === "MainBeaconTab"){
+            document.getElementById("BeaconTab").classList.remove("hidden")
+            document.getElementById("MainBeaconTab").classList.remove("hidden")
+            document.getElementById("WavelengthsBeaconTab").classList.add("hidden")
+            document.getElementById("LumensBeaconTab").classList.add("hidden")
+        }
+        else if(tab === "WavelengthsBeaconTab"){
+            document.getElementById("BeaconTab").classList.remove("hidden")
+            document.getElementById("MainBeaconTab").classList.add("hidden")
+            document.getElementById("WavelengthsBeaconTab").classList.remove("hidden")
+            document.getElementById("LumensBeaconTab").classList.add("hidden")
+        }
+        else if(tab === "LumensBeaconTab"){
+            document.getElementById("BeaconTab").classList.remove("hidden")
+            document.getElementById("MainBeaconTab").classList.add("hidden")
+            document.getElementById("WavelengthsBeaconTab").classList.add("hidden")
+            document.getElementById("LumensBeaconTab").classList.remove("hidden")
         }
     }
     else if(tab === "AutoTab" || tab === "MainAutoTab" || tab === "QOLAutoTab"){

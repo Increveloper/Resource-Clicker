@@ -11,6 +11,9 @@ setInterval (function(){
     UpdateAutoVisibility();
     updateRankRewards();
     CheckActiveVB();
+    BeaconDisplay();
+    DisplayActiveBeacon();
+    CheckIRUV();
 
     // Calculate necessary variables
     game.powerEffect = 1 + game.powerAmount ** game.powerEffectExp;
@@ -56,17 +59,22 @@ setInterval (function(){
         game.VoidBooster3[2] += 1
     }
     game.VoidBooster3[3] = game.VoidBoosters
+    game.BeaconEnergies[0] = Math.log(game.BeaconChalsBest[0]) ** 0.4
+    game.BeaconEnergies[1] = Math.log(game.BeaconChalsBest[1]) ** 0.5
+    game.BeaconEnergies[2] = Math.log(game.BeaconChalsBest[2]) ** 0.6
+    game.BeaconEnergies[3] = game.BeaconChalsBest[3]
+    game.BeaconPower = game.BeaconEnergies[0] * game.BeaconEnergies[1] * game.BeaconEnergies[2] * game.BeaconEnergies[3] 
+    game.Lumens[1] = 100 * 10 ** game.Lumens[0]
+    game.Lumens[3] = game.Lumens[2] ** game.Lumens[0]
 
     // Update Text Content
 
     document.getElementById("points").textContent = formatNumber(game.points);
     document.getElementById("ppc").textContent = formatNumber(game.ppc);
-    if(game.points >= game.PointSoftcapStart){
-        document.getElementById("PS1").classList.remove("hidden")
-    }
-    else{
-        document.getElementById("PS1").classList.add("hidden")
-    }
+    document.getElementById("PS1start").textContent = game.PointSoftcapStart;
+    document.getElementById("PS1effect").textContent = game.PointSoftcapEffect;
+    document.getElementById("PS2start").textContent = game.SecondPointSoftcapStart;
+    document.getElementById("PS2effect").textContent = game.SecondPointSoftcapEffect;
     document.getElementById("unlock").textContent = game.unlocks[game.unlockAmount];
     document.getElementById("unlockprice").textContent = formatNumber(game.unlockCost[game.unlockAmount]);
     document.getElementById("unlockeramnt").textContent = game.unlockAmount;
@@ -93,9 +101,6 @@ setInterval (function(){
     document.getElementById("boosters").textContent = game.boosters;
     document.getElementById("boostereff").textContent = formatNumber(game.boostereffect);
     document.getElementById("boosterreq").textContent = formatNumber(game.boosterrequirement);
-    for (let el of document.getElementsByClassName("boostercost")) {
-        el.textContent = game.boostupgcost[game.bstrupgamnt];
-    };
     document.getElementById("BU1effect").textContent = game.BU1effect;
     document.getElementById("BU2effect").textContent = game.BU2effect;
     document.getElementById("BU3effect").textContent = game.BU3effect;
@@ -125,29 +130,6 @@ setInterval (function(){
     document.getElementById("PowerAllocationCost").textContent = formatNumber(game.APbuyables[2][1])
     document.getElementById("AscensionAllocationCost").textContent = formatNumber(game.APbuyables[3][1])
     document.getElementById("VoidAllocationCost").textContent = formatNumber(game.APbuyables[4][1])
-    if(!game.InVoid){
-        document.getElementById("VoidToggle").textContent = "Enter"
-        document.getElementById("VoidEnergy").classList.add("hidden")
-        document.getElementById("VES1").classList.add("hidden")
-        document.getElementById("VES2").classList.add("hidden")
-    }
-    else if(game.InVoid){
-        document.getElementById("VoidToggle").textContent = "Exit"
-        document.getElementById("VoidEnergy").classList.remove("hidden")
-        document.getElementById("VoidEnergyGain").textContent = formatNumber(game.VoidEnergy[0])
-        if(game.VoidEnergy[0] >= 10 ** 6){
-            document.getElementById("VES1").classList.remove("hidden")
-        }
-        else{
-            document.getElementById("VES1").classList.add("hidden")
-        }
-        if(game.VoidEnergy[0] >= 10 ** 10){
-            document.getElementById("VES2").classList.remove("hidden")
-        }
-        else{
-            document.getElementById("VES2").classList.add("hidden")
-        }
-    }
     document.getElementById("VoidEnergyAmount").textContent = formatNumber(game.VoidEnergy[1])
     document.getElementById("VEeff1").textContent = formatNumber(game.VoidEnergy[2])
     document.getElementById("VEeff2").textContent = formatNumber(game.VoidEnergy[3])
@@ -178,4 +160,34 @@ setInterval (function(){
     document.getElementById("VB3E2").textContent = formatNumber(game.VoidBooster3[1])
     document.getElementById("VB3E3").textContent = game.VoidBooster3[2]
     document.getElementById("VB3E4").textContent = formatNumber(game.VoidBooster3[3])
+    document.getElementById("BPamount").textContent = formatNumber(game.BeaconPower)
+    document.getElementById("PEamount").textContent = formatNumber(game.BeaconEnergies[0])
+    document.getElementById("PPEamount").textContent = formatNumber(game.BeaconEnergies[1])
+    document.getElementById("PPowEamount").textContent = formatNumber(game.BeaconEnergies[2])
+    document.getElementById("BEamount").textContent = formatNumber(game.BeaconEnergies[3])
+    document.getElementById("infrared").textContent = formatNumber(game.WavelengthAmount[0])
+    document.getElementById("red").textContent = formatNumber(game.WavelengthAmount[1])
+    document.getElementById("orange").textContent = formatNumber(game.WavelengthAmount[2])
+    document.getElementById("yellow").textContent = formatNumber(game.WavelengthAmount[3])
+    document.getElementById("green").textContent = formatNumber(game.WavelengthAmount[4])
+    document.getElementById("blue").textContent = formatNumber(game.WavelengthAmount[5])
+    document.getElementById("violet").textContent = formatNumber(game.WavelengthAmount[6])
+    document.getElementById("ultraviolet").textContent = formatNumber(game.WavelengthAmount[7])
+    document.getElementById("infraredeffect").textContent = formatNumber(game.WavelengthEffect[0])
+    document.getElementById("redeffect").textContent = formatNumber(game.WavelengthEffect[1])
+    document.getElementById("orangeeffect").textContent = formatNumber(game.WavelengthEffect[2])
+    document.getElementById("yelloweffect").textContent = formatNumber(game.WavelengthEffect[3])
+    document.getElementById("greeneffect").textContent = formatNumber(game.WavelengthEffect[4])
+    document.getElementById("blueeffect").textContent = formatNumber(game.WavelengthEffect[5])
+    document.getElementById("violeteffect").textContent = formatNumber(game.WavelengthEffect[6])
+    document.getElementById("ultravioleteffect").textContent = formatNumber(game.WavelengthEffect[7])
+    document.getElementById("LumenAmount").textContent = game.Lumens[0]
+    document.getElementById("LumenRequirement").textContent = game.Lumens[1]
+    document.getElementById("LumenBase").textContent = game.Lumens[2]
+    document.getElementById("LumenEffect").textContent = game.Lumens[3]
+    document.getElementById("BPamount").textContent = game.Buyablepoints
+    document.getElementById("LumenB1Cost").textContent = game.LumenBuyables[0][1]
+    document.getElementById("LumenB2Cost").textContent = game.LumenBuyables[1][1]
+    document.getElementById("LumenMilestoneEffect").textContent = game.LumenMilesEffect
+    //
 }, 50)

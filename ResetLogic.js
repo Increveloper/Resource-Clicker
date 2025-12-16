@@ -20,7 +20,6 @@ function GoBooster(){
     game.powerEffect = 1 + game.powerAmount ** 0.5;
 };
 function ResetAscension(){
-    //console.log(game.points, "before reset")
     if(game.boosters >= 4){
         game.PauseAuto = 0
         if(!game.QOLU[7]){
@@ -67,8 +66,28 @@ function ResetAscension(){
         game.PauseAuto = 0
     }
     game.ifAscend = true
-    //console.log(game.points, "after reset")
 };
 function GoAscension(){
     ResetAscension()
 };
+function EnterBeaconReset(){
+    game.InVoid = true
+    game.points = 0
+    game.prestigeAmount = 0
+    game.powerAmount = 0
+    game.boosters = 0
+}
+function GoLumen(){
+    let ReqMet = true
+    for(let i = 0; i < 8; i++){
+        if(game.wavelengths[i] < game.Lumens[1]){
+            ReqMet = false
+        }
+    }
+    if(ReqMet){
+        game.Lumens[0] += 1
+        for(let i = 0; i < 8; i++){
+            game.wavelengths[i] = 0
+        }
+    }
+}

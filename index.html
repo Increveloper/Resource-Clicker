@@ -14,12 +14,14 @@
             <button onclick="GainPoints()" class="col1 row2" tabindex="-1">Click for <span id="ppc">1</span> points</button>
         </section>
         <div id="PS1">Beyond <span id="PS1start">1.00e50</span> Points, Point gain is raised by ^<span id="PS1effect">0.4</span></div>
+        <div id="PS2">Beyond <span id="PS2start">1.00e75</span> Points, Point gain is raised by ^<span id="PS2effect">0.1</span></div>
         <nav class="MainNav">
             <a onclick="SwitchTabs('MainTab')" id="Main" class="btn maincolor">Main</a>
             <a onclick="SwitchTabs('PresTab')" id="Prestige" class="btn prescolor hidden">Prestige</a>
             <a onclick="SwitchTabs('BoostTab')" id="Booster" class="btn boostcolor hidden">Boosters</a>
             <a onclick="SwitchTabs('AscTab')" id="Ascend" class="btn ascendcolor hidden">Ascension</a>
             <a onclick="SwitchTabs('VoidTab')" id="Void" class="btn voidcolor hidden">The Void</a>
+            <a onclick="SwitchTabs('BeaconTab')" id="Beacon" class="btn beaconcolor hidden">The Beacon</a>
             <a onclick="SwitchTabs('AutoTab')" id="Auto" class="btn maincolor hidden">Automation</a>
             <a onclick="SwitchTabs('SettingsTab')" class="btn maincolor">Settings</a>
         </nav>
@@ -29,7 +31,7 @@
                 <h1 class="unlockheader">Unlocker</h1>
                 <div><span id="unlock">Unlock Prestige Points</span></div>
                 <div>Cost: <span id="unlockprice">10</span> points</div>
-                <div>Amount: <span id="unlockeramnt">0</span>/8</div>
+                <div>Amount: <span id="unlockeramnt">0</span>/9</div>
             </button>
 
             <div>Some content has extra requirements before unlocking. After buying a new unlocker level, they appear below.</div>
@@ -42,7 +44,7 @@
                 <div id="unlock6" class="hidden">Allocation Points: Unlocked at Unlocker level 6 and Ascension Upgrade I bought. Appears as a separate tab in Ascension.</div>
                 <div id="unlock7" class="hidden">The Void: Unlocked at Unlocker level 7. Appears as a separate tab in the main Navigation</div>
                 <div id="unlock8" class="hidden">Void Boosters: Unlocked at Unlocker level 8. Appears as a separate tab in The Void.</div>
-
+                <div id="unlock9" class="hidden">The Beacon: Unlocked at Unlocker level 9. Appears as a separate tab in the main Navigation. (WIP)</div>
             </div>
         </div>
 
@@ -445,6 +447,118 @@
                         <div>Post-Ascension Booster</div>
                         <button onclick="activateVB('VoidBooster3', 2)" id="VBButton3">Activate this Void Booster</button>
                         <div>When active, it boosts Void Energy by <span id="VB3E1">1</span>x, Void Power by <span id="VB3E2">1</span>x, increase Rank Extension cap by <span id="VB3E3">0</span> and boost Void Rewards by <span id="VB3E4">1</span>x</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="BeaconTab" class="hidden">
+            <div>You have <span id="BPamount">0</span> Beacon Power</div>
+            <div>Your Beacon Power is based on energy amounts of each Beacon.</div>
+            <div>Upon entering a Beacon, you will be trapped in The Void, and all pre-Ascension resources are reset.</div>
+
+            <nav>
+                <a onclick="SwitchTabs('MainBeaconTab')" class="btn beaconcolor">Beacons</a>
+                <a onclick="SwitchTabs('WavelengthsBeaconTab')" class="btn beaconcolor">Wavelengths</a>
+                <a onclick="SwitchTabs('LumensBeaconTab')" class="btn beaconcolor">Lumens</a>
+            </nav>
+
+            <div id="MainBeaconTab">
+                <button onclick="ExitBeacon()">Exit the active beacon (Currently: <span id="activebeacon">none</span>)</button>
+
+                <div id="Beacon1" class="Beacon">
+                    <div class="Beaconheader">Point Beacon</div>
+                    <button onclick="EnterBeacon(0)">Enter this Beacon</button>
+                    <div>This Beacon has no further penalty</div>
+                    <div>There's <span id="PEamount">0</span> Point Energy in this Beacon</div>
+                </div>
+                <div id="Beacon2" class="Beacon hidden">
+                    <div class="Beaconheader">Prestige Beacon</div>
+                    <button onclick="EnterBeacon(1)">Enter this Beacon</button>
+                    <div>Upon entering, Prestige Points are raised ^0.2</div>
+                    <div>There's <span id="PPEamount">0</span> Prestige Energy in this Beacon</div>
+                </div>
+                <div id="Beacon3" class="Beacon hidden">
+                    <div class="beaconheader">Power Beacon</div>
+                    <button onclick="EnterBeacon(2)">Enter this Beacon</button>
+                    <div>Prestige Beacon + Power rebuyables are useless</div>
+                    <div>There's <span id="PPowEamount">0</span> Power Energy in this Beacon</div>
+                </div>
+                <div id="Beacon4" class="Beacon hidden">
+                    <div class="beaconheader">Booster Beacon</div>
+                    <button onclick="EnterBeacon(3)">Enter this Beacon</button>
+                    <div>Power Beacon + Booster base is fourth-rooted</div>
+                    <div>There's <span id="BEamount">0</span> Booster Energy in this Beacon</div>
+                </div>
+            </div>
+
+            <div id="WavelengthsBeaconTab">
+                <div>You have <span id="red">0</span> Red (620-750 nm) Wavelengths, which boost Points by <span id="redeffect">1</span></div>
+                <div>You have <span id="orange">0</span> Orange (590-620 nm) Wavelengths, which boost Prestige by <span id="orangeeffect">1</span></div>
+                <div>You have <span id="yellow">0</span> Yellow (570-590 nm) Wavelengths, which boost Powers by <span id="yelloweffect">1</span></div>
+                <div>You have <span id="green">0</span> Green (495-570 nm) Wavelengths, which boost Ascension Points by <span id="greeneffect">1</span></div>
+                <div>You have <span id="blue">0</span> Blue (450-495 nm) Wavelengths, which add <span id="blueeffect">0</span> extra AP</div>
+                <div>You have <span id="violet">0</span> Violet (380-450 nm) Wavelengths, which boost Void Energy by <span id="violeteffect">1</span></div>
+
+                You unlock two new wavelengths at 1000 of each other one
+                <div id="IRUV" class="hidden">
+                    Infrared and Ultraviolet effects apply to each other and the main 6 wavelengths, but not to themselves
+
+                    <div>You have <span id="infrared">0</span> Infrared (&gt;750nm) Wavelengths, which boost all other wavelengths by <span id="infraredeffect">1</span></div>
+                    <div>You have <span id="ultraviolet">0</span> Ultraviolet (&lt;380 nm), which boost all other wavelengths by <span id="ultravioleteffect">1</span></div>
+                </div>
+
+                <button onclick="GainWavelength()">Click to gain wavelengths!</button>
+            </div>
+
+            <div id="LumensBeaconTab">
+                <div>You have <span id="LumenAmount">0</span> Lumens, which boost all Wavelengths by <span id="LumenEffect">1</span></div>
+                <div>Currently, the Lumen base is <span id="LumenBase">1</span></div>
+                
+                <div onclick="GoLumen()">Reset wavelengths for 1 Lumens. Requires: <span id="LumenRequirement">100</span> infrared/ultraviolet wavelengths</div>
+
+                <nav class="SubNav">
+                    <a onclick="" class="btn beaconcolor">Buyables</a>
+                    <a onclick="" class="btn beaconcolor">Milestones</a>
+                </nav>
+
+                <div id="BuyablesLumensBeaconTab">
+                    <div>You have <span id="BPamount">0</span> unspent Buyable Points (Based on Lumens)</div>
+
+                    <button onclick="RespecBP()">Respec BP</button>
+
+                    <div class="rebuyables">
+                        <div class="rebuyable">
+                            <div class="upgradeheader">Linear Base</div>
+                            <div>Increase Lumens base by 1</div>
+                            <div>Cost: <span id="LumenB1Cost">1</span> BP</div>
+                        </div>
+                        <div class="rebuyable">
+                            <div class="upgradeheader">Exponential Base</div>
+                            <div>Multiply Lumens base by 1.1</div>
+                            <div>Cost: <span id="LumenB2Cost">1</span> BP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="MilestonesLumensBeaconTab">
+                    <div class="milestones">
+                        <div>Your completed milestones boost Lumen effect by ^<span id="LumenMilestoneEffect">1.00</span></div>
+                        <div id="lm1" class="unachieved">
+                            <div class="milestoneheader">Lumens Milestone I</div>
+                            <div class="milestonereq">1 Lumens</div>
+                            <div>If your wavelengths are above 1000, UV and IR are boosted by log10(Beacon Power)</div>
+                        </div>
+                        <div id="lm2" class="unachieved hidden">
+                            <div class="milestoneheader">Lumens Milestone II</div>
+                            <div class="milestonereq">2 Lumens</div>
+                            <div>First point softcap exponent +0.05 and second softcap exponent +0.02, but /1000 base points</div>
+                        </div>
+                        <div id="lm3" class="unachieved hidden">
+                            <div class="milestoneheader">Lumens Milestone III</div>
+                            <div class="milestonereq">4 Lumens</div>
+                            <div>Both Lumen buyable costs are -2, with a minimum of 0. Point gain is ^1.1. Power effect exponent is +0.05.</div>
+                        </div>
                     </div>
                 </div>
             </div>

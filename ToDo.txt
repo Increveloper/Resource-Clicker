@@ -1,3 +1,5 @@
 - Update DevReset.js and HardReset.js after finishing
 - Check for bugs with softcap mechanics
 - Add toggles for automation
+
+For this update:

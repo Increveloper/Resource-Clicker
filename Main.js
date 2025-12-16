@@ -221,8 +221,120 @@ function CheckActiveVB(){
     if(game.ActiveEffect[2]){
         document.getElementById("VBButton3").textContent = "Void Booster activated."
     }
+
+    else{
+        document.getElementById("VBButton1").textContent = "Click to activate this Void Booster!"
+        document.getElementById("VBButton2").textContent = "Click to activate this Void Booster!"
+        document.getElementById("VBButton3").textContent = "Click to activate this Void Booster!"
+    }
 }
 
+// The Beacon Tab Items
+
+function EnterBeacon(index){
+    let AllFalse = True
+    for(let i = 0; i < game.BeaconChals.length; i++){
+        if(game.BeaconChals[i]){
+            AllFalse = false
+        }
+    }
+    if(AllFalse){
+        EnterBeaconReset()
+        game.BeaconChals[index] = true
+        game.InVoid = true
+    }
+}
+
+function ExitBeacon(){
+    for (let i = 0; i < 4; i++){
+        if(game.BeaconChals[i]){
+            if(i === 0 && game.BeaconChalsBest[i] < game.points){
+                game.BeaconChalsBest[0] = game.points
+            }
+            else if(i === 1 && game.BeaconChalsBest[1] < game.prestigeAmount){
+                game.BeaconChalsBest[1] = game.prestigeAmount
+            }
+            else if(i === 2 && game.BeaconChalsBest[2] < game.powerAmount){
+                game.BeaconChalsBest[2] = game.powerAmount
+            }
+            else if(i === 3 && game.BeaconChalsBest[3] < game.boosters){
+                game.BeaconChalsBest[3] = game.boosters
+            }
+        }
+    }
+    game.BeaconChals = [false, false, false, false]
+    game.InVoid = false
+}
+function BeaconDisplay(){
+    if(game.BeaconEnergies[0] >= 4){
+        document.getElementById("Beacon2").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("Beacon2").classList.add("hidden")
+    }
+    if(game.BeaconEnergies[1] >= 4){
+        document.getElementById("Beacon3").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("Beacon3").classList.add("hidden")
+    }
+    if(game.BeaconEnergies[2] >= 4){
+        document.getElementById("Beacon4").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("Beacon4").classList.add("hidden")
+    }
+}
+function DisplayActiveBeacon(){
+    if(game.BeaconChals[0]){
+        document.getElementById("ActiveBeacon").textContent = "Point Beacon"
+    }
+    else if(game.BeaconChals[1]){
+        document.getElementById("ActiveBeacon").textContent = "Prestige Beacon"
+    }
+    else if(game.BeaconChals[2]){
+        document.getElementById("ActiveBeacon").textContent = "Power Beacon"
+    }
+    else if(game.BeaconChals[3]){
+        document.getElementById("ActiveBeacon").textContent = "Booster Beacon"
+    }
+    else{
+        document.getElementById("ActiveBeacon").textContent = "None"
+    }
+}
+
+function GainWavelength(){
+    let ReqMet = true
+    for(let i = 1; i < 7; i++){
+        game.WavelengthAmount[i] += game.WavelengthGain[i]
+        if(game.WavelengthAmount[i] < 1000){
+            ReqMet = false
+        }
+    }
+    if(ReqMet){
+        game.WavelengthAmount[0] += game.WavelengthGain[0]
+        game.WavelengthAmount[7] += game.WavelengthGain[7]
+    }
+}
+function CheckIRUV(){
+    let ReqMet = true
+    for(let i = 1; i < 7; i++){
+        if(game.WavelengthAmount[i] < 1000){
+            ReqMet = false
+        }
+    }
+
+    if(ReqMet){
+        document.getElementById("IRUV").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("IRUV").classList.add("hidden")
+    }
+}
+function RespecBP(){
+    game.LumenBuyables[0][0] = 0
+    game.LumenBuyables[1][0] = 0
+}
 // Automation Tab Items
 
 function GainAuto(){

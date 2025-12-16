@@ -3,8 +3,10 @@ game = {
     ppc: 1,
     PointSoftcapStart: 10**50,
     PointSoftcapEffect: 0.4,
-    unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Unlock Void Boosters", "Finish the game"],
-    unlockCost: [10, 1000, 10 ** 8, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 60, 10 ** 300],
+    SecondPointSoftcapStart: 10**75,
+    SecondPointSoftcapEffect: 0.1,
+    unlocks: ["Unlock Prestige Points", "Unlock Prestige Powers", "Unlock Boosters", "Unlock Automation", "Unlock Ascension", "Unlock Allocation Points", "Unlock The Void", "Unlock Void Boosters", "Unlock The Beacon", "Finish the game"],
+    unlockCost: [10, 1000, 10 ** 8, 10 ** 13, 10 ** 18, 10 ** 28, 10 ** 45, 10 ** 60, 10 ** 80, 10 ** 300],
     unlockAmount: 0,
     prestigeGain: 0,
     prestigeAmount: 0,
@@ -105,5 +107,19 @@ game = {
     VoidBooster2: [1, 0, 0, 0],
     VoidBooster3: [1, 1, 0, 1],
     VB3req: [1, 3, 6, 1000],
+    BeaconChals: [false, false, false, false],
+    BeaconEnergies: [0, 0, 0, 0],
+    BeaconChalsBest: [0, 0, 0, 0],
+    BeaconPower: 0,
+    WavelengthAmount: [0, 0, 0, 0, 0, 0, 0, 0], //[IR, red, orange, yellow, green, blue, violet, UV]
+    WavelengthEffect: [1, 1, 1, 1, 1, 0, 1, 1], //[IR, red, orange, yellow, green, blue, violet, UV]
+    WavelengthGain: [0, 0, 0, 0, 0, 0, 0, 0], //[IR, red, orange, yellow, green, blue, violet, UV]
+    Lumens: [0, 100, 1, 1], //[amount, requirement, base, effect]
+    LumenRebuyables: [[0, 1], [0, 1]], //[rebuyable 1, rebuyable 2], [[amount, cost]]
+    BuyablePoints: [0, 0], //[total, unspent]
+    LumenMilestones: [false, false, false], //[M1, M2, M3]
+    LumenMilesAmnt: 0,
+    LumenMilesEffect: 1.00,
 };
 // REMEMBER: LIST ITEM 1 IS REFERRED TO AS [0]!!!!!
+// Use const only for elements that won't be changed, let when it will be reassigned, ignore var.
