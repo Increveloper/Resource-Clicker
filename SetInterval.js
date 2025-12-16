@@ -185,9 +185,9 @@ setInterval (function(){
     document.getElementById("LumenRequirement").textContent = game.Lumens[1]
     document.getElementById("LumenBase").textContent = game.Lumens[2]
     document.getElementById("LumenEffect").textContent = game.Lumens[3]
-    document.getElementById("BPamount").textContent = game.Buyablepoints
-    document.getElementById("LumenB1Cost").textContent = game.LumenBuyables[0][1]
-    document.getElementById("LumenB2Cost").textContent = game.LumenBuyables[1][1]
+    document.getElementById("BuyablePointsamount").textContent = game.Buyablepoints
+    document.getElementById("LumenB1Cost").textContent = game.LumenRebuyables[0][1]
+    document.getElementById("LumenB2Cost").textContent = game.LumenRebuyables[1][1]
     document.getElementById("LumenMilestoneEffect").textContent = game.LumenMilesEffect
     //
 }, 50)
