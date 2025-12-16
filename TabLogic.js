@@ -65,6 +65,12 @@ function updateTabs(){
     else{
         document.getElementById("VBoosters").classList.add("hidden")
     }
+    if(game.unlockAmount >= 9){
+        document.getElementById("Beacon").classList.remove("hidden")
+    }
+    else{
+        document.getElementById("Beacon").classList.add("hidden")
+    }
 };
 
 function SwitchTabs(tab){
