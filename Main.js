@@ -232,7 +232,7 @@ function CheckActiveVB(){
 // The Beacon Tab Items
 
 function EnterBeacon(index){
-    let AllFalse = True
+    let AllFalse = true
     for(let i = 0; i < game.BeaconChals.length; i++){
         if(game.BeaconChals[i]){
             AllFalse = false
