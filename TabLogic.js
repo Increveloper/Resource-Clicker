@@ -193,11 +193,23 @@ function SwitchTabs(tab){
             document.getElementById("WavelengthsBeaconTab").classList.remove("hidden")
             document.getElementById("LumensBeaconTab").classList.add("hidden")
         }
-        else if(tab === "LumensBeaconTab"){
+        else if(tab === "LumensBeaconTab" || tab === "BuyablesLumensBeaconTab" || tab === "MilestonesLumensBeaconTab"){
             document.getElementById("BeaconTab").classList.remove("hidden")
             document.getElementById("MainBeaconTab").classList.add("hidden")
             document.getElementById("WavelengthsBeaconTab").classList.add("hidden")
             document.getElementById("LumensBeaconTab").classList.remove("hidden")
+            document.getElementById("BuyablesLumensBeaconTab").classList.remove("hidden")
+            document.getElementById("MilestonesLumensBeaconTab").classList.add("hidden")
+            if(tab === "BuyablesLumensBeaconTab"){
+                document.getElementById("LumensBeaconTab").classList.remove("hidden")
+                document.getElementById("BuyablesLumensBeaconTab").classList.remove("hidden")
+                document.getElementById("MilestonesLumensBeaconTab").classList.add("hidden")
+            }
+            if(tab === "MilestonesLumensBeaconTab"){
+                document.getElementById("LumensBeaconTab").classList.remove("hidden")
+                document.getElementById("BuyablesLumensBeaconTab").classList.remove("hidden")
+                document.getElementById("MilestonesLumensBeaconTab").classList.add("hidden")
+            }
         }
     }
     else if(tab === "AutoTab" || tab === "MainAutoTab" || tab === "QOLAutoTab"){

@@ -106,6 +106,19 @@ function HardReset(){
         VoidBooster2: [1, 0, 0, 0],
         VoidBooster3: [1, 1, 0, 1],
         VB3req: [1, 3, 6, 1000],
+        BeaconChals: [false, false, false, false],
+        BeaconEnergies: [0, 0, 0, 0],
+        BeaconChalsBest: [0, 0, 0, 0],
+        BeaconPower: 0,
+        WavelengthAmount: [0, 0, 0, 0, 0, 0, 0, 0], //[IR, red, orange, yellow, green, blue, violet, UV]
+        WavelengthEffect: [1, 1, 1, 1, 1, 0, 1, 1], //[IR, red, orange, yellow, green, blue, violet, UV]
+        WavelengthGain: [0, 0, 0, 0, 0, 0, 0, 0], //[IR, red, orange, yellow, green, blue, violet, UV]
+        Lumens: [0, 100, 1, 1], //[amount, requirement, base, effect]
+        LumenRebuyables: [[0, 1], [0, 1]], //[rebuyable 1, rebuyable 2], [[amount, cost]]
+        BuyablePoints: [0, 0], //[total, unspent]
+        LumenMilestones: [false, false, false], //[M1, M2, M3]
+        LumenMilesAmnt: 0,
+        LumenMilesEffect: 1.00,
     };
     updateTabs();
 };

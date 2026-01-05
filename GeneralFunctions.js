@@ -833,5 +833,6 @@ setInterval(function(){
     CalculateWavelengthEffects();
     CalculateLumenBase();
     CalculateLumenMilesEffect();
+    calculateBuyablePoints();
     game.boostereffect = game.boosterbase ** game.boosters;
 },50);

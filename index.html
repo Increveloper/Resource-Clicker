@@ -466,30 +466,31 @@
             <div id="MainBeaconTab">
                 <button onclick="ExitBeacon()">Exit the active beacon (Currently: <span id="ActiveBeacon">none</span>)</button>
 
-                <div id="Beacon1" class="Beacon">
-                    <div class="Beaconheader">Point Beacon</div>
-                    <button onclick="EnterBeacon(0)">Enter this Beacon</button>
-                    <div>This Beacon has no further penalty</div>
-                    <div>There's <span id="PEamount">0</span> Point Energy in this Beacon</div>
-                </div>
-                <div id="Beacon2" class="Beacon hidden">
-                    <div class="Beaconheader">Prestige Beacon</div>
-                    <button onclick="EnterBeacon(1)">Enter this Beacon</button>
-                    <div>Upon entering, Prestige Points are raised ^0.2</div>
-                    <div>There's <span id="PPEamount">0</span> Prestige Energy in this Beacon</div>
-                </div>
-                <div id="Beacon3" class="Beacon hidden">
-                    <div class="beaconheader">Power Beacon</div>
-                    <button onclick="EnterBeacon(2)">Enter this Beacon</button>
-                    <div>Prestige Beacon + Power rebuyables are useless</div>
-                    <div>There's <span id="PPowEamount">0</span> Power Energy in this Beacon</div>
-                </div>
-                <div id="Beacon4" class="Beacon hidden">
-                    <div class="beaconheader">Booster Beacon</div>
-                    <button onclick="EnterBeacon(3)">Enter this Beacon</button>
-                    <div>Power Beacon + Booster base is fourth-rooted</div>
-                    <div>There's <span id="BEamount">0</span> Booster Energy in this Beacon</div>
-                </div>
+                <div class="BeaconBox">
+                    <div id="Beacon1" class="Beacon">
+                        <div class="Beaconheader">Point Beacon</div>
+                        <button onclick="EnterBeacon(0)">Enter this Beacon</button>
+                        <div>This Beacon has no further penalty</div>
+                        <div>There's <span id="PEamount">0</span> Point Energy in this Beacon</div>
+                    </div>
+                    <div id="Beacon2" class="Beacon hidden">
+                        <div class="Beaconheader">Prestige Beacon</div>
+                        <button onclick="EnterBeacon(1)">Enter this Beacon</button>
+                        <div>Upon entering, Prestige Points are raised ^0.2</div>
+                        <div>There's <span id="PPEamount">0</span> Prestige Energy in this Beacon</div>
+                    </div>
+                    <div id="Beacon3" class="Beacon hidden">
+                        <div class="beaconheader">Power Beacon</div>
+                        <button onclick="EnterBeacon(2)">Enter this Beacon</button>
+                        <div>Prestige Beacon + Power rebuyables are useless</div>
+                        <div>There's <span id="PPowEamount">0</span> Power Energy in this Beacon</div>
+                    </div>
+                    <div id="Beacon4" class="Beacon hidden">
+                        <div class="beaconheader">Booster Beacon</div>
+                        <button onclick="EnterBeacon(3)">Enter this Beacon</button>
+                        <div>Power Beacon + Booster base is fourth-rooted</div>
+                        <div>There's <span id="BEamount">0</span> Booster Energy in this Beacon</div>
+                    </div>
             </div>
 
             <div id="WavelengthsBeaconTab">
@@ -500,7 +501,7 @@
                 <div>You have <span id="blue">0</span> Blue (450-495 nm) Wavelengths, which add <span id="blueeffect">0</span> extra AP</div>
                 <div>You have <span id="violet">0</span> Violet (380-450 nm) Wavelengths, which boost Void Energy by <span id="violeteffect">1</span></div>
 
-                You unlock two new wavelengths at 1000 of each other one
+                <div>You unlock two new wavelengths at 1000 of each other one</div>
                 <div id="IRUV" class="hidden">
                     Infrared and Ultraviolet effects apply to each other and the main 6 wavelengths, but not to themselves
 

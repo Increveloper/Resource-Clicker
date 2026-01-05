@@ -107,6 +107,18 @@ section.points .row1 {
     );
     border-radius: inherit;
 }
+.beaconcolor{
+    background: radial-gradient(circle 50px at center, transparent 60%, rgb(252, 154, 231) 100%),
+        radial-gradient(circle 30px at center, transparent 60%, rgb(255, 128, 128) 100%),
+        #fc9ae7;
+    box-shadow: 0 0 10px 1px rgb(255, 128, 128);
+}
+.beaconcolor:hover{
+    background: radial-gradient(circle 50px at center, transparent 60%, rgb(255, 170, 240) 100%),
+        radial-gradient(circle 30px at center, transparent 60%, rgb(255, 150, 150) 100%),
+        #ffaaf0;
+    box-shadow: 0 0 10px 1px rgb(255, 150, 150);
+}
 
 
 .upgrades {

@@ -63,7 +63,7 @@ setInterval (function(){
     game.BeaconEnergies[1] = Math.log(Math.max(1, game.BeaconChalsBest[1])) ** 0.5
     game.BeaconEnergies[2] = Math.log(Math.max(1, game.BeaconChalsBest[2])) ** 0.6
     game.BeaconEnergies[3] = game.BeaconChalsBest[3]
-    game.BeaconPower = game.BeaconEnergies[0] * game.BeaconEnergies[1] * game.BeaconEnergies[2] * game.BeaconEnergies[3] 
+    game.BeaconPower = (game.BeaconEnergies[0] + 1) * (game.BeaconEnergies[1] + 1) * (game.BeaconEnergies[2] + 1) * (game.BeaconEnergies[3] + 1)
     game.Lumens[1] = 100 * 10 ** game.Lumens[0]
     game.Lumens[3] = game.Lumens[2] ** game.Lumens[0]
 
