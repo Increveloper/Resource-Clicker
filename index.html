@@ -464,30 +464,30 @@
             </nav>
 
             <div id="MainBeaconTab">
-                <button onclick="ExitBeacon()">Exit the active beacon (Currently: <span id="ActiveBeacon">none</span>)</button>
+                <button onclick="ExitBeacon()" class="beaconExit">Exit the active beacon (Currently: <span id="ActiveBeacon">none</span>)</button>
 
                 <div class="BeaconBox">
                     <div id="Beacon1" class="Beacon">
                         <div class="Beaconheader">Point Beacon</div>
-                        <button onclick="EnterBeacon(0)">Enter this Beacon</button>
+                        <button onclick="EnterBeacon(0)" class="beaconEnter">Enter this Beacon</button>
                         <div>This Beacon has no further penalty</div>
                         <div>There's <span id="PEamount">0</span> Point Energy in this Beacon</div>
                     </div>
                     <div id="Beacon2" class="Beacon hidden">
                         <div class="Beaconheader">Prestige Beacon</div>
-                        <button onclick="EnterBeacon(1)">Enter this Beacon</button>
+                        <button onclick="EnterBeacon(1)" class="beaconEnter">Enter this Beacon</button>
                         <div>Upon entering, Prestige Points are raised ^0.2</div>
                         <div>There's <span id="PPEamount">0</span> Prestige Energy in this Beacon</div>
                     </div>
                     <div id="Beacon3" class="Beacon hidden">
                         <div class="beaconheader">Power Beacon</div>
-                        <button onclick="EnterBeacon(2)">Enter this Beacon</button>
+                        <button onclick="EnterBeacon(2)" class="beaconEnter">Enter this Beacon</button>
                         <div>Prestige Beacon + Power rebuyables are useless</div>
                         <div>There's <span id="PPowEamount">0</span> Power Energy in this Beacon</div>
                     </div>
                     <div id="Beacon4" class="Beacon hidden">
                         <div class="beaconheader">Booster Beacon</div>
-                        <button onclick="EnterBeacon(3)">Enter this Beacon</button>
+                        <button onclick="EnterBeacon(3)" class="beaconEnter">Enter this Beacon</button>
                         <div>Power Beacon + Booster base is fourth-rooted</div>
                         <div>There's <span id="BEamount">0</span> Booster Energy in this Beacon</div>
                     </div>
@@ -510,14 +510,14 @@
                     <div>You have <span id="ultraviolet">0</span> Ultraviolet (&lt;380 nm), which boost all other wavelengths by <span id="ultravioleteffect">1</span></div>
                 </div>
 
-                <button onclick="GainWavelength()">Click to gain wavelengths!</button>
+                <button onclick="GainWavelength()" class="GainWavelength">Click to gain wavelengths!</button>
             </div>
 
             <div id="LumensBeaconTab">
                 <div>You have <span id="LumenAmount">0</span> Lumens, which boost all Wavelengths by <span id="LumenEffect">1</span></div>
                 <div>Currently, the Lumen base is <span id="LumenBase">1</span></div>
                 
-                <div onclick="GoLumen()">Reset wavelengths for 1 Lumens. Requires: <span id="LumenRequirement">100</span> infrared/ultraviolet wavelengths</div>
+                <div onclick="GoLumen()" class="LumenReset">Reset wavelengths for 1 Lumens. Requires: <span id="LumenRequirement">100</span> infrared/ultraviolet wavelengths</div>
 
                 <nav class="SubNav">
                     <a onclick="" class="btn beaconcolor">Buyables</a>

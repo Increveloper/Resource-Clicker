@@ -71,9 +71,9 @@ setInterval (function(){
 
     document.getElementById("points").textContent = formatNumber(game.points);
     document.getElementById("ppc").textContent = formatNumber(game.ppc);
-    document.getElementById("PS1start").textContent = game.PointSoftcapStart;
+    document.getElementById("PS1start").textContent = formatNumber(game.PointSoftcapStart);
     document.getElementById("PS1effect").textContent = game.PointSoftcapEffect;
-    document.getElementById("PS2start").textContent = game.SecondPointSoftcapStart;
+    document.getElementById("PS2start").textContent = formatNumber(game.SecondPointSoftcapStart);
     document.getElementById("PS2effect").textContent = game.SecondPointSoftcapEffect;
     document.getElementById("unlock").textContent = game.unlocks[game.unlockAmount];
     document.getElementById("unlockprice").textContent = formatNumber(game.unlockCost[game.unlockAmount]);

@@ -80,14 +80,14 @@ function EnterBeaconReset(){
 function GoLumen(){
     let ReqMet = true
     for(let i = 0; i < 8; i++){
-        if(game.wavelengths[i] < game.Lumens[1]){
+        if(game.WavelengthAmount[i] < game.Lumens[1]){
             ReqMet = false
         }
     }
     if(ReqMet){
         game.Lumens[0] += 1
         for(let i = 0; i < 8; i++){
-            game.wavelengths[i] = 0
+            game.WavelengthAmount[i] = 0
         }
     }
 }

@@ -783,7 +783,7 @@ function calculateBuyablePoints(){
         CostReduction2 += 2
     }
 
-    game.BuyablePoints = game.Lumens[0] ** 2
+    game.BuyablePoints[0] = game.Lumens[0] ** 2
 
     for(let i = 0; i < game.LumenRebuyables[0][0]; i++){
         BPDecrease1 = 1 + i - CostReduction1
@@ -792,8 +792,8 @@ function calculateBuyablePoints(){
         }
         game.BuyablePoints -= BPDecrease1
     }
-    for(let j = 0; j < game.LumenRebuyables[1][0]; i++){
-        BPDecrease1 = 1 + j - CostReduction2
+    for(let j = 0; j < game.LumenRebuyables[1][0]; j++){
+        BPDecrease2 = 1 + j - CostReduction2
         if(BPDecrease2 < 0){
             BPDecrease2 = 0
         }
