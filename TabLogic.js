@@ -71,6 +71,7 @@ function updateTabs(){
     else{
         document.getElementById("Beacon").classList.add("hidden")
     }
+    document.getElementById("Toggles").classList.toggle("hidden", Boolean(!(QOLU[1] || QOLU[4])))
 };
 
 function SwitchTabs(tab){
