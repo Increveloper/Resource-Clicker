@@ -14,6 +14,7 @@ setInterval (function(){
     BeaconDisplay();
     DisplayActiveBeacon();
     CheckIRUV();
+    DisplayToggles();
     DisplayActive("PBautomation", game.Toggles[0]);
     DisplayActive("BoosterAutomation", game.Toggles[1]);
 
