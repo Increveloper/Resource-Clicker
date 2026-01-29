@@ -212,18 +212,26 @@ function SwitchTabs(tab){
             }
         }
     }
-    else if(tab === "AutoTab" || tab === "MainAutoTab" || tab === "QOLAutoTab"){
+    else if(tab === "AutoTab" || tab === "MainAutoTab" || tab === "QOLAutoTab" || tab === "TogglesAutoTab"){
         document.getElementById("AutoTab").classList.remove("hidden")
         document.getElementById("MainAutoTab").classList.remove("hidden")
         document.getElementById("QOLAutoTab").classList.add("hidden")
+        document.getElementById("TogglesAutoTab").classList.add("hidden")
         if(tab === "MainAutoTab"){
             document.getElementById("AutoTab").classList.remove("hidden")
             document.getElementById("MainAutoTab").classList.remove("hidden")
             document.getElementById("QOLAutoTab").classList.add("hidden")
+            document.getElementById("TogglesAutoTab").classList.add("hidden")
         } else if(tab === "QOLAutoTab"){
             document.getElementById("AutoTab").classList.remove("hidden")
             document.getElementById("MainAutoTab").classList.add("hidden")
             document.getElementById("QOLAutoTab").classList.remove("hidden")
+            document.getElementById("TogglesAutoTab").classList.add("hidden")
+        } else if(tab === "TogglesAutoTab"){
+            document.getElementById("AutoTab").classList.remove("hidden")
+            document.getElementById("MainAutoTab").classList.add("hidden")
+            document.getElementById("QOLAutoTab").classList.add("hidden")
+            document.getElementById("TogglesAutoTab").classList.remove("hidden")
         }
     }
     else{

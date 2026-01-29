@@ -15,7 +15,7 @@ function runautomation(){
         game.PU2 = true
         game.PU3 = true
     }
-    if(game.QOLU[1]){
+    if(game.QOLU[1] && game.Toggles[0]){
         if (game.powerAmount >= game.powB1cost && game.powB1 < game.powB1max) {
             if(!game.QOLU[2]){
                 game.powerAmount -= game.powB1cost;
@@ -35,7 +35,7 @@ function runautomation(){
             game.powB3 += 1;
         }
     }
-    if(game.QOLU[4]){
+    if(game.QOLU[4] && game.Toggles[1]){
         if(game.points >= game.boosterrequirement){
             if(!game.QOLU[3]){
                 game.points = 0

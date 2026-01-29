@@ -14,6 +14,8 @@ setInterval (function(){
     BeaconDisplay();
     DisplayActiveBeacon();
     CheckIRUV();
+    DisplayActive("PBautomation", game.Toggles[0]);
+    DisplayActive("BoosterAutomation", game.Toggles[1]);
 
     // Calculate necessary variables
     game.powerEffect = 1 + game.powerAmount ** game.powerEffectExp;

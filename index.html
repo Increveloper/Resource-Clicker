@@ -577,6 +577,7 @@
             <nav class="SubNav">
                 <a onclick="SwitchTabs('MainAutoTab')" class="btn maincolor">Automation</a>
                 <a onclick="SwitchTabs('QOLAutoTab')" class="btn maincolor">QOL</a>
+                <a onclick="SwitchTabs('TogglesAutoTab')" class="btn maincolor hidden">Toggles</a>
             </nav>
             <div id="MainAutoTab" class="">
                 <section class="Automations">
@@ -647,6 +648,11 @@
                     </div>
                 </section>
             </div>
+
+            <div id="TogglesAutoTab" class="hidden">
+                <div onclick="Toggle(game.Toggles[0])" id="toggle1" class="toggle automation hidden">Toggle Power Rebuyable automation Currently: <span id="PBautomation">Enabled</span></div>
+                <div onclick="Toggle(game.Toggles[1])" id="toggle2" class="toggle automation hidden">Toggle Booster automation Currently: <span id="BoosterAutomation">Enabled</span></div>
+            </div>
         </div>
 
         <div id="SettingsTab" class="hidden">
@@ -672,5 +678,6 @@
         <script src="UpgradeLogic.js"></script>
         <script src="Main.js"></script>
         <script src="SetInterval.js"></script>
+        <script src="Toggles.js"></script>
     </body>
 </html>
