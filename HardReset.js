@@ -73,6 +73,7 @@ function HardReset(){
         autoeff: [0, 0, 0, 0],
         QOLU: [false, false, false, false, false, false, false, false],
         QOLUBought: 0,
+        Toggles: [true, true],
         AscAmount: 0,
         AscGain: 0,
         RankRequirement: [1, 2, 5, 15, 10 ** 300],

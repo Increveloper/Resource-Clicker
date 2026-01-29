@@ -70,6 +70,7 @@ function DevReset(){
         autoeff: [0, 0, 0, 0],
         QOLU: [true, true, true, true, true, true, true, true],
         QOLUBought: 4,
+        Toggles: [true, true],
         AscAmount: 100,
         AscGain: 0,
         RankRequirement: [1, 2, 5, 15, 10 ** 300],
