@@ -1,6 +1,6 @@
 function DisplayToggles(){
-    document.getElementById("toggle1").classList.toggle("hidden", game.QOLU[1])
-    document.getElementById("toggle2").classList.toggle("hidden", game.QOLU[3])
+    document.getElementById("toggle1").classList.toggle("hidden", !game.QOLU[1])
+    document.getElementById("toggle2").classList.toggle("hidden", !game.QOLU[3])
 }
 function Toggle(vars){
     if(typeof vars === "boolean"){
