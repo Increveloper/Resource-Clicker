@@ -383,6 +383,16 @@ nav {
     color: white;
     border-color: #555
 }
+.toggle{
+    background: #444;
+    border: 1px solid black;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    border-radius: 5px;
+}
 
 /* QOL Tab Items */
 

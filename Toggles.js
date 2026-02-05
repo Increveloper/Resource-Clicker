@@ -5,9 +5,10 @@ function DisplayToggles(){
 function Toggle(vars){
     if(typeof vars === "boolean"){
         vars = !vars
+        console.log(vars)
     }
     else{
-        console.log(`${vars}`)
+        console.log(`${vars} is no a boolean!`)
     }
 }
 function DisplayActive(id, vars){
